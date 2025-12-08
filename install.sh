@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CassToolSSH - Beautiful Server Greeting System
-# Version: 1.0.0
+# Version: 1.0.1
 # Author: Joel & Community
 # License: MIT
 
@@ -29,7 +29,7 @@ cat << "EOF"
 EOF
 echo -e "${NC}"
 echo -e "${CYAN}${BOLD}Beautiful Server Greeting System${NC}"
-echo -e "${YELLOW}Installation Script v1.0.0${NC}"
+echo -e "${YELLOW}Installation Script v1.0.1 (Fixed)${NC}"
 echo ""
 
 # Check if running as root
@@ -201,20 +201,20 @@ EOF
         minimal)
             echo -e "${BRIGHT}"
             echo "╔═══════════════════════════════════════╗"
-            echo "║        C A S S M A R R O W            ║"
+            echo "║        C A S S T O O L S S H          ║"
             echo "╚═══════════════════════════════════════╝"
             ;;
         blocks)
             echo -e "${BRIGHT}"
             cat << "EOF"
-█▀▀ ▄▀█ █▀ █▀ █▀▄▀█ ▄▀█ █▀█ █▀█ █▀█ █ █ █
-█▄▄ █▀█ ▄█ ▄█ █ ▀ █ █▀█ █▀▄ █▀▄ █▄█ ▀▄▀▄▀
+█▀▀ ▄▀█ █▀ █▀ ▀█▀ █▀█ █▀█ █   █▀ █▀ █ █
+█▄▄ █▀█ ▄█ ▄█  █  █▄█ █▄█ █▄▄ ▄█ ▄█ █▀█
 EOF
             ;;
         simple)
             echo -e "${BRIGHT}"
             echo "=================================="
-            echo "      C A S S M A R R O W"
+            echo "      C A S S T O O L S S H"
             echo "=================================="
             ;;
     esac
@@ -387,7 +387,8 @@ cat > /etc/update-motd.d/00-CassToolSSH << 'MOTDEOF'
 /opt/CassToolSSH/motd.sh
 MOTDEOF
 
-chmod +x /etc/update-motd.d/00-CassToolSSHecho -e "${GREEN}[✓]${NC} CassToolSSH MOTD installed"
+chmod +x /etc/update-motd.d/00-CassToolSSH
+echo -e "${GREEN}[✓]${NC} CassToolSSH MOTD installed"
 
 # Create uninstall script
 echo -e "${BLUE}[→]${NC} Creating uninstall script..."
@@ -405,7 +406,8 @@ if [ -d /etc/update-motd.d.backup ]; then
 fi
 
 # Remove CassToolSSH files
-rm -rf /opt/CassToolSSHrm -f /etc/CassToolSSH.conf
+rm -rf /opt/CassToolSSH
+rm -f /etc/CassToolSSH.conf
 
 echo "CassToolSSH has been uninstalled"
 UNINSTALLEOF
