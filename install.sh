@@ -66,11 +66,11 @@ fi
 INSTALL_DIR="/opt/CassToolSSH"
 CONFIG_FILE="/etc/CassToolSSH.conf"
 
-echo ""
+printf "\n"
 echo -e "${CYAN}${BOLD}Installation Options:${NC}"
 echo -e "  Installation directory: ${YELLOW}$INSTALL_DIR${NC}"
 echo -e "  Configuration file: ${YELLOW}$CONFIG_FILE${NC}"
-echo ""
+printf "\n"
 
 read -p "Proceed with installation? (y/n) " -n 1 -r
 echo
@@ -79,7 +79,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
-echo ""
+printf "\n"
 echo -e "${BLUE}[→]${NC} Creating installation directory..."
 mkdir -p "$INSTALL_DIR"
 
