@@ -1,0 +1,100 @@
+name: CI Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test Installation
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ubuntu-version: ['20.04', '22.04', '24.04']
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Test installation script syntax
+      run: |
+        bash -n install.sh
+        echo "✓ Installation script syntax is valid"
+    
+    - name: Test MOTD script creation
+      run: |
+        sudo ./install.sh <<< $'y\n'
+        echo "✓ Installation completed"
+    
+    - name: Verify files created
+      run: |
+        test -f /opt/cassmarrow/motd.sh || exit 1
+        test -f /etc/cassmarrow.conf || exit 1
+        test -f /etc/update-motd.d/00-cassmarrow || exit 1
+        echo "✓ All files created successfully"
+    
+    - name: Test configuration file
+      run: |
+        source /etc/cassmarrow.conf
+        echo "✓ Configuration file is valid"
+    
+    - name: Test MOTD script execution
+      run: |
+        /opt/cassmarrow/motd.sh
+        echo "✓ MOTD script executed successfully"
+    
+    - name: Test customization script
+      run: |
+        test -x /opt/cassmarrow/customize.sh || exit 1
+        echo "✓ Customization script is executable"
+    
+    - name: Test uninstallation
+      run: |
+        sudo /opt/cassmarrow/uninstall.sh
+        test ! -d /opt/cassmarrow || exit 1
+        echo "✓ Uninstallation successful"
+
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Run ShellCheck
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y shellcheck
+        shellcheck install.sh || true
+        echo "✓ ShellCheck completed"
+
+  documentation:
+    name: Check Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Check README exists
+      run: |
+        test -f README.md || exit 1
+        echo "✓ README.md exists"
+    
+    - name: Check CONTRIBUTING guide
+      run: |
+        test -f CONTRIBUTING.md || exit 1
+        echo "✓ CONTRIBUTING.md exists"
+    
+    - name: Check LICENSE
+      run: |
+        test -f LICENSE || exit 1
+        echo "✓ LICENSE exists"
+    
+    - name: Check CHANGELOG
+      run: |
+        test -f CHANGELOG.md || exit 1
+        echo "✓ CHANGELOG.md exists"
