@@ -1,9 +1,9 @@
-# CassMarrow Project Structure
+# CassToolSSH Project Structure
 
 ## Repository Layout
 
 ```
-cassmarrow/
+CassToolSSH/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug_report.md           # Bug report template
@@ -17,7 +17,7 @@ cassmarrow/
 ├── README.md                       # Main documentation
 ├── QUICKSTART.md                   # Quick start guide
 ├── SCREENSHOTS.md                  # Screenshot guide
-├── cassmarrow.conf.example         # Example configuration
+├── CassToolSSH.conf.example         # Example configuration
 ├── demo.sh                         # Interactive demo script
 ├── install.sh                      # Main installation script
 └── test.sh                         # Test suite
@@ -28,15 +28,15 @@ cassmarrow/
 ```
 Server filesystem after installation:
 
-/opt/cassmarrow/
+/opt/CassToolSSH/
 ├── motd.sh                         # Main MOTD script
 ├── customize.sh                    # Interactive customization
 └── uninstall.sh                    # Uninstallation script
 
 /etc/
-├── cassmarrow.conf                 # User configuration
+├── CassToolSSH.conf                 # User configuration
 └── update-motd.d/
-    ├── 00-cassmarrow              # MOTD hook (active)
+    ├── 00-CassToolSSH              # MOTD hook (active)
     ├── 10-help-text               # Disabled
     ├── 50-motd-news               # Disabled
     └── ...                        # Other default scripts (disabled)
@@ -58,7 +58,7 @@ Server filesystem after installation:
   - Permission management
 - **Usage**: `sudo ./install.sh`
 
-#### /opt/cassmarrow/motd.sh
+#### /opt/CassToolSSH/motd.sh
 - **Purpose**: Main greeting script
 - **Features**:
   - ASCII art rendering
@@ -66,35 +66,35 @@ Server filesystem after installation:
   - Service monitoring
   - Color theme application
   - Configuration loading
-- **Usage**: `/opt/cassmarrow/motd.sh` (automatic on login)
+- **Usage**: `/opt/CassToolSSH/motd.sh` (automatic on login)
 
-#### /etc/cassmarrow.conf
+#### /etc/CassToolSSH.conf
 - **Purpose**: User configuration file
 - **Contents**:
   - Display toggles
   - Theme settings
   - Custom messages
   - Service list
-- **Usage**: Edit with `nano /etc/cassmarrow.conf`
+- **Usage**: Edit with `nano /etc/CassToolSSH.conf`
 
 ### Helper Scripts
 
-#### /opt/cassmarrow/customize.sh
+#### /opt/CassToolSSH/customize.sh
 - **Purpose**: Interactive customization tool
 - **Features**:
   - Theme switching
   - Style selection
   - Service configuration
   - Live preview
-- **Usage**: `sudo /opt/cassmarrow/customize.sh`
+- **Usage**: `sudo /opt/CassToolSSH/customize.sh`
 
-#### /opt/cassmarrow/uninstall.sh
+#### /opt/CassToolSSH/uninstall.sh
 - **Purpose**: Clean removal
 - **Features**:
   - Restore original MOTD
   - Remove all files
   - Clean configuration
-- **Usage**: `sudo /opt/cassmarrow/uninstall.sh`
+- **Usage**: `sudo /opt/CassToolSSH/uninstall.sh`
 
 ### Documentation
 
@@ -131,7 +131,7 @@ Server filesystem after installation:
 
 ### Configuration
 
-#### cassmarrow.conf.example
+#### CassToolSSH.conf.example
 - Example configurations
 - All available options
 - Use case templates
@@ -176,7 +176,7 @@ Server filesystem after installation:
 
 ### Installation Target
 ```
-/opt/cassmarrow/           # Application directory
+/opt/CassToolSSH/           # Application directory
 /etc/                      # Configuration directory
 /etc/update-motd.d/        # MOTD hooks
 ```
@@ -194,16 +194,16 @@ Server filesystem after installation:
 ├── install.sh
 ├── demo.sh
 ├── test.sh
-├── /opt/cassmarrow/motd.sh
-├── /opt/cassmarrow/customize.sh
-├── /opt/cassmarrow/uninstall.sh
+├── /opt/CassToolSSH/motd.sh
+├── /opt/CassToolSSH/customize.sh
+├── /opt/CassToolSSH/uninstall.sh
 └── /etc/update-motd.d/00-CassToolSSH```
 
 ### Configuration Files
 ```
 644 (rw-r--r--)
-├── /etc/cassmarrow.conf
-├── cassmarrow.conf.example
+├── /etc/CassToolSSH.conf
+├── CassToolSSH.conf.example
 └── All documentation files
 ```
 
@@ -242,26 +242,26 @@ Server filesystem after installation:
 
 ### Via GitHub
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
 ```
 
 ### Manual
 ```bash
-git clone https://github.com/ahmetakifcetin/cassmarrow.git
+git clone https://github.com/ahmetakifcetin/CassToolSSH.git
 cd CassToolSSHsudo ./install.sh
 ```
 
 ### Docker
 ```dockerfile
 FROM ubuntu:24.04
-RUN curl -fsSL https://cassmarrow-url/install.sh | bash
+RUN curl -fsSL https://CassToolSSH-url/install.sh | bash
 ```
 
 ## Backup Strategy
 
 ### User Data
-- Configuration: `/etc/cassmarrow.conf`
-- Backup location: `~/.cassmarrow.conf.backup` (user created)
+- Configuration: `/etc/CassToolSSH.conf`
+- Backup location: `~/.CassToolSSH.conf.backup` (user created)
 
 ### System Data
 - Original MOTD: `/etc/update-motd.d.backup/`
@@ -270,10 +270,10 @@ RUN curl -fsSL https://cassmarrow-url/install.sh | bash
 ### Recovery
 ```bash
 # Restore original MOTD
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/CassToolSSH/uninstall.sh
 
 # Restore from manual backup
-sudo cp ~/.cassmarrow.conf.backup /etc/cassmarrow.conf
+sudo cp ~/.CassToolSSH.conf.backup /etc/CassToolSSH.conf
 ```
 
 ## Size Information

@@ -30,17 +30,17 @@ This guide helps you create beautiful screenshots for the README and documentati
 # SSH into your server
 ssh user@server
 
-# It will automatically display CassMarrow greeting
+# It will automatically display CassToolSSH greeting
 # Take screenshot
 
 # Or test manually:
-/opt/cassmarrow/motd.sh
+/opt/CassToolSSH/motd.sh
 ```
 
 ## Screenshot Checklist
 
 ### Main Screenshot (README hero)
-- [ ] Full CassMarrow ASCII art
+- [ ] Full CassToolSSH ASCII art
 - [ ] All system information visible
 - [ ] Clean terminal background
 - [ ] No personal/sensitive information
@@ -53,7 +53,7 @@ For each theme (blue, green, purple, cyan, red, yellow):
 - [ ] Readable text
 
 ### Style Screenshots
-For each style (cassmarrow, minimal, blocks, simple):
+For each style (CassToolSSH, minimal, blocks, simple):
 - [ ] Full view of ASCII art
 - [ ] System info section
 - [ ] Consistent terminal size
@@ -64,16 +64,16 @@ For each style (cassmarrow, minimal, blocks, simple):
 #!/bin/bash
 # screenshot-automation.sh
 
-STYLES="cassmarrow minimal blocks simple"
+STYLES="CassToolSSH minimal blocks simple"
 THEMES="cyan purple green blue red yellow"
 
 for style in $STYLES; do
     for theme in $THEMES; do
-        sudo sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" /etc/cassmarrow.conf
-        sudo sed -i "s/COLOR_THEME=.*/COLOR_THEME=\"$theme\"/" /etc/cassmarrow.conf
+        sudo sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" /etc/CassToolSSH.conf
+        sudo sed -i "s/COLOR_THEME=.*/COLOR_THEME=\"$theme\"/" /etc/CassToolSSH.conf
         
         clear
-        /opt/cassmarrow/motd.sh
+        /opt/CassToolSSH/motd.sh
         
         # Manual: Take screenshot here
         # Or use automated screenshot tool:
@@ -118,7 +118,7 @@ screenshots/
 │   ├── red.png
 │   └── yellow.png
 └── styles/
-    ├── cassmarrow.png
+    ├── CassToolSSH.png
     ├── minimal.png
     ├── blocks.png
     └── simple.png
@@ -126,7 +126,7 @@ screenshots/
 
 3. Reference in README:
 ```markdown
-![CassMarrow Demo](screenshots/main-demo.png)
+![CassToolSSH Demo](screenshots/main-demo.png)
 
 ### Available Themes
 ![Cyan Theme](screenshots/themes/cyan.png)
@@ -166,7 +166,7 @@ For consistent screenshots, set up a demo configuration:
 
 ```bash
 # Create demo config
-cat > /etc/cassmarrow.conf << 'EOF'
+cat > /etc/CassToolSSH.conf << 'EOF'
 SHOW_HOSTNAME=true
 SHOW_KERNEL=true
 SHOW_UPTIME=true
@@ -177,21 +177,21 @@ SHOW_IP=true
 SHOW_DOCKER=true
 SHOW_SERVICES=true
 SHOW_LAST_LOGIN=true
-SYSTEM_NAME="CassMarrow Demo Infrastructure"
+SYSTEM_NAME="CassToolSSH Demo Infrastructure"
 SYSTEM_VERSION="v1.0"
 COLOR_THEME="cyan"
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="CassToolSSH"
 MONITORED_SERVICES="nginx docker postgresql"
 CUSTOM_MESSAGE="Beautiful server greeting for the self-hosting community"
 CUSTOM_HEADER=""
 EOF
 
 # Override hostname display
-sudo sed -i 's/$(hostname -f)/demo.cassmarrow.local/' /opt/cassmarrow/motd.sh
+sudo sed -i 's/$(hostname -f)/demo.CassToolSSH.local/' /opt/CassToolSSH/motd.sh
 
 # Override IP display  
-sudo sed -i 's/$(get_ip)/192.168.1.100/' /opt/cassmarrow/motd.sh
-sudo sed -i 's/$(get_public_ip)/203.0.113.42/' /opt/cassmarrow/motd.sh
+sudo sed -i 's/$(get_ip)/192.168.1.100/' /opt/CassToolSSH/motd.sh
+sudo sed -i 's/$(get_public_ip)/203.0.113.42/' /opt/CassToolSSH/motd.sh
 ```
 
 ## Recording GIFs
@@ -204,11 +204,11 @@ For animated demonstrations:
 sudo apt-get install asciinema
 
 # Record
-asciinema rec cassmarrow-demo.cast
+asciinema rec CassToolSSH-demo.cast
 
 # Convert to GIF
 # Use: https://github.com/asciinema/agg
-agg cassmarrow-demo.cast cassmarrow-demo.gif
+agg CassToolSSH-demo.cast CassToolSSH-demo.gif
 ```
 
 ### Using terminalizer
@@ -217,10 +217,10 @@ agg cassmarrow-demo.cast cassmarrow-demo.gif
 npm install -g terminalizer
 
 # Record
-terminalizer record cassmarrow-demo
+terminalizer record CassToolSSH-demo
 
 # Render
-terminalizer render cassmarrow-demo
+terminalizer render CassToolSSH-demo
 ```
 
 ## Sample Screenshot Commands

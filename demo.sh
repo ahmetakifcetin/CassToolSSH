@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# CassMarrow Demo Script
+# CassToolSSH Demo Script
 # Shows all available features and styles
 
 echo "╔════════════════════════════════════════════════════════════════════╗"
-echo "║                    CassMarrow Feature Demo                        ║"
+echo "║                    CassToolSSH Feature Demo                        ║"
 echo "╚════════════════════════════════════════════════════════════════════╝"
 echo ""
 
 # Temporary config for demo
-TEMP_CONFIG="/tmp/cassmarrow_demo.conf"
+TEMP_CONFIG="/tmp/CassToolSSH_demo.conf"
 
 show_demo() {
     local style=$1
@@ -32,18 +32,18 @@ SHOW_IP=true
 SHOW_DOCKER=true
 SHOW_SERVICES=true
 SHOW_LAST_LOGIN=true
-SYSTEM_NAME="CassMarrow Demo Infrastructure"
+SYSTEM_NAME="CassToolSSH Demo Infrastructure"
 SYSTEM_VERSION="v1.0 Demo"
 COLOR_THEME="$theme"
 ASCII_STYLE="$style"
 MONITORED_SERVICES="nginx docker postgresql"
-CUSTOM_MESSAGE="This is a demo of CassMarrow server greeting system"
+CUSTOM_MESSAGE="This is a demo of CassToolSSH server greeting system"
 EOF
     
     # Create temporary motd script
     cat > /tmp/demo_motd.sh << 'DEMOSCRIPT'
 #!/bin/bash
-source /tmp/cassmarrow_demo.conf
+source /tmp/CassToolSSH_demo.conf
 
 case $COLOR_THEME in
     blue) PRIMARY='\033[0;34m'; BRIGHT='\033[1;34m' ;;
@@ -62,7 +62,7 @@ NC='\033[0m'
 
 print_ascii_art() {
     case $ASCII_STYLE in
-        cassmarrow)
+        CassToolSSH)
             echo -e "${BRIGHT}"
             cat << "EOF"
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
@@ -102,7 +102,7 @@ echo -e "${SECONDARY}Version: ${SYSTEM_VERSION}${NC}"
 echo -e "${SECONDARY}Status: ${PRIMARY}[ ${BOLD}ONLINE${NC}${PRIMARY} ]${NC}"
 echo ""
 echo -e "${BRIGHT}═══════════════════════════════════════════════════════════════════${NC}"
-echo -e "${PRIMARY}${BOLD}Host:${NC}           demo.cassmarrow.local"
+echo -e "${PRIMARY}${BOLD}Host:${NC}           demo.CassToolSSH.local"
 echo -e "${PRIMARY}${BOLD}Kernel:${NC}         6.8.0-88-generic"
 echo -e "${PRIMARY}${BOLD}Uptime:${NC}         7 days, 3 hours, 42 minutes"
 echo -e "${PRIMARY}${BOLD}Load Average:${NC}   0.45, 0.38, 0.32"
@@ -136,11 +136,11 @@ DEMOSCRIPT
     read -p "Press Enter to continue..."
 }
 
-# Demo 1: CassMarrow style with Cyan theme
-show_demo "cassmarrow" "cyan" "Style: CassMarrow (Default) | Theme: Cyan"
+# Demo 1: CassToolSSH style with Cyan theme
+show_demo "CassToolSSH" "cyan" "Style: CassToolSSH (Default) | Theme: Cyan"
 
-# Demo 2: CassMarrow style with Purple theme
-show_demo "cassmarrow" "purple" "Style: CassMarrow | Theme: Purple"
+# Demo 2: CassToolSSH style with Purple theme
+show_demo "CassToolSSH" "purple" "Style: CassToolSSH | Theme: Purple"
 
 # Demo 3: Minimal style with Green theme
 show_demo "minimal" "green" "Style: Minimal | Theme: Green"
@@ -151,8 +151,8 @@ show_demo "blocks" "blue" "Style: Blocks | Theme: Blue"
 # Demo 5: Simple style with Yellow theme
 show_demo "simple" "yellow" "Style: Simple | Theme: Yellow"
 
-# Demo 6: CassMarrow style with Red theme
-show_demo "cassmarrow" "red" "Style: CassMarrow | Theme: Red"
+# Demo 6: CassToolSSH style with Red theme
+show_demo "CassToolSSH" "red" "Style: CassToolSSH | Theme: Red"
 
 # Cleanup
 rm -f "$TEMP_CONFIG" /tmp/demo_motd.sh
@@ -161,9 +161,9 @@ echo ""
 echo "╔════════════════════════════════════════════════════════════════════╗"
 echo "║                         Demo Complete!                             ║"
 echo "╠════════════════════════════════════════════════════════════════════╣"
-echo "║  Install CassMarrow:                                              ║"
-echo "║  curl -fsSL https://cassmarrow.sh/install | sudo bash             ║"
+echo "║  Install CassToolSSH:                                              ║"
+echo "║  curl -fsSL https://CassToolSSH.sh/install | sudo bash             ║"
 echo "║                                                                    ║"
-echo "║  GitHub: https://github.com/ahmetakifcetin/cassmarrow               ║"
+echo "║  GitHub: https://github.com/ahmetakifcetin/CassToolSSH               ║"
 echo "╚════════════════════════════════════════════════════════════════════╝"
 echo ""

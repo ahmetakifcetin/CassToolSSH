@@ -1,13 +1,13 @@
-# CassMarrow Quick Start Guide
+# CassToolSSH Quick Start Guide
 
-Get CassMarrow up and running in under 5 minutes! ⚡
+Get CassToolSSH up and running in under 5 minutes! ⚡
 
 ## 🚀 Installation (30 seconds)
 
 ### One-Line Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
 ```
 
 That's it! Log out and log back in to see your new greeting.
@@ -16,7 +16,7 @@ That's it! Log out and log back in to see your new greeting.
 
 ```bash
 # Download the installer
-wget https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh
+wget https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh
 
 # Make it executable
 chmod +x install.sh
@@ -42,7 +42,7 @@ ssh user@your-server
 Run the interactive customizer:
 
 ```bash
-sudo /opt/cassmarrow/customize.sh
+sudo /opt/CassToolSSH/customize.sh
 ```
 
 ### 3. Manual Configuration
@@ -50,7 +50,7 @@ sudo /opt/cassmarrow/customize.sh
 Edit the config file directly:
 
 ```bash
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/CassToolSSH.conf
 ```
 
 ## 🎨 Popular Customizations
@@ -59,32 +59,32 @@ sudo nano /etc/cassmarrow.conf
 
 ```bash
 # Available: blue, green, purple, cyan, red, yellow
-sudo sed -i 's/COLOR_THEME="cyan"/COLOR_THEME="purple"/' /etc/cassmarrow.conf
+sudo sed -i 's/COLOR_THEME="cyan"/COLOR_THEME="purple"/' /etc/CassToolSSH.conf
 ```
 
 ### Change ASCII Style
 
 ```bash
-# Available: cassmarrow, minimal, blocks, simple
-sudo sed -i 's/ASCII_STYLE="cassmarrow"/ASCII_STYLE="minimal"/' /etc/cassmarrow.conf
+# Available: CassToolSSH, minimal, blocks, simple
+sudo sed -i 's/ASCII_STYLE="CassToolSSH"/ASCII_STYLE="minimal"/' /etc/CassToolSSH.conf
 ```
 
 ### Add Custom Message
 
 ```bash
-echo 'CUSTOM_MESSAGE="Welcome to Production! Handle with care 🚀"' | sudo tee -a /etc/cassmarrow.conf
+echo 'CUSTOM_MESSAGE="Welcome to Production! Handle with care 🚀"' | sudo tee -a /etc/CassToolSSH.conf
 ```
 
 ### Change System Name
 
 ```bash
-sudo sed -i 's/SYSTEM_NAME="CassMarrow Infrastructure"/SYSTEM_NAME="My Awesome Server"/' /etc/cassmarrow.conf
+sudo sed -i 's/SYSTEM_NAME="CassToolSSH Infrastructure"/SYSTEM_NAME="My Awesome Server"/' /etc/CassToolSSH.conf
 ```
 
 ### Monitor Different Services
 
 ```bash
-sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 redis mongodb"/' /etc/cassmarrow.conf
+sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 redis mongodb"/' /etc/CassToolSSH.conf
 ```
 
 ## 🧪 Testing
@@ -92,7 +92,7 @@ sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 redis m
 Test your configuration without logging out:
 
 ```bash
-/opt/cassmarrow/motd.sh
+/opt/CassToolSSH/motd.sh
 ```
 
 ## 📋 Common Use Cases
@@ -100,7 +100,7 @@ Test your configuration without logging out:
 ### Production Server Setup
 
 ```bash
-cat << 'EOF' | sudo tee /etc/cassmarrow.conf
+cat << 'EOF' | sudo tee /etc/CassToolSSH.conf
 SHOW_HOSTNAME=true
 SHOW_KERNEL=true
 SHOW_UPTIME=true
@@ -115,7 +115,7 @@ SYSTEM_NAME="Production API Server"
 SYSTEM_VERSION="v2.0"
 CUSTOM_MESSAGE="⚠️  PRODUCTION - All changes require approval"
 COLOR_THEME="red"
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="CassToolSSH"
 MONITORED_SERVICES="nginx docker postgresql redis"
 EOF
 ```
@@ -123,7 +123,7 @@ EOF
 ### Development Environment
 
 ```bash
-cat << 'EOF' | sudo tee /etc/cassmarrow.conf
+cat << 'EOF' | sudo tee /etc/CassToolSSH.conf
 SHOW_HOSTNAME=true
 SHOW_KERNEL=true
 SHOW_UPTIME=true
@@ -146,7 +146,7 @@ EOF
 ### Minimal Setup
 
 ```bash
-cat << 'EOF' | sudo tee /etc/cassmarrow.conf
+cat << 'EOF' | sudo tee /etc/CassToolSSH.conf
 SHOW_HOSTNAME=true
 SHOW_KERNEL=true
 SHOW_UPTIME=true
@@ -172,35 +172,35 @@ EOF
 
 1. **Check installation:**
    ```bash
-   ls -la /opt/cassmarrow/
+   ls -la /opt/CassToolSSH/
    ls -la /etc/update-motd.d/00-CassToolSSH   ```
 
 2. **Test manually:**
    ```bash
-   /opt/cassmarrow/motd.sh
+   /opt/CassToolSSH/motd.sh
    ```
 
 3. **Check permissions:**
    ```bash
-   sudo chmod +x /etc/update-motd.d/00-CassToolSSH   sudo chmod +x /opt/cassmarrow/motd.sh
+   sudo chmod +x /etc/update-motd.d/00-CassToolSSH   sudo chmod +x /opt/CassToolSSH/motd.sh
    ```
 
 ### Configuration Not Working?
 
 1. **Validate syntax:**
    ```bash
-   bash -n /opt/cassmarrow/motd.sh
+   bash -n /opt/CassToolSSH/motd.sh
    ```
 
 2. **Check config file:**
    ```bash
-   cat /etc/cassmarrow.conf
+   cat /etc/CassToolSSH.conf
    ```
 
 3. **Reset to defaults:**
    ```bash
-   sudo /opt/cassmarrow/uninstall.sh
-   curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+   sudo /opt/CassToolSSH/uninstall.sh
+   curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
    ```
 
 ### Services Not Showing?
@@ -212,18 +212,18 @@ Make sure the service names match your system:
 systemctl list-unit-files --type=service | grep -v '@'
 
 # Update monitored services
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/CassToolSSH.conf
 # Change MONITORED_SERVICES line
 ```
 
 ## 🗑️ Uninstallation
 
 ```bash
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/CassToolSSH/uninstall.sh
 ```
 
 This will:
-- Remove CassMarrow files
+- Remove CassToolSSH files
 - Restore original MOTD
 - Clean up configuration
 
@@ -231,14 +231,14 @@ This will:
 
 - **Full documentation**: [README.md](README.md)
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Examples**: [cassmarrow.conf.example](cassmarrow.conf.example)
-- **Report issues**: [GitHub Issues](https://github.com/ahmetakifcetin/cassmarrow/issues)
+- **Examples**: [CassToolSSH.conf.example](CassToolSSH.conf.example)
+- **Report issues**: [GitHub Issues](https://github.com/ahmetakifcetin/CassToolSSH/issues)
 
 ## 💡 Pro Tips
 
 1. **Keep it simple**: Start with default settings, customize gradually
-2. **Test changes**: Always run `/opt/cassmarrow/motd.sh` after editing config
-3. **Backup config**: `sudo cp /etc/cassmarrow.conf /etc/cassmarrow.conf.backup`
+2. **Test changes**: Always run `/opt/CassToolSSH/motd.sh` after editing config
+3. **Backup config**: `sudo cp /etc/CassToolSSH.conf /etc/CassToolSSH.conf.backup`
 4. **Use themes**: Different colors for dev/staging/production servers
 5. **Monitor wisely**: Only add services you actually care about
 
@@ -246,32 +246,32 @@ This will:
 
 ```bash
 # Edit configuration
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/CassToolSSH.conf
 
 # Test configuration
-/opt/cassmarrow/motd.sh
+/opt/CassToolSSH/motd.sh
 
 # Interactive customization
-sudo /opt/cassmarrow/customize.sh
+sudo /opt/CassToolSSH/customize.sh
 
 # View current config
-cat /etc/cassmarrow.conf
+cat /etc/CassToolSSH.conf
 
 # Uninstall
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/CassToolSSH/uninstall.sh
 
 # Reinstall
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
 ```
 
 ## 🆘 Getting Help
 
-- **GitHub Issues**: [Report a bug](https://github.com/ahmetakifcetin/cassmarrow/issues/new?template=bug_report.md)
-- **Feature Request**: [Suggest a feature](https://github.com/ahmetakifcetin/cassmarrow/issues/new?template=feature_request.md)
-- **Discussions**: [Ask questions](https://github.com/ahmetakifcetin/cassmarrow/discussions)
+- **GitHub Issues**: [Report a bug](https://github.com/ahmetakifcetin/CassToolSSH/issues/new?template=bug_report.md)
+- **Feature Request**: [Suggest a feature](https://github.com/ahmetakifcetin/CassToolSSH/issues/new?template=feature_request.md)
+- **Discussions**: [Ask questions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)
 
 ---
 
 **Happy customizing! 🚀**
 
-Made with ❤️ by the CassMarrow community
+Made with ❤️ by the CassToolSSH community

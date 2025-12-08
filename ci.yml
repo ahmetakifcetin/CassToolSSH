@@ -30,30 +30,30 @@ jobs:
     
     - name: Verify files created
       run: |
-        test -f /opt/cassmarrow/motd.sh || exit 1
-        test -f /etc/cassmarrow.conf || exit 1
-        test -f /etc/update-motd.d/00-cassmarrow || exit 1
+        test -f /opt/CassToolSSH/motd.sh || exit 1
+        test -f /etc/CassToolSSH.conf || exit 1
+        test -f /etc/update-motd.d/00-CassToolSSH || exit 1
         echo "✓ All files created successfully"
     
     - name: Test configuration file
       run: |
-        source /etc/cassmarrow.conf
+        source /etc/CassToolSSH.conf
         echo "✓ Configuration file is valid"
     
     - name: Test MOTD script execution
       run: |
-        /opt/cassmarrow/motd.sh
+        /opt/CassToolSSH/motd.sh
         echo "✓ MOTD script executed successfully"
     
     - name: Test customization script
       run: |
-        test -x /opt/cassmarrow/customize.sh || exit 1
+        test -x /opt/CassToolSSH/customize.sh || exit 1
         echo "✓ Customization script is executable"
     
     - name: Test uninstallation
       run: |
-        sudo /opt/cassmarrow/uninstall.sh
-        test ! -d /opt/cassmarrow || exit 1
+        sudo /opt/CassToolSSH/uninstall.sh
+        test ! -d /opt/CassToolSSH || exit 1
         echo "✓ Uninstallation successful"
 
   shellcheck:

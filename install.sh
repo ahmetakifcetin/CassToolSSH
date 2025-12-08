@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CassMarrow - Beautiful Server Greeting System
+# CassToolSSH - Beautiful Server Greeting System
 # Version: 1.0.0
 # Author: Joel & Community
 # License: MIT
@@ -63,8 +63,8 @@ if [[ ! "$OS" =~ "Ubuntu" ]] && [[ ! "$OS" =~ "Debian" ]]; then
 fi
 
 # Installation directory
-INSTALL_DIR="/opt/cassmarrow"
-CONFIG_FILE="/etc/cassmarrow.conf"
+INSTALL_DIR="/opt/CassToolSSH"
+CONFIG_FILE="/etc/CassToolSSH.conf"
 
 echo ""
 echo -e "${CYAN}${BOLD}Installation Options:${NC}"
@@ -86,7 +86,7 @@ mkdir -p "$INSTALL_DIR"
 # Create configuration file
 echo -e "${BLUE}[→]${NC} Creating configuration file..."
 cat > "$CONFIG_FILE" << 'CONFIGEOF'
-# CassMarrow Configuration File
+# CassToolSSH Configuration File
 # Customize your server greeting here
 
 # Display Settings
@@ -102,15 +102,15 @@ SHOW_SERVICES=true
 SHOW_LAST_LOGIN=true
 
 # Custom Text
-SYSTEM_NAME="CassMarrow Infrastructure"
+SYSTEM_NAME="CassToolSSH Infrastructure"
 SYSTEM_VERSION="v1.0"
 CUSTOM_MESSAGE=""
 
 # Color Theme (options: blue, green, purple, cyan, red, yellow)
 COLOR_THEME="cyan"
 
-# ASCII Art Style (options: cassmarrow, minimal, blocks, simple)
-ASCII_STYLE="cassmarrow"
+# ASCII Art Style (options: CassToolSSH, minimal, blocks, simple)
+ASCII_STYLE="CassToolSSH"
 
 # Services to monitor (space-separated)
 MONITORED_SERVICES="nginx docker postgresql mysql"
@@ -127,8 +127,8 @@ cat > "$INSTALL_DIR/motd.sh" << 'SCRIPTEOF'
 #!/bin/bash
 
 # Load configuration
-if [ -f /etc/cassmarrow.conf ]; then
-    source /etc/cassmarrow.conf
+if [ -f /etc/CassToolSSH.conf ]; then
+    source /etc/CassToolSSH.conf
 else
     SHOW_HOSTNAME=true
     SHOW_KERNEL=true
@@ -140,10 +140,10 @@ else
     SHOW_DOCKER=true
     SHOW_SERVICES=true
     SHOW_LAST_LOGIN=true
-    SYSTEM_NAME="CassMarrow Infrastructure"
+    SYSTEM_NAME="CassToolSSH Infrastructure"
     SYSTEM_VERSION="v1.0"
     COLOR_THEME="cyan"
-    ASCII_STYLE="cassmarrow"
+    ASCII_STYLE="CassToolSSH"
     MONITORED_SERVICES="nginx docker postgresql mysql"
 fi
 
@@ -187,7 +187,7 @@ NC='\033[0m'
 # ASCII Art
 print_ascii_art() {
     case $ASCII_STYLE in
-        cassmarrow)
+        CassToolSSH)
             echo -e "${BRIGHT}"
             cat << "EOF"
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
@@ -381,20 +381,20 @@ echo "" > /etc/motd
 rm -f /etc/motd.dynamic
 
 # Create new MOTD script in update-motd.d
-echo -e "${BLUE}[→]${NC} Installing CassMarrow MOTD..."
-cat > /etc/update-motd.d/00-cassmarrow << 'MOTDEOF'
+echo -e "${BLUE}[→]${NC} Installing CassToolSSH MOTD..."
+cat > /etc/update-motd.d/00-CassToolSSH << 'MOTDEOF'
 #!/bin/bash
-/opt/cassmarrow/motd.sh
+/opt/CassToolSSH/motd.sh
 MOTDEOF
 
-chmod +x /etc/update-motd.d/00-CassToolSSHecho -e "${GREEN}[✓]${NC} CassMarrow MOTD installed"
+chmod +x /etc/update-motd.d/00-CassToolSSHecho -e "${GREEN}[✓]${NC} CassToolSSH MOTD installed"
 
 # Create uninstall script
 echo -e "${BLUE}[→]${NC} Creating uninstall script..."
 cat > "$INSTALL_DIR/uninstall.sh" << 'UNINSTALLEOF'
 #!/bin/bash
 
-echo "Uninstalling CassMarrow..."
+echo "Uninstalling CassToolSSH..."
 
 # Restore backups
 if [ -d /etc/update-motd.d.backup ]; then
@@ -404,10 +404,10 @@ if [ -d /etc/update-motd.d.backup ]; then
     rm -rf /etc/update-motd.d.backup
 fi
 
-# Remove CassMarrow files
-rm -rf /opt/CassToolSSHrm -f /etc/cassmarrow.conf
+# Remove CassToolSSH files
+rm -rf /opt/CassToolSSHrm -f /etc/CassToolSSH.conf
 
-echo "CassMarrow has been uninstalled"
+echo "CassToolSSH has been uninstalled"
 UNINSTALLEOF
 
 chmod +x "$INSTALL_DIR/uninstall.sh"
@@ -416,9 +416,9 @@ chmod +x "$INSTALL_DIR/uninstall.sh"
 cat > "$INSTALL_DIR/customize.sh" << 'CUSTOMEOF'
 #!/bin/bash
 
-CONFIG_FILE="/etc/cassmarrow.conf"
+CONFIG_FILE="/etc/CassToolSSH.conf"
 
-echo "CassMarrow Customization Helper"
+echo "CassToolSSH Customization Helper"
 echo "================================"
 echo ""
 
@@ -449,7 +449,7 @@ while true; do
             echo "Theme updated!"
             ;;
         2)
-            echo "Available styles: cassmarrow, minimal, blocks, simple"
+            echo "Available styles: CassToolSSH, minimal, blocks, simple"
             read -p "Enter style: " style
             sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" "$CONFIG_FILE"
             echo "Style updated!"
@@ -471,7 +471,7 @@ while true; do
             ${EDITOR:-nano} "$CONFIG_FILE"
             ;;
         7)
-            /opt/cassmarrow/motd.sh
+            /opt/CassToolSSH/motd.sh
             ;;
         8)
             exit 0
@@ -491,16 +491,16 @@ echo -e "${GREEN}${BOLD}✓ Installation Complete!${NC}"
 echo -e "${BRIGHT}═══════════════════════════════════════════════════════════════════${NC}"
 echo ""
 echo -e "${CYAN}${BOLD}Next Steps:${NC}"
-echo -e "  1. Edit configuration: ${YELLOW}nano /etc/cassmarrow.conf${NC}"
-echo -e "  2. Customize settings: ${YELLOW}/opt/cassmarrow/customize.sh${NC}"
-echo -e "  3. Test your MOTD: ${YELLOW}/opt/cassmarrow/motd.sh${NC}"
-echo -e "  4. Uninstall: ${YELLOW}/opt/cassmarrow/uninstall.sh${NC}"
+echo -e "  1. Edit configuration: ${YELLOW}nano /etc/CassToolSSH.conf${NC}"
+echo -e "  2. Customize settings: ${YELLOW}/opt/CassToolSSH/customize.sh${NC}"
+echo -e "  3. Test your MOTD: ${YELLOW}/opt/CassToolSSH/motd.sh${NC}"
+echo -e "  4. Uninstall: ${YELLOW}/opt/CassToolSSH/uninstall.sh${NC}"
 echo ""
 echo -e "${CYAN}${BOLD}Quick Customization:${NC}"
 echo -e "  Color themes: ${YELLOW}blue, green, purple, cyan, red, yellow${NC}"
-echo -e "  ASCII styles: ${YELLOW}cassmarrow, minimal, blocks, simple${NC}"
+echo -e "  ASCII styles: ${YELLOW}CassToolSSH, minimal, blocks, simple${NC}"
 echo ""
 echo -e "${PRIMARY}${BOLD}Log out and log back in to see your new server greeting!${NC}"
 echo ""
-echo -e "${DIM}For more info: https://github.com/ahmetakifcetin/cassmarrow${NC}"
+echo -e "${DIM}For more info: https://github.com/ahmetakifcetin/CassToolSSH${NC}"
 echo ""

@@ -1,13 +1,13 @@
-# 🚀 CassMarrow - GitHub Repository Setup Guide
+# 🚀 CassToolSSH - GitHub Repository Setup Guide
 
-Bu dosyada CassMarrow projesini GitHub'a nasıl yükleyeceğiniz ve toplulukla nasıl paylaşacağınız anlatılıyor.
+Bu dosyada CassToolSSH projesini GitHub'a nasıl yükleyeceğiniz ve toplulukla nasıl paylaşacağınız anlatılıyor.
 
 ## 📦 Repository Kurulumu
 
 ### 1. GitHub'da Yeni Repository Oluşturun
 
 1. GitHub'a gidin: https://github.com/new
-2. Repository adı: `cassmarrow`
+2. Repository adı: `CassToolSSH`
 3. Açıklama: `Beautiful, customizable server greeting system for Linux servers 🚀`
 4. Public olarak işaretleyin
 5. **README eklemeyin** (zaten var)
@@ -18,16 +18,16 @@ Bu dosyada CassMarrow projesini GitHub'a nasıl yükleyeceğiniz ve toplulukla n
 
 ```bash
 # Repository'yi klonlayın (boş)
-git clone https://github.com/ahmetakifcetin/cassmarrow.git
+git clone https://github.com/ahmetakifcetin/CassToolSSH.git
 cd CassToolSSH
-# CassMarrow dosyalarını kopyalayın
-cp -r /path/to/cassmarrow/files/* .
-cp -r /path/to/cassmarrow/files/.github .
-cp /path/to/cassmarrow/files/.gitignore .
+# CassToolSSH dosyalarını kopyalayın
+cp -r /path/to/CassToolSSH/files/* .
+cp -r /path/to/CassToolSSH/files/.github .
+cp /path/to/CassToolSSH/files/.gitignore .
 
 # Git'e ekleyin
 git add .
-git commit -m "Initial commit: CassMarrow v1.0.0
+git commit -m "Initial commit: CassToolSSH v1.0.0
 
 - Complete installation system
 - Multiple themes and styles
@@ -65,7 +65,7 @@ homelab self-hosted infrastructure monitoring
 🔧 Zero dependencies, highly configurable
 ```
 
-Website: `https://ahmetakifcetin.github.io/cassmarrow`
+Website: `https://ahmetakifcetin.github.io/CassToolSSH`
 
 ## 📝 README Güncellemeleri
 
@@ -86,7 +86,7 @@ sed -i 's/ahmetakifcetin/ACTUAL_USERNAME/g' CHANGELOG.md
 `install.sh` içinde:
 ```bash
 # 8. satırı güncelleyin (REPO URL)
-REPO_URL="https://raw.githubusercontent.com/ACTUAL_USERNAME/cassmarrow/main"
+REPO_URL="https://raw.githubusercontent.com/ACTUAL_USERNAME/CassToolSSH/main"
 ```
 
 ## 🎨 Sosyal Önizleme (Social Preview)
@@ -95,7 +95,7 @@ REPO_URL="https://raw.githubusercontent.com/ACTUAL_USERNAME/cassmarrow/main"
 
 1. Canva veya Figma kullanarak 1280x640 boyutunda bir görsel oluşturun
 2. İçerik:
-   - CassMarrow logosu/ASCII art
+   - CassToolSSH logosu/ASCII art
    - "Beautiful Server Greeting System"
    - Örnek screenshot
 3. Settings → Social preview → Upload image
@@ -104,7 +104,7 @@ REPO_URL="https://raw.githubusercontent.com/ACTUAL_USERNAME/cassmarrow/main"
 - Arka plan: Koyu (terminal benzeri)
 - Yazı: Beyaz/Cyan
 - Font: Monospace
-- Screenshot: Terminalde CassMarrow çalışırken
+- Screenshot: Terminalde CassToolSSH çalışırken
 
 ## 📢 Lansmanı Duyurun
 
@@ -115,7 +115,7 @@ REPO_URL="https://raw.githubusercontent.com/ACTUAL_USERNAME/cassmarrow/main"
 - [ ] Tag oluşturun: `v1.0.0`
 
 ```bash
-git tag -a v1.0.0 -m "CassMarrow v1.0.0 - Initial Release"
+git tag -a v1.0.0 -m "CassToolSSH v1.0.0 - Initial Release"
 git push origin v1.0.0
 ```
 
@@ -123,9 +123,9 @@ git push origin v1.0.0
 
 **r/selfhosted** (en uygun):
 ```
-Title: [Project] CassMarrow - Beautiful Server Greeting System for Linux
+Title: [Project] CassToolSSH - Beautiful Server Greeting System for Linux
 
-I've created CassMarrow, a customizable server greeting tool that 
+I've created CassToolSSH, a customizable server greeting tool that 
 makes your SSH logins beautiful and informative!
 
 Features:
@@ -151,13 +151,13 @@ Diğer subredditler:
 https://news.ycombinator.com/submit
 
 ```
-Title: CassMarrow – Beautiful server greeting system for Linux
+Title: CassToolSSH – Beautiful server greeting system for Linux
 URL: https://github.com/ahmetakifcetin/CassToolSSH```
 
 ### 4. Twitter/X
 
 ```
-🚀 Just released CassMarrow v1.0!
+🚀 Just released CassToolSSH v1.0!
 
 A beautiful server greeting system for Linux 
 that makes SSH logins informative and stunning 🎨
@@ -189,14 +189,14 @@ https://www.producthunt.com/posts/new
 README.md'nin başına:
 
 ```markdown
-![GitHub Stars](https://img.shields.io/github/stars/ahmetakifcetin/cassmarrow?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/ahmetakifcetin/cassmarrow?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/ahmetakifcetin/CassToolSSH?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/ahmetakifcetin/CassToolSSH?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-green.svg)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow.svg)
-![GitHub Issues](https://img.shields.io/github/issues/ahmetakifcetin/cassmarrow)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ahmetakifcetin/cassmarrow)
-![CI](https://github.com/ahmetakifcetin/cassmarrow/workflows/CI%20Tests/badge.svg)
+![GitHub Issues](https://img.shields.io/github/issues/ahmetakifcetin/CassToolSSH)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ahmetakifcetin/CassToolSSH)
+![CI](https://github.com/ahmetakifcetin/CassToolSSH/workflows/CI%20Tests/badge.svg)
 ```
 
 ## 🤝 Topluluk Yönetimi
@@ -259,7 +259,7 @@ https://star-history.com/#ahmetakifcetin/CassToolSSH
 
 `ROADMAP.md` dosyası:
 ```markdown
-# CassMarrow Roadmap
+# CassToolSSH Roadmap
 
 ## Version 1.1 (Q1 2026)
 - [ ] Weather integration
@@ -339,7 +339,7 @@ git commit -m "Ready for launch! 🚀"
 git push origin main
 
 # Create release
-git tag -a v1.0.0 -m "CassMarrow v1.0.0 - Initial Public Release"
+git tag -a v1.0.0 -m "CassToolSSH v1.0.0 - Initial Public Release"
 git push origin v1.0.0
 ```
 
@@ -354,4 +354,4 @@ git push origin v1.0.0
 
 **İyi Şanslar! 🎉**
 
-CassMarrow'u topluluğa sunmanın tam zamanı!
+CassToolSSH'u topluluğa sunmanın tam zamanı!

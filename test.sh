@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CassMarrow Test Suite
+# CassToolSSH Test Suite
 # Comprehensive testing for all components
 
 set -e
@@ -25,7 +25,7 @@ test_result() {
 }
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║              CassMarrow Test Suite                                ║${NC}"
+echo -e "${BLUE}║              CassToolSSH Test Suite                                ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -36,41 +36,41 @@ test_result $? "Installation script syntax"
 
 # Test 2: Installation
 echo -e "${YELLOW}[2/10]${NC} Testing installation..."
-if [ ! -f /opt/cassmarrow/motd.sh ]; then
-    echo "Installing CassMarrow for testing..."
+if [ ! -f /opt/CassToolSSH/motd.sh ]; then
+    echo "Installing CassToolSSH for testing..."
     sudo ./install.sh <<< $'y\n' > /dev/null 2>&1
 fi
-test -f /opt/cassmarrow/motd.sh
-test_result $? "CassMarrow installation"
+test -f /opt/CassToolSSH/motd.sh
+test_result $? "CassToolSSH installation"
 
 # Test 3: Configuration File
 echo -e "${YELLOW}[3/10]${NC} Testing configuration file..."
-test -f /etc/cassmarrow.conf
+test -f /etc/CassToolSSH.conf
 test_result $? "Configuration file exists"
 
 # Test 4: Configuration Validity
 echo -e "${YELLOW}[4/10]${NC} Testing configuration validity..."
-source /etc/cassmarrow.conf 2>/dev/null
+source /etc/CassToolSSH.conf 2>/dev/null
 test_result $? "Configuration file is valid"
 
 # Test 5: MOTD Script Execution
 echo -e "${YELLOW}[5/10]${NC} Testing MOTD script execution..."
-/opt/cassmarrow/motd.sh > /tmp/motd_output.txt 2>&1
+/opt/CassToolSSH/motd.sh > /tmp/motd_output.txt 2>&1
 test_result $? "MOTD script executes without errors"
 
 # Test 6: MOTD Output
 echo -e "${YELLOW}[6/10]${NC} Testing MOTD output content..."
-grep -q "CassMarrow" /tmp/motd_output.txt
+grep -q "CassToolSSH" /tmp/motd_output.txt
 test_result $? "MOTD contains expected content"
 
 # Test 7: Customization Script
 echo -e "${YELLOW}[7/10]${NC} Testing customization script..."
-test -x /opt/cassmarrow/customize.sh
+test -x /opt/CassToolSSH/customize.sh
 test_result $? "Customization script is executable"
 
 # Test 8: Uninstall Script
 echo -e "${YELLOW}[8/10]${NC} Testing uninstall script..."
-test -x /opt/cassmarrow/uninstall.sh
+test -x /opt/CassToolSSH/uninstall.sh
 test_result $? "Uninstall script is executable"
 
 # Test 9: Color Themes
@@ -78,8 +78,8 @@ echo -e "${YELLOW}[9/10]${NC} Testing color themes..."
 ALL_THEMES="blue green purple cyan red yellow"
 THEME_TEST_PASSED=true
 for theme in $ALL_THEMES; do
-    sudo sed -i "s/COLOR_THEME=.*/COLOR_THEME=\"$theme\"/" /etc/cassmarrow.conf
-    /opt/cassmarrow/motd.sh > /dev/null 2>&1
+    sudo sed -i "s/COLOR_THEME=.*/COLOR_THEME=\"$theme\"/" /etc/CassToolSSH.conf
+    /opt/CassToolSSH/motd.sh > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         THEME_TEST_PASSED=false
         break
@@ -90,11 +90,11 @@ test_result $? "All color themes work"
 
 # Test 10: ASCII Styles
 echo -e "${YELLOW}[10/10]${NC} Testing ASCII styles..."
-ALL_STYLES="cassmarrow minimal blocks simple"
+ALL_STYLES="CassToolSSH minimal blocks simple"
 STYLE_TEST_PASSED=true
 for style in $ALL_STYLES; do
-    sudo sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" /etc/cassmarrow.conf
-    /opt/cassmarrow/motd.sh > /dev/null 2>&1
+    sudo sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" /etc/CassToolSSH.conf
+    /opt/CassToolSSH/motd.sh > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         STYLE_TEST_PASSED=false
         break

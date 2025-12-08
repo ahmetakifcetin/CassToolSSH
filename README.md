@@ -1,4 +1,4 @@
-# CassMarrow 🚀
+# CassToolSSH 🚀
 
 **Beautiful, customizable server greeting system for Linux servers**
 
@@ -21,7 +21,7 @@ Transform your boring SSH login into a stunning, informative welcome screen with
 
 ## 📸 Screenshots
 
-### CassMarrow Style (Default)
+### CassToolSSH Style (Default)
 ```
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║
@@ -30,7 +30,7 @@ Transform your boring SSH login into a stunning, informative welcome screen with
 ╚██████╗██║  ██║███████║███████║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║╚██████╔╝╚███╔███╔╝
  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝
 
-CassMarrow Infrastructure
+CassToolSSH Infrastructure
 Version: v1.0
 Status: [ ONLINE ]
 
@@ -68,21 +68,21 @@ root     pts/0        Mon Dec  8 14:03 - 14:03  (00:00)
 ### One-Line Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
 ```
 
 Or download and run manually:
 
 ```bash
-wget https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh
+wget https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh
 chmod +x install.sh
 sudo ./install.sh
 ```
 
 ### What it does
 1. Backs up your existing MOTD configuration
-2. Installs CassMarrow to `/opt/cassmarrow`
-3. Creates configuration file at `/etc/cassmarrow.conf`
+2. Installs CassToolSSH to `/opt/CassToolSSH`
+3. Creates configuration file at `/etc/CassToolSSH.conf`
 4. Sets up automatic greeting on login
 5. Provides customization tools
 
@@ -93,7 +93,7 @@ sudo ./install.sh
 Use the built-in customization helper:
 
 ```bash
-sudo /opt/cassmarrow/customize.sh
+sudo /opt/CassToolSSH/customize.sh
 ```
 
 ### Manual Configuration
@@ -101,7 +101,7 @@ sudo /opt/cassmarrow/customize.sh
 Edit the configuration file:
 
 ```bash
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/CassToolSSH.conf
 ```
 
 ### Configuration Options
@@ -120,7 +120,7 @@ SHOW_SERVICES=true      # Show monitored services
 SHOW_LAST_LOGIN=true    # Show last login info
 
 # Custom Text
-SYSTEM_NAME="CassMarrow Infrastructure"
+SYSTEM_NAME="CassToolSSH Infrastructure"
 SYSTEM_VERSION="v1.0"
 CUSTOM_MESSAGE=""       # Optional footer message
 
@@ -128,7 +128,7 @@ CUSTOM_MESSAGE=""       # Optional footer message
 COLOR_THEME="cyan"      # Options: blue, green, purple, cyan, red, yellow
 
 # ASCII Art Style
-ASCII_STYLE="cassmarrow" # Options: cassmarrow, minimal, blocks, simple
+ASCII_STYLE="CassToolSSH" # Options: CassToolSSH, minimal, blocks, simple
 
 # Services to Monitor
 MONITORED_SERVICES="nginx docker postgresql mysql redis"
@@ -139,25 +139,25 @@ MONITORED_SERVICES="nginx docker postgresql mysql redis"
 ### Change Color Theme
 
 ```bash
-sudo sed -i 's/COLOR_THEME="cyan"/COLOR_THEME="purple"/' /etc/cassmarrow.conf
+sudo sed -i 's/COLOR_THEME="cyan"/COLOR_THEME="purple"/' /etc/CassToolSSH.conf
 ```
 
 ### Change ASCII Style
 
 ```bash
-sudo sed -i 's/ASCII_STYLE="cassmarrow"/ASCII_STYLE="minimal"/' /etc/cassmarrow.conf
+sudo sed -i 's/ASCII_STYLE="CassToolSSH"/ASCII_STYLE="minimal"/' /etc/CassToolSSH.conf
 ```
 
 ### Add Custom Message
 
 ```bash
-echo 'CUSTOM_MESSAGE="Welcome to Production Server - Handle with care!"' | sudo tee -a /etc/cassmarrow.conf
+echo 'CUSTOM_MESSAGE="Welcome to Production Server - Handle with care!"' | sudo tee -a /etc/CassToolSSH.conf
 ```
 
 ### Monitor Different Services
 
 ```bash
-sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 mongodb redis"/' /etc/cassmarrow.conf
+sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 mongodb redis"/' /etc/CassToolSSH.conf
 ```
 
 ## 🔧 Advanced Usage
@@ -165,12 +165,12 @@ sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 mongodb
 ### Test Your Configuration
 
 ```bash
-/opt/cassmarrow/motd.sh
+/opt/CassToolSSH/motd.sh
 ```
 
 ### Disable Specific Features
 
-Edit `/etc/cassmarrow.conf` and set any `SHOW_*` option to `false`:
+Edit `/etc/CassToolSSH.conf` and set any `SHOW_*` option to `false`:
 
 ```bash
 SHOW_DOCKER=false
@@ -179,7 +179,7 @@ SHOW_LAST_LOGIN=false
 
 ### Create Custom ASCII Art
 
-You can create your own ASCII art and modify the `print_ascii_art()` function in `/opt/cassmarrow/motd.sh`.
+You can create your own ASCII art and modify the `print_ascii_art()` function in `/opt/CassToolSSH/motd.sh`.
 
 Tools for creating ASCII art:
 - [ASCII Art Generator](http://patorjk.com/software/taag/)
@@ -188,23 +188,23 @@ Tools for creating ASCII art:
 ## 🗑️ Uninstallation
 
 ```bash
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/CassToolSSH/uninstall.sh
 ```
 
 This will:
 - Restore your original MOTD configuration
-- Remove all CassMarrow files
+- Remove all CassToolSSH files
 - Clean up configuration files
 
 ## 🐳 Docker Container Usage
 
-You can also use CassMarrow in Docker containers:
+You can also use CassToolSSH in Docker containers:
 
 ```dockerfile
 FROM ubuntu:24.04
 
 # Install CassToolSSHRUN apt-get update && apt-get install -y curl sudo
-RUN curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | bash
+RUN curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | bash
 
 # Your container setup here
 ```
@@ -270,13 +270,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 [Report a Bug](https://github.com/ahmetakifcetin/cassmarrow/issues)
-- 💡 [Request a Feature](https://github.com/ahmetakifcetin/cassmarrow/issues)
-- 💬 [Discussions](https://github.com/ahmetakifcetin/cassmarrow/discussions)
+- 🐛 [Report a Bug](https://github.com/ahmetakifcetin/CassToolSSH/issues)
+- 💡 [Request a Feature](https://github.com/ahmetakifcetin/CassToolSSH/issues)
+- 💬 [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)
 
 ## 🌟 Show Your Support
 
-If you find CassMarrow useful, please consider:
+If you find CassToolSSH useful, please consider:
 - ⭐ Starring the repository
 - 🐦 Sharing on social media
 - 🤝 Contributing to the project
@@ -285,4 +285,4 @@ If you find CassMarrow useful, please consider:
 
 **Made with ❤️ for the self-hosting community**
 
-[GitHub](https://github.com/ahmetakifcetin/cassmarrow) • [Issues](https://github.com/ahmetakifcetin/cassmarrow/issues) • [Discussions](https://github.com/ahmetakifcetin/cassmarrow/discussions)
+[GitHub](https://github.com/ahmetakifcetin/CassToolSSH) • [Issues](https://github.com/ahmetakifcetin/CassToolSSH/issues) • [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)

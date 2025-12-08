@@ -1,5 +1,5 @@
 # Contributing to CassToolSSH
-First off, thank you for considering contributing to CassMarrow! It's people like you that make CassMarrow such a great tool for the self-hosting community.
+First off, thank you for considering contributing to CassToolSSH! It's people like you that make CassToolSSH such a great tool for the self-hosting community.
 
 ## 🌟 How Can I Contribute?
 
@@ -15,7 +15,7 @@ Before creating bug reports, please check the existing issues to avoid duplicate
 - **Environment**: 
   - OS and version (e.g., Ubuntu 24.04)
   - Shell version
-  - CassMarrow version
+  - CassToolSSH version
 - **Screenshots/Logs**: If applicable
 
 ### Suggesting Features
@@ -126,10 +126,10 @@ Before submitting a PR, test your changes on:
 sudo ./install.sh
 
 # Test all configurations
-sudo /opt/cassmarrow/customize.sh
+sudo /opt/CassToolSSH/customize.sh
 
 # Test uninstallation
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/CassToolSSH/uninstall.sh
 ```
 
 ## 📚 Documentation
@@ -245,7 +245,7 @@ Don't hesitate to ask questions! You can:
 
 ## 🙏 Thank You!
 
-Every contribution, no matter how small, is valuable. Thank you for helping make CassMarrow better!
+Every contribution, no matter how small, is valuable. Thank you for helping make CassToolSSH better!
 
 ---
 

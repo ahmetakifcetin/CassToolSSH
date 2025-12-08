@@ -22,12 +22,12 @@ What actually happened.
 ## Environment
 - **OS**: [e.g., Ubuntu 24.04]
 - **Shell**: [e.g., bash 5.1.16]
-- **CassMarrow Version**: [e.g., 1.0.0]
+- **CassToolSSH Version**: [e.g., 1.0.0]
 - **Installation Method**: [curl script / manual]
 
 ## Configuration
 ```bash
-# Paste your /etc/cassmarrow.conf here if relevant
+# Paste your /etc/CassToolSSH.conf here if relevant
 ```
 
 ## Screenshots/Logs

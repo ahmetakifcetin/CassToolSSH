@@ -1,5 +1,5 @@
-# CassMarrow Configuration File - Examples
-# Copy this file to /etc/cassmarrow.conf and customize
+# CassToolSSH Configuration File - Examples
+# Copy this file to /etc/CassToolSSH.conf and customize
 
 # ============================================================================
 # DISPLAY SETTINGS
@@ -21,7 +21,7 @@ SHOW_LAST_LOGIN=true        # Display last login information
 # CUSTOM TEXT
 # ============================================================================
 
-SYSTEM_NAME="CassMarrow Infrastructure"
+SYSTEM_NAME="CassToolSSH Infrastructure"
 # Examples:
 # SYSTEM_NAME="Production Server"
 # SYSTEM_NAME="Development Environment"
@@ -64,12 +64,12 @@ COLOR_THEME="cyan"
 # ============================================================================
 # ASCII ART STYLE
 # ============================================================================
-# Available styles: cassmarrow, minimal, blocks, simple
+# Available styles: CassToolSSH, minimal, blocks, simple
 
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="CassToolSSH"
 
 # Style Examples:
-# ASCII_STYLE="cassmarrow"    # Full logo (default)
+# ASCII_STYLE="CassToolSSH"    # Full logo (default)
 # ASCII_STYLE="minimal"       # Simple box design
 # ASCII_STYLE="blocks"        # Modern block characters
 # ASCII_STYLE="simple"        # Plain text
@@ -96,7 +96,7 @@ MONITORED_SERVICES="nginx docker postgresql mysql"
 # SYSTEM_NAME="Production API Server"
 # SYSTEM_VERSION="v3.2.1"
 # COLOR_THEME="red"
-# ASCII_STYLE="cassmarrow"
+# ASCII_STYLE="CassToolSSH"
 # CUSTOM_MESSAGE="⚠️  PRODUCTION - All changes require approval"
 # MONITORED_SERVICES="nginx docker postgresql redis"
 
@@ -125,7 +125,7 @@ MONITORED_SERVICES="nginx docker postgresql mysql"
 # SYSTEM_NAME="Joel's Home Lab"
 # SYSTEM_VERSION="2025"
 # COLOR_THEME="purple"
-# ASCII_STYLE="cassmarrow"
+# ASCII_STYLE="CassToolSSH"
 # CUSTOM_MESSAGE="🏠 Home Infrastructure - Experimentation Encouraged!"
 # MONITORED_SERVICES="docker plex transmission nginx"
 
@@ -143,12 +143,12 @@ MONITORED_SERVICES="nginx docker postgresql mysql"
 # ============================================================================
 
 # To add custom ASCII art:
-# 1. Edit /opt/cassmarrow/motd.sh
+# 1. Edit /opt/CassToolSSH/motd.sh
 # 2. Add a new case in the print_ascii_art() function
 # 3. Set ASCII_STYLE to your custom name
 
 # To add custom system information:
-# 1. Edit /opt/cassmarrow/motd.sh
+# 1. Edit /opt/CassToolSSH/motd.sh
 # 2. Add your custom function (e.g., get_custom_info())
 # 3. Add display logic in the main section
 
@@ -157,13 +157,13 @@ MONITORED_SERVICES="nginx docker postgresql mysql"
 # ============================================================================
 
 # Test your configuration:
-#   /opt/cassmarrow/motd.sh
+#   /opt/CassToolSSH/motd.sh
 
 # Interactive customization:
-#   /opt/cassmarrow/customize.sh
+#   /opt/CassToolSSH/customize.sh
 
 # Edit this file:
-#   sudo nano /etc/cassmarrow.conf
+#   sudo nano /etc/CassToolSSH.conf
 
-# Uninstall CassMarrow:
-#   sudo /opt/cassmarrow/uninstall.sh
+# Uninstall CassToolSSH:
+#   sudo /opt/CassToolSSH/uninstall.sh

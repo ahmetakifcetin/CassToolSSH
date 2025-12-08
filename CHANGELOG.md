@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to CassMarrow will be documented in this file.
+All notable changes to CassToolSSH will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-12-08
 
 ### Added
-- Initial release of CassToolSSH- Four ASCII art styles (CassMarrow, Minimal, Blocks, Simple)
+- Initial release of CassToolSSH- Four ASCII art styles (CassToolSSH, Minimal, Blocks, Simple)
 - Six color themes (Blue, Green, Purple, Cyan, Red, Yellow)
 - Real-time system information display:
   - Hostname and kernel version
@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Systemd service status checking
   - Customizable service list
 - Last login information display
-- Configuration file support (`/etc/cassmarrow.conf`)
+- Configuration file support (`/etc/CassToolSSH.conf`)
 - Interactive customization helper script
 - One-line installation script
 - Clean uninstallation process
@@ -107,13 +107,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### From 0.x to 1.0.0
 ```bash
 # Backup your configuration
-sudo cp /etc/cassmarrow.conf /etc/cassmarrow.conf.backup
+sudo cp /etc/CassToolSSH.conf /etc/CassToolSSH.conf.backup
 
 # Run installation script
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
 
 # Restore your custom settings if needed
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/CassToolSSH.conf
 ```
 
 ---
@@ -122,9 +122,9 @@ sudo nano /etc/cassmarrow.conf
 
 ### Version 1.0.0 - Initial Release
 
-This is the first stable release of CassMarrow! 🎉
+This is the first stable release of CassToolSSH! 🎉
 
-CassMarrow is a beautiful, customizable server greeting system designed for Linux servers. It transforms the standard SSH login experience into an informative and visually appealing welcome screen.
+CassToolSSH is a beautiful, customizable server greeting system designed for Linux servers. It transforms the standard SSH login experience into an informative and visually appealing welcome screen.
 
 **Key Highlights:**
 - Production-ready and stable
@@ -140,6 +140,6 @@ Thanks to the open-source community for inspiration and feedback during developm
 
 ---
 
-[Unreleased]: https://github.com/ahmetakifcetin/cassmarrow/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/ahmetakifcetin/cassmarrow/releases/tag/v1.0.0
-[0.0.1]: https://github.com/ahmetakifcetin/cassmarrow/releases/tag/v0.0.1
+[Unreleased]: https://github.com/ahmetakifcetin/CassToolSSH/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ahmetakifcetin/CassToolSSH/releases/tag/v1.0.0
+[0.0.1]: https://github.com/ahmetakifcetin/CassToolSSH/releases/tag/v0.0.1
