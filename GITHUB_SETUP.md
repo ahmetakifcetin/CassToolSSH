@@ -18,9 +18,8 @@ Bu dosyada CassMarrow projesini GitHub'a nasıl yükleyeceğiniz ve toplulukla n
 
 ```bash
 # Repository'yi klonlayın (boş)
-git clone https://github.com/YOURUSERNAME/cassmarrow.git
-cd cassmarrow
-
+git clone https://github.com/ahmetakifcetin/cassmarrow.git
+cd CassToolSSH
 # CassMarrow dosyalarını kopyalayın
 cp -r /path/to/cassmarrow/files/* .
 cp -r /path/to/cassmarrow/files/.github .
@@ -66,7 +65,7 @@ homelab self-hosted infrastructure monitoring
 🔧 Zero dependencies, highly configurable
 ```
 
-Website: `https://yourusername.github.io/cassmarrow`
+Website: `https://ahmetakifcetin.github.io/cassmarrow`
 
 ## 📝 README Güncellemeleri
 
@@ -75,11 +74,11 @@ Website: `https://yourusername.github.io/cassmarrow`
 `README.md` dosyasında şunları değiştirin:
 
 ```bash
-# Tüm "yourusername" referanslarını kendi GitHub kullanıcı adınızla değiştirin
-sed -i 's/yourusername/ACTUAL_USERNAME/g' README.md
-sed -i 's/yourusername/ACTUAL_USERNAME/g' CONTRIBUTING.md
-sed -i 's/yourusername/ACTUAL_USERNAME/g' QUICKSTART.md
-sed -i 's/yourusername/ACTUAL_USERNAME/g' CHANGELOG.md
+# Tüm "ahmetakifcetin" referanslarını kendi GitHub kullanıcı adınızla değiştirin
+sed -i 's/ahmetakifcetin/ACTUAL_USERNAME/g' README.md
+sed -i 's/ahmetakifcetin/ACTUAL_USERNAME/g' CONTRIBUTING.md
+sed -i 's/ahmetakifcetin/ACTUAL_USERNAME/g' QUICKSTART.md
+sed -i 's/ahmetakifcetin/ACTUAL_USERNAME/g' CHANGELOG.md
 ```
 
 ### Installation URL'i
@@ -136,8 +135,7 @@ Features:
 - 🔧 Zero dependencies
 - ⚡ One-line install
 
-GitHub: https://github.com/yourusername/cassmarrow
-
+GitHub: https://github.com/ahmetakifcetin/CassToolSSH
 Would love your feedback!
 ```
 
@@ -154,8 +152,7 @@ https://news.ycombinator.com/submit
 
 ```
 Title: CassMarrow – Beautiful server greeting system for Linux
-URL: https://github.com/yourusername/cassmarrow
-```
+URL: https://github.com/ahmetakifcetin/CassToolSSH```
 
 ### 4. Twitter/X
 
@@ -170,8 +167,7 @@ that makes SSH logins informative and stunning 🎨
 🐳 Docker integration
 ⚡ Zero dependencies
 
-Check it out: github.com/yourusername/cassmarrow
-
+Check it out: github.com/ahmetakifcetin/CassToolSSH
 #Linux #DevOps #SelfHosted #OpenSource
 ```
 
@@ -193,14 +189,14 @@ https://www.producthunt.com/posts/new
 README.md'nin başına:
 
 ```markdown
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/cassmarrow?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/yourusername/cassmarrow?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/ahmetakifcetin/cassmarrow?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/ahmetakifcetin/cassmarrow?style=social)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-green.svg)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow.svg)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/cassmarrow)
-![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/cassmarrow)
-![CI](https://github.com/yourusername/cassmarrow/workflows/CI%20Tests/badge.svg)
+![GitHub Issues](https://img.shields.io/github/issues/ahmetakifcetin/cassmarrow)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/ahmetakifcetin/cassmarrow)
+![CI](https://github.com/ahmetakifcetin/cassmarrow/workflows/CI%20Tests/badge.svg)
 ```
 
 ## 🤝 Topluluk Yönetimi
@@ -256,8 +252,7 @@ Thanks to these wonderful people:
 
 ### Star History
 
-https://star-history.com/#yourusername/cassmarrow
-
+https://star-history.com/#ahmetakifcetin/CassToolSSH
 ## 🔄 Sürekli Geliştirme
 
 ### Roadmap Oluşturun

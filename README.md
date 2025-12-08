@@ -68,13 +68,13 @@ root     pts/0        Mon Dec  8 14:03 - 14:03  (00:00)
 ### One-Line Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
 ```
 
 Or download and run manually:
 
 ```bash
-wget https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh
+wget https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh
 chmod +x install.sh
 sudo ./install.sh
 ```
@@ -203,9 +203,8 @@ You can also use CassMarrow in Docker containers:
 ```dockerfile
 FROM ubuntu:24.04
 
-# Install CassMarrow
-RUN apt-get update && apt-get install -y curl sudo
-RUN curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | bash
+# Install CassToolSSHRUN apt-get update && apt-get install -y curl sudo
+RUN curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | bash
 
 # Your container setup here
 ```
@@ -265,15 +264,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Created by [Joel](https://github.com/yourusername) and the open-source community
+- Created by [Joel](https://github.com/ahmetakifcetin) and the open-source community
 - Inspired by the need for beautiful, informative server greetings
 - Special thanks to all contributors
 
 ## 📞 Support
 
-- 🐛 [Report a Bug](https://github.com/yourusername/cassmarrow/issues)
-- 💡 [Request a Feature](https://github.com/yourusername/cassmarrow/issues)
-- 💬 [Discussions](https://github.com/yourusername/cassmarrow/discussions)
+- 🐛 [Report a Bug](https://github.com/ahmetakifcetin/cassmarrow/issues)
+- 💡 [Request a Feature](https://github.com/ahmetakifcetin/cassmarrow/issues)
+- 💬 [Discussions](https://github.com/ahmetakifcetin/cassmarrow/discussions)
 
 ## 🌟 Show Your Support
 
@@ -286,4 +285,4 @@ If you find CassMarrow useful, please consider:
 
 **Made with ❤️ for the self-hosting community**
 
-[GitHub](https://github.com/yourusername/cassmarrow) • [Issues](https://github.com/yourusername/cassmarrow/issues) • [Discussions](https://github.com/yourusername/cassmarrow/discussions)
+[GitHub](https://github.com/ahmetakifcetin/cassmarrow) • [Issues](https://github.com/ahmetakifcetin/cassmarrow/issues) • [Discussions](https://github.com/ahmetakifcetin/cassmarrow/discussions)

@@ -197,8 +197,7 @@ Server filesystem after installation:
 ├── /opt/cassmarrow/motd.sh
 ├── /opt/cassmarrow/customize.sh
 ├── /opt/cassmarrow/uninstall.sh
-└── /etc/update-motd.d/00-cassmarrow
-```
+└── /etc/update-motd.d/00-CassToolSSH```
 
 ### Configuration Files
 ```
@@ -243,14 +242,13 @@ Server filesystem after installation:
 
 ### Via GitHub
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
 ```
 
 ### Manual
 ```bash
-git clone https://github.com/yourusername/cassmarrow.git
-cd cassmarrow
-sudo ./install.sh
+git clone https://github.com/ahmetakifcetin/cassmarrow.git
+cd CassToolSSHsudo ./install.sh
 ```
 
 ### Docker

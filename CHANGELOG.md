@@ -19,8 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-12-08
 
 ### Added
-- Initial release of CassMarrow
-- Four ASCII art styles (CassMarrow, Minimal, Blocks, Simple)
+- Initial release of CassToolSSH- Four ASCII art styles (CassMarrow, Minimal, Blocks, Simple)
 - Six color themes (Blue, Green, Purple, Cyan, Red, Yellow)
 - Real-time system information display:
   - Hostname and kernel version
@@ -111,7 +110,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 sudo cp /etc/cassmarrow.conf /etc/cassmarrow.conf.backup
 
 # Run installation script
-curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
 
 # Restore your custom settings if needed
 sudo nano /etc/cassmarrow.conf
@@ -141,6 +140,6 @@ Thanks to the open-source community for inspiration and feedback during developm
 
 ---
 
-[Unreleased]: https://github.com/yourusername/cassmarrow/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/yourusername/cassmarrow/releases/tag/v1.0.0
-[0.0.1]: https://github.com/yourusername/cassmarrow/releases/tag/v0.0.1
+[Unreleased]: https://github.com/ahmetakifcetin/cassmarrow/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ahmetakifcetin/cassmarrow/releases/tag/v1.0.0
+[0.0.1]: https://github.com/ahmetakifcetin/cassmarrow/releases/tag/v0.0.1

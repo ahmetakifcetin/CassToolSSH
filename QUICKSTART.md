@@ -7,7 +7,7 @@ Get CassMarrow up and running in under 5 minutes! ⚡
 ### One-Line Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
 ```
 
 That's it! Log out and log back in to see your new greeting.
@@ -16,7 +16,7 @@ That's it! Log out and log back in to see your new greeting.
 
 ```bash
 # Download the installer
-wget https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh
+wget https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh
 
 # Make it executable
 chmod +x install.sh
@@ -173,8 +173,7 @@ EOF
 1. **Check installation:**
    ```bash
    ls -la /opt/cassmarrow/
-   ls -la /etc/update-motd.d/00-cassmarrow
-   ```
+   ls -la /etc/update-motd.d/00-CassToolSSH   ```
 
 2. **Test manually:**
    ```bash
@@ -183,8 +182,7 @@ EOF
 
 3. **Check permissions:**
    ```bash
-   sudo chmod +x /etc/update-motd.d/00-cassmarrow
-   sudo chmod +x /opt/cassmarrow/motd.sh
+   sudo chmod +x /etc/update-motd.d/00-CassToolSSH   sudo chmod +x /opt/cassmarrow/motd.sh
    ```
 
 ### Configuration Not Working?
@@ -202,7 +200,7 @@ EOF
 3. **Reset to defaults:**
    ```bash
    sudo /opt/cassmarrow/uninstall.sh
-   curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+   curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
    ```
 
 ### Services Not Showing?
@@ -234,7 +232,7 @@ This will:
 - **Full documentation**: [README.md](README.md)
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Examples**: [cassmarrow.conf.example](cassmarrow.conf.example)
-- **Report issues**: [GitHub Issues](https://github.com/yourusername/cassmarrow/issues)
+- **Report issues**: [GitHub Issues](https://github.com/ahmetakifcetin/cassmarrow/issues)
 
 ## 💡 Pro Tips
 
@@ -263,14 +261,14 @@ cat /etc/cassmarrow.conf
 sudo /opt/cassmarrow/uninstall.sh
 
 # Reinstall
-curl -fsSL https://raw.githubusercontent.com/yourusername/cassmarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/cassmarrow/main/install.sh | sudo bash
 ```
 
 ## 🆘 Getting Help
 
-- **GitHub Issues**: [Report a bug](https://github.com/yourusername/cassmarrow/issues/new?template=bug_report.md)
-- **Feature Request**: [Suggest a feature](https://github.com/yourusername/cassmarrow/issues/new?template=feature_request.md)
-- **Discussions**: [Ask questions](https://github.com/yourusername/cassmarrow/discussions)
+- **GitHub Issues**: [Report a bug](https://github.com/ahmetakifcetin/cassmarrow/issues/new?template=bug_report.md)
+- **Feature Request**: [Suggest a feature](https://github.com/ahmetakifcetin/cassmarrow/issues/new?template=feature_request.md)
+- **Discussions**: [Ask questions](https://github.com/ahmetakifcetin/cassmarrow/discussions)
 
 ---
 

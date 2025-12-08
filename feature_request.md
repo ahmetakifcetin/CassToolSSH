@@ -1,7 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea for CassMarrow
-title: '[FEATURE] '
+about: Suggest an idea for CassToolSSHtitle: '[FEATURE] '
 labels: enhancement
 assignees: ''
 ---

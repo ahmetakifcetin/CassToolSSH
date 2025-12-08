@@ -1,7 +1,6 @@
 # Screenshot Guide
 
-## How to Create Screenshots for CassMarrow
-
+## How to Create Screenshots for CassToolSSH
 This guide helps you create beautiful screenshots for the README and documentation.
 
 ## Quick Screenshots

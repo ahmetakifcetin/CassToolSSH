@@ -1,5 +1,4 @@
-# Contributing to CassMarrow
-
+# Contributing to CassToolSSH
 First off, thank you for considering contributing to CassMarrow! It's people like you that make CassMarrow such a great tool for the self-hosting community.
 
 ## 🌟 How Can I Contribute?

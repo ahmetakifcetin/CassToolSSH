@@ -164,6 +164,6 @@ echo "╠═══════════════════════�
 echo "║  Install CassMarrow:                                              ║"
 echo "║  curl -fsSL https://cassmarrow.sh/install | sudo bash             ║"
 echo "║                                                                    ║"
-echo "║  GitHub: https://github.com/yourusername/cassmarrow               ║"
+echo "║  GitHub: https://github.com/ahmetakifcetin/cassmarrow               ║"
 echo "╚════════════════════════════════════════════════════════════════════╝"
 echo ""

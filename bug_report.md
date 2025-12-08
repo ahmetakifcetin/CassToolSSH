@@ -1,7 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help us improve CassMarrow
-title: '[BUG] '
+about: Create a report to help us improve CassToolSSHtitle: '[BUG] '
 labels: bug
 assignees: ''
 ---

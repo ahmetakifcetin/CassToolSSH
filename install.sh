@@ -387,8 +387,7 @@ cat > /etc/update-motd.d/00-cassmarrow << 'MOTDEOF'
 /opt/cassmarrow/motd.sh
 MOTDEOF
 
-chmod +x /etc/update-motd.d/00-cassmarrow
-echo -e "${GREEN}[✓]${NC} CassMarrow MOTD installed"
+chmod +x /etc/update-motd.d/00-CassToolSSHecho -e "${GREEN}[✓]${NC} CassMarrow MOTD installed"
 
 # Create uninstall script
 echo -e "${BLUE}[→]${NC} Creating uninstall script..."
@@ -406,8 +405,7 @@ if [ -d /etc/update-motd.d.backup ]; then
 fi
 
 # Remove CassMarrow files
-rm -rf /opt/cassmarrow
-rm -f /etc/cassmarrow.conf
+rm -rf /opt/CassToolSSHrm -f /etc/cassmarrow.conf
 
 echo "CassMarrow has been uninstalled"
 UNINSTALLEOF
@@ -504,5 +502,5 @@ echo -e "  ASCII styles: ${YELLOW}cassmarrow, minimal, blocks, simple${NC}"
 echo ""
 echo -e "${PRIMARY}${BOLD}Log out and log back in to see your new server greeting!${NC}"
 echo ""
-echo -e "${DIM}For more info: https://github.com/yourusername/cassmarrow${NC}"
+echo -e "${DIM}For more info: https://github.com/ahmetakifcetin/cassmarrow${NC}"
 echo ""
