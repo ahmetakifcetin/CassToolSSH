@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CassMarrow Management Tool v2.0
+# casstool Management Tool v2.0
 # Enhanced with gradient themes support
 
 CYAN='\033[0;36m'
@@ -11,7 +11,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 BOLD='\033[1m'
 
-CONFIG="/etc/cassmarrow.conf"
+CONFIG="/etc/casstool.conf"
 
 show_banner() {
     echo -e "${CYAN}${BOLD}"
@@ -28,11 +28,11 @@ EOF
 
 show_usage() {
     show_banner
-    echo "Kullanım: cassmarrow <komut>"
+    echo "Kullanım: casstool <komut>"
     echo ""
     echo "Komutlar:"
-    echo -e "  ${GREEN}enable${NC}      - CassMarrow'u aktifleştir"
-    echo -e "  ${GREEN}disable${NC}     - CassMarrow'u devre dışı bırak"
+    echo -e "  ${GREEN}enable${NC}      - casstool'u aktifleştir"
+    echo -e "  ${GREEN}disable${NC}     - casstool'u devre dışı bırak"
     echo -e "  ${GREEN}status${NC}      - Durum bilgisi göster"
     echo -e "  ${GREEN}config${NC}      - Yapılandırmayı düzenle"
     echo -e "  ${GREEN}customize${NC}   - İnteraktif özelleştirme"
@@ -40,7 +40,7 @@ show_usage() {
     echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir (16 tema)"
     echo -e "  ${GREEN}style${NC}       - Hızlı stil değiştir (3 stil)"
     echo -e "  ${GREEN}themes${NC}      - Tüm temaları listele"
-    echo -e "  ${GREEN}uninstall${NC}   - CassMarrow'u kaldır"
+    echo -e "  ${GREEN}uninstall${NC}   - casstool'u kaldır"
     echo ""
 }
 
@@ -51,7 +51,7 @@ enable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="false"/MOTD_ENABLED="true"/' "$CONFIG"
-    echo -e "${GREEN}✓ CassMarrow aktifleştirildi${NC}"
+    echo -e "${GREEN}✓ casstool aktifleştirildi${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilecek${NC}"
 }
 
@@ -62,13 +62,13 @@ disable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="true"/MOTD_ENABLED="false"/' "$CONFIG"
-    echo -e "${YELLOW}! CassMarrow devre dışı bırakıldı${NC}"
+    echo -e "${YELLOW}! casstool devre dışı bırakıldı${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilmeyecek${NC}"
 }
 
 show_status() {
     if [ ! -f "$CONFIG" ]; then
-        echo -e "${RED}CassMarrow kurulu değil${NC}"
+        echo -e "${RED}casstool kurulu değil${NC}"
         exit 1
     fi
     
@@ -157,7 +157,7 @@ change_theme() {
     echo ""
     echo -e "${GREEN}✓ Tema değiştirildi: ${PURPLE}$theme${NC}"
     echo ""
-    echo -e "${YELLOW}Önizleme için: ${CYAN}cassmarrow test${NC}"
+    echo -e "${YELLOW}Önizleme için: ${CYAN}casstool test${NC}"
     echo ""
 }
 
@@ -165,14 +165,14 @@ change_style() {
     show_banner
     echo -e "${PURPLE}${BOLD}Stil Seçimi:${NC}"
     echo ""
-    echo "1) cassmarrow  - Profesyonel (tam logo)"
+    echo "1) casstool  - Profesyonel (tam logo)"
     echo "2) minimal     - Minimal (kutu tasarım)"
     echo "3) retro       - Retro (klasik terminal)"
     echo ""
     read -p "Stil seçin [1-3]: " choice
     
     case $choice in
-        1) style="cassmarrow" ;;
+        1) style="casstool" ;;
         2) style="minimal" ;;
         3) style="retro" ;;
         *) echo -e "${RED}Geçersiz seçim${NC}"; exit 1 ;;
@@ -182,7 +182,7 @@ change_style() {
     echo ""
     echo -e "${GREEN}✓ Stil değiştirildi: ${PURPLE}$style${NC}"
     echo ""
-    echo -e "${YELLOW}Önizleme için: ${CYAN}cassmarrow test${NC}"
+    echo -e "${YELLOW}Önizleme için: ${CYAN}casstool test${NC}"
     echo ""
 }
 
@@ -200,10 +200,10 @@ case "$1" in
         ${EDITOR:-nano} "$CONFIG"
         ;;
     customize)
-        /opt/cassmarrow/customize.sh
+        /opt/casstool/customize.sh
         ;;
     test)
-        /opt/cassmarrow/motd.sh
+        /opt/casstool/motd.sh
         ;;
     theme)
         change_theme
@@ -215,7 +215,7 @@ case "$1" in
         list_themes
         ;;
     uninstall)
-        /opt/cassmarrow/uninstall.sh
+        /opt/casstool/uninstall.sh
         ;;
     *)
         show_usage

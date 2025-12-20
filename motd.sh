@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# CassMarrow - Advanced MOTD Script with Dynamic Themes
+# casstool - Advanced MOTD Script with Dynamic Themes
 # Version: 2.0.0
 
 # Load configuration
-if [ -f /etc/cassmarrow.conf ]; then
-    source /etc/cassmarrow.conf
+if [ -f /etc/casstool.conf ]; then
+    source /etc/casstool.conf
 else
     # Defaults
     SHOW_HOSTNAME=true
@@ -21,7 +21,7 @@ else
     SYSTEM_NAME="Production Infrastructure"
     SYSTEM_VERSION="v1.0"
     COLOR_THEME="ice"
-    ASCII_STYLE="cassmarrow"
+    ASCII_STYLE="casstool"
     MONITORED_SERVICES="nginx docker postgresql mysql redis"
     MOTD_ENABLED="true"
 fi
@@ -157,7 +157,7 @@ load_theme "$COLOR_THEME"
 # ASCII Art Styles
 print_ascii_art() {
     case $ASCII_STYLE in
-        cassmarrow)
+        casstool)
             echo -e "${BRIGHT}"
             cat << "EOF"
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗

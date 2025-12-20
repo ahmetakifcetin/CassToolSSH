@@ -1,4 +1,4 @@
-# CassMarrow 🚀
+# casstool 🚀
 
 **Professional Server Greeting System for Linux**
 
@@ -20,13 +20,13 @@ Transform your SSH login into a beautiful, informative welcome screen with real-
 - 🔧 **Service Monitoring** - Track your critical services
 - 🚦 **Smart Status Indicators** - Optimal, Moderate, Heavy Load detection
 - ⚡ **Zero Dependencies** - Pure bash, works everywhere
-- 🎯 **Easy Management** - Simple `cassmarrow` command for all operations
+- 🎯 **Easy Management** - Simple `casstool` command for all operations
 
 ---
 
 ## 🎨 Styles & Themes
 
-### Style 1: CassMarrow (Professional)
+### Style 1: casstool (Professional)
 
 <details>
 <summary>🔵 Ice Theme (Default)</summary>
@@ -66,25 +66,25 @@ Last Login
 <details>
 <summary>🟢 Matrix Theme</summary>
 
-![Matrix Theme](screenshots/cassmarrow-matrix.png)
+![Matrix Theme](screenshots/casstool-matrix.png)
 </details>
 
 <details>
 <summary>🌅 Sunset Theme</summary>
 
-![Sunset Theme](screenshots/cassmarrow-sunset.png)
+![Sunset Theme](screenshots/casstool-sunset.png)
 </details>
 
 <details>
 <summary>🔥 Fire Theme</summary>
 
-![Fire Theme](screenshots/cassmarrow-fire.png)
+![Fire Theme](screenshots/casstool-fire.png)
 </details>
 
 <details>
 <summary>🟣 Neon Theme</summary>
 
-![Neon Theme](screenshots/cassmarrow-neon.png)
+![Neon Theme](screenshots/casstool-neon.png)
 </details>
 
 ### Style 2: Minimal (Clean & Simple)
@@ -161,14 +161,14 @@ Memory               3854 MB / 7941 MB (48.5%)
 ### One-Line Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/casstool/main/install.sh | sudo bash
 ```
 
 ### Manual Installation
 
 ```bash
 # Download installer
-wget https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh
+wget https://raw.githubusercontent.com/ahmetakifcetin/casstool/main/install.sh
 
 # Make executable
 chmod +x install.sh
@@ -181,16 +181,16 @@ sudo ./install.sh
 
 ```bash
 # Test your setup
-cassmarrow test
+casstool test
 
 # Check status
-cassmarrow status
+casstool status
 
 # Change theme
-cassmarrow theme
+casstool theme
 
 # Change style
-cassmarrow style
+casstool style
 ```
 
 ---
@@ -200,40 +200,40 @@ cassmarrow style
 ### Management Commands
 
 ```bash
-cassmarrow status      # Show current configuration
-cassmarrow enable      # Enable MOTD on SSH login
-cassmarrow disable     # Disable MOTD on SSH login
-cassmarrow test        # Preview current setup
-cassmarrow theme       # Quick theme switcher
-cassmarrow style       # Quick style switcher
-cassmarrow config      # Edit configuration file
-cassmarrow customize   # Interactive customization
-cassmarrow uninstall   # Remove CassMarrow
+casstool status      # Show current configuration
+casstool enable      # Enable MOTD on SSH login
+casstool disable     # Disable MOTD on SSH login
+casstool test        # Preview current setup
+casstool theme       # Quick theme switcher
+casstool style       # Quick style switcher
+casstool config      # Edit configuration file
+casstool customize   # Interactive customization
+casstool uninstall   # Remove casstool
 ```
 
 ### Quick Theme Switch
 
 ```bash
 # Interactive menu
-cassmarrow theme
+casstool theme
 
 # Or edit config directly
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/casstool.conf
 # Change: COLOR_THEME="ice"
 ```
 
 ### Quick Style Switch
 
 ```bash
-# Available styles: cassmarrow, minimal, retro
-cassmarrow style
+# Available styles: casstool, minimal, retro
+casstool style
 ```
 
 ---
 
 ## ⚙️ Configuration
 
-Configuration file: `/etc/cassmarrow.conf`
+Configuration file: `/etc/casstool.conf`
 
 ```bash
 # Display Settings
@@ -255,7 +255,7 @@ CUSTOM_MESSAGE="Welcome to Production - Handle with care!"
 
 # Theme & Style
 COLOR_THEME="ice"        # See theme table above
-ASCII_STYLE="cassmarrow" # cassmarrow, minimal, retro
+ASCII_STYLE="casstool" # casstool, minimal, retro
 
 # Services to Monitor
 MONITORED_SERVICES="nginx docker postgresql mysql redis"
@@ -273,7 +273,7 @@ MOTD_ENABLED="true"
 ```bash
 SYSTEM_NAME="Production API Server"
 COLOR_THEME="fire"
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="casstool"
 CUSTOM_MESSAGE="⚠️  PRODUCTION - All changes require approval"
 MONITORED_SERVICES="nginx docker postgresql redis"
 ```
@@ -336,7 +336,7 @@ MONITORED_SERVICES="ssh fail2ban ufw iptables"
 
 ### Custom ASCII Art
 
-Edit `/opt/cassmarrow/motd.sh` and add your own ASCII art in the `print_ascii_art()` function.
+Edit `/opt/casstool/motd.sh` and add your own ASCII art in the `print_ascii_art()` function.
 
 ### Custom Themes
 
@@ -367,13 +367,13 @@ MONITORED_SERVICES="nginx apache2 mysql postgresql redis mongodb docker gitlab-r
 
 ```bash
 # Check if enabled
-cassmarrow status
+casstool status
 
 # Enable MOTD
-cassmarrow enable
+casstool enable
 
 # Test manually
-cassmarrow test
+casstool test
 
 # Verify SSH config
 grep PrintMotd /etc/ssh/sshd_config
@@ -385,11 +385,11 @@ grep PrintMotd /etc/ssh/sshd_config
 
 ```bash
 # Verify config
-cat /etc/cassmarrow.conf | grep COLOR_THEME
+cat /etc/casstool.conf | grep COLOR_THEME
 
 # Test with different theme
-sudo sed -i 's/COLOR_THEME=.*/COLOR_THEME="matrix"/' /etc/cassmarrow.conf
-cassmarrow test
+sudo sed -i 's/COLOR_THEME=.*/COLOR_THEME="matrix"/' /etc/casstool.conf
+casstool test
 ```
 
 ### Services Not Showing
@@ -399,7 +399,7 @@ cassmarrow test
 systemctl list-units --type=service | grep -v '@'
 
 # Update monitored services
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/casstool.conf
 # Edit: MONITORED_SERVICES="nginx docker"
 ```
 
@@ -409,14 +409,14 @@ sudo nano /etc/cassmarrow.conf
 
 ```bash
 # Quick uninstall
-cassmarrow uninstall
+casstool uninstall
 
 # Or manually
-sudo /opt/cassmarrow/uninstall.sh
+sudo /opt/casstool/uninstall.sh
 ```
 
 This will:
-- Remove all CassMarrow files
+- Remove all casstool files
 - Restore original MOTD configuration
 - Clean up configuration files
 
@@ -468,7 +468,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 Show Your Support
 
-If you find CassMarrow useful:
+If you find casstool useful:
 - ⭐ Star the repository
 - 🐦 Share on social media
 - 🤝 Contribute to the project

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CassMarrow - Beautiful Server Greeting System
+# casstool - Beautiful Server Greeting System
 # Version: 1.1.0
 # Author: Joel & Community
 # License: MIT
@@ -95,7 +95,7 @@ installation_wizard() {
         INSTALL_MODE="quick"
         ENABLE_MOTD="true"
         SELECTED_THEME="cyan"
-        SELECTED_STYLE="cassmarrow"
+        SELECTED_STYLE="casstool"
         SYSTEM_NAME="Production Infrastructure"
         return
     fi
@@ -104,7 +104,7 @@ installation_wizard() {
     show_banner
     
     echo -e "${CYAN}${BOLD}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${CYAN}${BOLD}              CassMarrow Kurulum Sihirbazı                  ${NC}"
+    echo -e "${CYAN}${BOLD}              casstool Kurulum Sihirbazı                  ${NC}"
     echo -e "${CYAN}${BOLD}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     echo -e "${YELLOW}Kurulum tipini seçin:${NC}"
@@ -134,7 +134,7 @@ installation_wizard() {
         echo -e "${GREEN}[✓]${NC} Hızlı kurulum seçildi"
         ENABLE_MOTD="true"
         SELECTED_THEME="cyan"
-        SELECTED_STYLE="cassmarrow"
+        SELECTED_STYLE="casstool"
         SYSTEM_NAME="Production Infrastructure"
     else
         custom_setup
@@ -149,7 +149,7 @@ custom_setup() {
     
     # 1. MOTD Enable/Disable
     echo -e "${YELLOW}1. SSH girişinde otomatik gösterilsin mi?${NC}"
-    echo -e "   ${DIM}(Her SSH bağlantısında CassMarrow karşılama ekranı gösterilir)${NC}"
+    echo -e "   ${DIM}(Her SSH bağlantısında casstool karşılama ekranı gösterilir)${NC}"
     while true; do
         response=$(ask_user "   [E/h]: " "E")
         case $response in
@@ -159,7 +159,7 @@ custom_setup() {
                 ;;
             [Hh]*)
                 ENABLE_MOTD="false"
-                echo -e "   ${DIM}Not: Daha sonra 'cassmarrow enable' komutuyla aktifleştirebilirsiniz${NC}"
+                echo -e "   ${DIM}Not: Daha sonra 'casstool enable' komutuyla aktifleştirebilirsiniz${NC}"
                 break
                 ;;
             *)
@@ -190,14 +190,14 @@ custom_setup() {
     # 3. ASCII Style
     echo ""
     echo -e "${YELLOW}3. ASCII art stilini seçin:${NC}"
-    echo -e "   ${GREEN}1)${NC} CassMarrow ${DIM}(Varsayılan - tam logo)${NC}"
+    echo -e "   ${GREEN}1)${NC} casstool ${DIM}(Varsayılan - tam logo)${NC}"
     echo -e "   ${GREEN}2)${NC} Minimal ${DIM}(Basit tasarım)${NC}"
     echo -e "   ${GREEN}3)${NC} Blocks ${DIM}(Modern blok karakterler)${NC}"
     echo -e "   ${GREEN}4)${NC} Simple ${DIM}(Düz metin)${NC}"
     while true; do
         response=$(ask_user "   Seçim [1-4]: " "1")
         case $response in
-            1|"") SELECTED_STYLE="cassmarrow"; break ;;
+            1|"") SELECTED_STYLE="casstool"; break ;;
             2) SELECTED_STYLE="minimal"; break ;;
             3) SELECTED_STYLE="blocks"; break ;;
             4) SELECTED_STYLE="simple"; break ;;
@@ -224,12 +224,12 @@ custom_setup() {
 
 # Create configuration
 create_config() {
-    local config_file="/etc/cassmarrow.conf"
+    local config_file="/etc/casstool.conf"
     
     echo -e "${BLUE}[→]${NC} Yapılandırma dosyası oluşturuluyor..."
     
     cat > "$config_file" << EOF
-# CassMarrow Configuration File
+# casstool Configuration File
 # Customize your server greeting here
 
 # Display Settings
@@ -252,7 +252,7 @@ CUSTOM_MESSAGE=""
 # Color Theme (options: blue, green, purple, cyan, red, yellow)
 COLOR_THEME="$SELECTED_THEME"
 
-# ASCII Art Style (options: cassmarrow, minimal, blocks, simple)
+# ASCII Art Style (options: casstool, minimal, blocks, simple)
 ASCII_STYLE="$SELECTED_STYLE"
 
 # Services to monitor (space-separated)
@@ -270,7 +270,7 @@ EOF
 
 # Create MOTD script
 create_motd_script() {
-    local install_dir="/opt/cassmarrow"
+    local install_dir="/opt/casstool"
     
     echo -e "${BLUE}[→]${NC} Kurulum dizini oluşturuluyor..."
     mkdir -p "$install_dir"
@@ -281,8 +281,8 @@ create_motd_script() {
 #!/bin/bash
 
 # Load configuration
-if [ -f /etc/cassmarrow.conf ]; then
-    source /etc/cassmarrow.conf
+if [ -f /etc/casstool.conf ]; then
+    source /etc/casstool.conf
 else
     SHOW_HOSTNAME=true
     SHOW_KERNEL=true
@@ -297,7 +297,7 @@ else
     SYSTEM_NAME="Production Infrastructure"
     SYSTEM_VERSION="v1.0"
     COLOR_THEME="cyan"
-    ASCII_STYLE="cassmarrow"
+    ASCII_STYLE="casstool"
     MONITORED_SERVICES="nginx docker postgresql mysql redis"
     MOTD_ENABLED="true"
 fi
@@ -355,7 +355,7 @@ NC='\033[0m'
 # ASCII Art
 print_ascii_art() {
     case $ASCII_STYLE in
-        cassmarrow)
+        casstool)
             echo -e "${BRIGHT}"
             cat << "EOF"
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
@@ -600,13 +600,13 @@ setup_motd() {
     echo "" > /etc/motd 2>/dev/null || true
     rm -f /etc/motd.dynamic 2>/dev/null || true
     
-    # Create CassMarrow MOTD hook
-    cat > /etc/update-motd.d/00-cassmarrow << 'MOTDEOF'
+    # Create casstool MOTD hook
+    cat > /etc/update-motd.d/00-casstool << 'MOTDEOF'
 #!/bin/bash
-/opt/cassmarrow/motd.sh
+/opt/casstool/motd.sh
 MOTDEOF
     
-    chmod +x /etc/update-motd.d/00-cassmarrow
+    chmod +x /etc/update-motd.d/00-casstool
     
     # Ensure SSH is configured to show MOTD
     if [ -f /etc/ssh/sshd_config ]; then
@@ -621,13 +621,13 @@ MOTDEOF
 }
 
 # Create management tool
-create_cassmarrow_command() {
+create_casstool_command() {
     echo -e "${BLUE}[→]${NC} Yönetim komutu oluşturuluyor..."
     
-    cat > /usr/local/bin/cassmarrow << 'TOOLEOF'
+    cat > /usr/local/bin/casstool << 'TOOLEOF'
 #!/bin/bash
 
-# CassMarrow Management Tool
+# casstool Management Tool
 
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
@@ -636,23 +636,23 @@ RED='\033[0;31m'
 NC='\033[0m'
 BOLD='\033[1m'
 
-CONFIG="/etc/cassmarrow.conf"
+CONFIG="/etc/casstool.conf"
 
 show_usage() {
-    echo -e "${CYAN}${BOLD}CassMarrow Yönetim Aracı${NC}"
+    echo -e "${CYAN}${BOLD}casstool Yönetim Aracı${NC}"
     echo ""
-    echo "Kullanım: cassmarrow <komut>"
+    echo "Kullanım: casstool <komut>"
     echo ""
     echo "Komutlar:"
-    echo -e "  ${GREEN}enable${NC}      - CassMarrow'u aktifleştir"
-    echo -e "  ${GREEN}disable${NC}     - CassMarrow'u devre dışı bırak"
+    echo -e "  ${GREEN}enable${NC}      - casstool'u aktifleştir"
+    echo -e "  ${GREEN}disable${NC}     - casstool'u devre dışı bırak"
     echo -e "  ${GREEN}status${NC}      - Durum bilgisi göster"
     echo -e "  ${GREEN}config${NC}      - Yapılandırmayı düzenle"
     echo -e "  ${GREEN}customize${NC}   - İnteraktif özelleştirme"
     echo -e "  ${GREEN}test${NC}        - Karşılama ekranını test et"
     echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir"
     echo -e "  ${GREEN}style${NC}       - Hızlı stil değiştir"
-    echo -e "  ${GREEN}uninstall${NC}   - CassMarrow'u kaldır"
+    echo -e "  ${GREEN}uninstall${NC}   - casstool'u kaldır"
     echo ""
 }
 
@@ -663,7 +663,7 @@ enable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="false"/MOTD_ENABLED="true"/' "$CONFIG"
-    echo -e "${GREEN}✓ CassMarrow aktifleştirildi${NC}"
+    echo -e "${GREEN}✓ casstool aktifleştirildi${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilecek${NC}"
 }
 
@@ -674,19 +674,19 @@ disable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="true"/MOTD_ENABLED="false"/' "$CONFIG"
-    echo -e "${YELLOW}! CassMarrow devre dışı bırakıldı${NC}"
+    echo -e "${YELLOW}! casstool devre dışı bırakıldı${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilmeyecek${NC}"
 }
 
 show_status() {
     if [ ! -f "$CONFIG" ]; then
-        echo -e "${RED}CassMarrow kurulu değil${NC}"
+        echo -e "${RED}casstool kurulu değil${NC}"
         exit 1
     fi
     
     source "$CONFIG"
     
-    echo -e "${CYAN}${BOLD}CassMarrow Durum${NC}"
+    echo -e "${CYAN}${BOLD}casstool Durum${NC}"
     echo -e "${CYAN}═══════════════════════════════════${NC}"
     
     if [ "$MOTD_ENABLED" = "true" ]; then
@@ -721,18 +721,18 @@ change_theme() {
     
     sed -i "s/COLOR_THEME=\".*\"/COLOR_THEME=\"$theme\"/" "$CONFIG"
     echo -e "${GREEN}✓ Tema değiştirildi: $theme${NC}"
-    /opt/cassmarrow/motd.sh
+    /opt/casstool/motd.sh
 }
 
 change_style() {
     echo -e "${CYAN}Mevcut Stiller:${NC}"
-    echo "1) cassmarrow  2) minimal"
+    echo "1) casstool  2) minimal"
     echo "3) blocks      4) simple"
     echo ""
     read -p "Stil seçin [1-4]: " choice
     
     case $choice in
-        1) style="cassmarrow" ;;
+        1) style="casstool" ;;
         2) style="minimal" ;;
         3) style="blocks" ;;
         4) style="simple" ;;
@@ -741,7 +741,7 @@ change_style() {
     
     sed -i "s/ASCII_STYLE=\".*\"/ASCII_STYLE=\"$style\"/" "$CONFIG"
     echo -e "${GREEN}✓ Stil değiştirildi: $style${NC}"
-    /opt/cassmarrow/motd.sh
+    /opt/casstool/motd.sh
 }
 
 case "$1" in
@@ -758,10 +758,10 @@ case "$1" in
         ${EDITOR:-nano} "$CONFIG"
         ;;
     customize)
-        /opt/cassmarrow/customize.sh
+        /opt/casstool/customize.sh
         ;;
     test)
-        /opt/cassmarrow/motd.sh
+        /opt/casstool/motd.sh
         ;;
     theme)
         change_theme
@@ -770,7 +770,7 @@ case "$1" in
         change_style
         ;;
     uninstall)
-        /opt/cassmarrow/uninstall.sh
+        /opt/casstool/uninstall.sh
         ;;
     *)
         show_usage
@@ -779,21 +779,21 @@ case "$1" in
 esac
 TOOLEOF
 
-    chmod +x /usr/local/bin/cassmarrow
-    echo -e "${GREEN}[✓]${NC} 'cassmarrow' komutu oluşturuldu"
+    chmod +x /usr/local/bin/casstool
+    echo -e "${GREEN}[✓]${NC} 'casstool' komutu oluşturuldu"
 }
 
 # Create helper scripts
 create_helper_scripts() {
-    local install_dir="/opt/cassmarrow"
+    local install_dir="/opt/casstool"
     
     # Customize script
     cat > "$install_dir/customize.sh" << 'CUSTOMEOF'
 #!/bin/bash
 
-CONFIG_FILE="/etc/cassmarrow.conf"
+CONFIG_FILE="/etc/casstool.conf"
 
-echo "CassMarrow Özelleştirme Yardımcısı"
+echo "casstool Özelleştirme Yardımcısı"
 echo "===================================="
 echo ""
 
@@ -822,7 +822,7 @@ while true; do
             echo "Tema güncellendi!"
             ;;
         2)
-            echo "Mevcut stiller: cassmarrow, minimal, blocks, simple"
+            echo "Mevcut stiller: casstool, minimal, blocks, simple"
             read -p "Stil girin: " style
             sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" "$CONFIG_FILE"
             echo "Stil güncellendi!"
@@ -841,7 +841,7 @@ while true; do
             ${EDITOR:-nano} "$CONFIG_FILE"
             ;;
         6)
-            /opt/cassmarrow/motd.sh
+            /opt/casstool/motd.sh
             ;;
         7)
             exit 0
@@ -859,7 +859,7 @@ CUSTOMEOF
     cat > "$install_dir/uninstall.sh" << 'UNINSTALLEOF'
 #!/bin/bash
 
-echo "CassMarrow kaldırılıyor..."
+echo "casstool kaldırılıyor..."
 
 # Restore backups
 if [ -d /etc/update-motd.d.backup ]; then
@@ -869,12 +869,12 @@ if [ -d /etc/update-motd.d.backup ]; then
     rm -rf /etc/update-motd.d.backup
 fi
 
-# Remove CassMarrow files
-rm -rf /opt/cassmarrow
-rm -f /etc/cassmarrow.conf
-rm -f /usr/local/bin/cassmarrow
+# Remove casstool files
+rm -rf /opt/casstool
+rm -f /etc/casstool.conf
+rm -f /usr/local/bin/casstool
 
-echo "CassMarrow kaldırıldı"
+echo "casstool kaldırıldı"
 UNINSTALLEOF
     
     chmod +x "$install_dir/uninstall.sh"
@@ -899,24 +899,24 @@ show_completion() {
     echo ""
     
     echo -e "${CYAN}${BOLD}Hızlı Komutlar:${NC}"
-    echo -e "  ${YELLOW}cassmarrow status${NC}      - Durum bilgisi"
-    echo -e "  ${YELLOW}cassmarrow enable${NC}      - Aktifleştir"
-    echo -e "  ${YELLOW}cassmarrow disable${NC}     - Devre dışı bırak"
-    echo -e "  ${YELLOW}cassmarrow test${NC}        - Test et"
-    echo -e "  ${YELLOW}cassmarrow theme${NC}       - Tema değiştir"
-    echo -e "  ${YELLOW}cassmarrow config${NC}      - Yapılandırmayı düzenle"
+    echo -e "  ${YELLOW}casstool status${NC}      - Durum bilgisi"
+    echo -e "  ${YELLOW}casstool enable${NC}      - Aktifleştir"
+    echo -e "  ${YELLOW}casstool disable${NC}     - Devre dışı bırak"
+    echo -e "  ${YELLOW}casstool test${NC}        - Test et"
+    echo -e "  ${YELLOW}casstool theme${NC}       - Tema değiştir"
+    echo -e "  ${YELLOW}casstool config${NC}      - Yapılandırmayı düzenle"
     echo ""
     
     echo -e "${CYAN}${BOLD}Dosya Konumları:${NC}"
-    echo -e "  Config:  ${YELLOW}/etc/cassmarrow.conf${NC}"
-    echo -e "  Scripts: ${YELLOW}/opt/cassmarrow/${NC}"
+    echo -e "  Config:  ${YELLOW}/etc/casstool.conf${NC}"
+    echo -e "  Scripts: ${YELLOW}/opt/casstool/${NC}"
     echo ""
     
     if [ "$ENABLE_MOTD" = "true" ]; then
-        echo -e "${GREEN}${BOLD}SSH bağlantılarında CassMarrow karşılama ekranı gösterilecek!${NC}"
-        echo -e "${CYAN}Şimdi test etmek için: ${YELLOW}cassmarrow test${NC}"
+        echo -e "${GREEN}${BOLD}SSH bağlantılarında casstool karşılama ekranı gösterilecek!${NC}"
+        echo -e "${CYAN}Şimdi test etmek için: ${YELLOW}casstool test${NC}"
     else
-        echo -e "${YELLOW}MOTD devre dışı. Aktifleştirmek için: ${BOLD}cassmarrow enable${NC}"
+        echo -e "${YELLOW}MOTD devre dışı. Aktifleştirmek için: ${BOLD}casstool enable${NC}"
     fi
     
     echo ""
@@ -937,7 +937,7 @@ main() {
     create_config
     create_motd_script
     setup_motd
-    create_cassmarrow_command
+    create_casstool_command
     create_helper_scripts
     
     show_completion

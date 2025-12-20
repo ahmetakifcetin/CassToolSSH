@@ -1,4 +1,4 @@
-# CassMarrow - Tema ve Stil Karşılaştırması 🎨
+# casstool - Tema ve Stil Karşılaştırması 🎨
 
 ## Toplam: 16 Tema + 3 Stil = 48 Farklı Görünüm!
 
@@ -15,7 +15,7 @@
 Cyan (#00FFFF) → Light Cyan (#00D7FF) → Blue Cyan (#00AFFF)
 ```
 
-**En iyi görünüm**: CassMarrow stili ile
+**En iyi görünüm**: casstool stili ile
 
 ---
 
@@ -56,7 +56,7 @@ Azure (#0087FF) → Sky Blue (#00D7FF) → Deep Blue (#005FFF)
 Orange (#FF8700) → Pink (#FF5FD7) → Red-Orange (#FF5F00)
 ```
 
-**En iyi görünüm**: CassMarrow stili ile
+**En iyi görünüm**: casstool stili ile
 **Özel**: Sıcak, yaratıcı
 
 ---
@@ -70,7 +70,7 @@ Orange (#FF8700) → Pink (#FF5FD7) → Red-Orange (#FF5F00)
 Bright Red (#FF0000) → Orange (#FF8700) → Dark Red (#AF0000)
 ```
 
-**En iyi görünüm**: CassMarrow stili ile
+**En iyi görünüm**: casstool stili ile
 **Özel**: Dikkat çekici, uyarı sistemi
 
 ---
@@ -84,7 +84,7 @@ Bright Red (#FF0000) → Orange (#FF8700) → Dark Red (#AF0000)
 Magenta (#FF00FF) → Light Pink (#FF87D7) → Purple (#AF00FF)
 ```
 
-**En iyi görünüm**: CassMarrow stili ile
+**En iyi görünüm**: casstool stili ile
 **Özel**: Modern, parlak, dikkat çekici
 
 ---
@@ -126,7 +126,7 @@ Steel Blue (#5F87AF) → Light Blue (#87AFD7) → Gray Blue (#5F5FAF)
 Gold (#FFD700) → Light Yellow (#FFFF87) → Orange-Gold (#FFAF00)
 ```
 
-**En iyi görünüm**: CassMarrow stili ile
+**En iyi görünüm**: casstool stili ile
 **Özel**: Lüks, premium hissi
 
 ---
@@ -175,7 +175,7 @@ Light Purple (#AF87FF) → Bright Purple (#D7AFFF) → Purple (#875FD7)
 
 ## 🖼️ 3 Farklı Stil
 
-### Stil 1: CassMarrow (Profesyonel)
+### Stil 1: casstool (Profesyonel)
 ```
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║
@@ -235,7 +235,7 @@ Light Purple (#AF87FF) → Bright Purple (#D7AFFF) → Purple (#875FD7)
 ### Production Server
 ```bash
 COLOR_THEME="fire"
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="casstool"
 SYSTEM_NAME="Production API Server"
 ```
 → Dikkat çekici, profesyonel
@@ -267,7 +267,7 @@ SYSTEM_NAME="Security Gateway"
 ### Media Server
 ```bash
 COLOR_THEME="neon"
-ASCII_STYLE="cassmarrow"
+ASCII_STYLE="casstool"
 SYSTEM_NAME="Media Processing Server"
 ```
 → Yaratıcı, modern
@@ -286,23 +286,23 @@ SYSTEM_NAME="Enterprise Infrastructure"
 
 ```bash
 # Interaktif menü
-cassmarrow theme
+casstool theme
 
 # Veya direkt config'den
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/casstool.conf
 
 # Tema değiştir
 COLOR_THEME="sunset"  # İstediğin temayı yaz
 
 # Test et
-cassmarrow test
+casstool test
 ```
 
 ---
 
 ## 🎨 Gradient Nasıl Çalışıyor?
 
-CassMarrow, ANSI 256-color palette kullanarak gradient efekti yaratıyor:
+casstool, ANSI 256-color palette kullanarak gradient efekti yaratıyor:
 
 ```bash
 # Örnek: Ice Theme

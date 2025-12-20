@@ -1,9 +1,9 @@
-# CassMarrow - Proje Dosya Yapısı
+# casstool - Proje Dosya Yapısı
 
 ## 📦 Repository Dosyaları
 
 ```
-CassMarrow/
+casstool/
 ├── install.sh                  # Ana kurulum scripti
 ├── README.md                   # Proje dokümantasyonu
 ├── THEMES.md                   # Tema rehberi
@@ -16,34 +16,34 @@ CassMarrow/
 │
 ├── scripts/                    # Yardımcı scriptler
 │   ├── motd.sh                # Ana MOTD scripti
-│   ├── cassmarrow             # Yönetim komutu
+│   ├── casstool             # Yönetim komutu
 │   ├── customize.sh           # İnteraktif özelleştirme
 │   └── uninstall.sh           # Kaldırma scripti
 │
 └── screenshots/                # Ekran görüntüleri
-    ├── cassmarrow-ice.png
-    ├── cassmarrow-matrix.png
-    ├── cassmarrow-ocean.png
-    ├── cassmarrow-sunset.png
-    ├── cassmarrow-fire.png
+    ├── casstool-ice.png
+    ├── casstool-matrix.png
+    ├── casstool-ocean.png
+    ├── casstool-sunset.png
+    ├── casstool-fire.png
     └── ...
 ```
 
 ## 🚀 Kurulum Sonrası Dosya Yapısı
 
 ```
-/opt/cassmarrow/               # Ana dizin
+/opt/casstool/               # Ana dizin
 ├── motd.sh                    # MOTD scripti
 ├── customize.sh               # Özelleştirme aracı
 └── uninstall.sh               # Kaldırma scripti
 
 /etc/
-├── cassmarrow.conf            # Kullanıcı yapılandırması
+├── casstool.conf            # Kullanıcı yapılandırması
 └── update-motd.d/
-    └── 00-cassmarrow          # MOTD hook
+    └── 00-casstool          # MOTD hook
 
 /usr/local/bin/
-└── cassmarrow                 # Yönetim komutu
+└── casstool                 # Yönetim komutu
 
 /etc/update-motd.d.backup/     # Orijinal MOTD yedekleri
 ```
@@ -84,7 +84,7 @@ CassMarrow/
 - Tema ve stil rendering
 - Smart status indicators
 
-### scripts/cassmarrow
+### scripts/casstool
 - Komut satırı yönetim aracı
 - Hızlı tema/stil değiştirme
 - Status ve test fonksiyonları
@@ -95,7 +95,7 @@ CassMarrow/
 ```bash
 # Repository'yi klonla
 git clone https://github.com/ahmetakifcetin/CassToolSSH.git
-cd CassMarrow
+cd casstool
 
 # Test et
 sudo ./install.sh
@@ -104,7 +104,7 @@ sudo ./install.sh
 nano scripts/motd.sh
 
 # Test et
-/opt/cassmarrow/motd.sh
+/opt/casstool/motd.sh
 
 # Commit et
 git add .
@@ -116,13 +116,13 @@ git push
 
 ```bash
 # Screenshot al
-cassmarrow test
+casstool test
 
 # Kaydet
-screenshots/cassmarrow-TEMA.png
+screenshots/casstool-TEMA.png
 
 # Optimize et
-optipng -o7 screenshots/cassmarrow-TEMA.png
+optipng -o7 screenshots/casstool-TEMA.png
 ```
 
 ## 🎨 Yeni Tema Ekleme
@@ -130,7 +130,7 @@ optipng -o7 screenshots/cassmarrow-TEMA.png
 1. `themes/gradients.sh` dosyasını düzenle
 2. Yeni tema fonksiyonu ekle
 3. `scripts/motd.sh` içinde tema case'e ekle
-4. `scripts/cassmarrow` yönetim aracına ekle
+4. `scripts/casstool` yönetim aracına ekle
 5. `THEMES.md` dosyasını güncelle
 6. Screenshot ekle
 
@@ -145,4 +145,4 @@ optipng -o7 screenshots/cassmarrow-TEMA.png
 
 ---
 
-**CassMarrow v2.0.0** 🎨
+**casstool v2.0.0** 🎨

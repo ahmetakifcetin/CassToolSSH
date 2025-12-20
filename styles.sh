@@ -1,7 +1,7 @@
-# CassMarrow ASCII Art Styles
+# casstool ASCII Art Styles
 
-# Style 1: CassMarrow (Professional, Modern)
-style_cassmarrow() {
+# Style 1: casstool (Professional, Modern)
+style_casstool() {
     cat << "EOF"
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║

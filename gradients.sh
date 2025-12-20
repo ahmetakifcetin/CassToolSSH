@@ -1,4 +1,4 @@
-# CassMarrow Themes
+# casstool Themes
 # Advanced color themes with gradient support
 
 # Matrix Theme (Green Matrix Style)

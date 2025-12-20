@@ -1,4 +1,4 @@
-# CassMarrow v2.0 - Özet 🚀
+# casstool v2.0 - Özet 🚀
 
 ## 🎉 Yapılanlar
 
@@ -9,7 +9,7 @@
 - Tema dosyaları: `themes/gradients.sh`
 
 ### 2. ✅ 3 Farklı Stil
-- **CassMarrow**: Profesyonel, tam logo
+- **casstool**: Profesyonel, tam logo
 - **Minimal**: Temiz, kutu tasarım  
 - **Retro**: Klasik terminal hissi
 - Stil dosyaları: `themes/styles.sh`
@@ -24,14 +24,14 @@
 ### 4. ✅ Güncellenmiş Install Script
 - İnteraktif/non-interactive mod desteği
 - Tema ve stil seçimi sihirbazı
-- CASSMARROW branding
+- casstool branding
 - Dosya: `install.sh`
 
-### 5. ✅ CassMarrow Yönetim Aracı
+### 5. ✅ casstool Yönetim Aracı
 - 16 tema desteği
 - 3 stil desteği
-- `cassmarrow themes` - Tüm temaları listele
-- Dosya: `cassmarrow`
+- `casstool themes` - Tüm temaları listele
+- Dosya: `casstool`
 
 ### 6. ✅ Kapsamlı Dokümantasyon
 - **README.md**: Tam kullanım kılavuzu
@@ -48,7 +48,7 @@
 - **Toplam**: 16 tema
 
 ### Stil Sayısı
-- CassMarrow (Profesyonel)
+- casstool (Profesyonel)
 - Minimal (Temiz)
 - Retro (Klasik)
 - **Toplam**: 3 stil
@@ -77,27 +77,27 @@
 
 ### Kurulum
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/casstool/main/install.sh | sudo bash
 ```
 
 ### Tema Değiştirme
 ```bash
-cassmarrow theme
+casstool theme
 # Veya
-sudo nano /etc/cassmarrow.conf
+sudo nano /etc/casstool.conf
 # COLOR_THEME="matrix"
 ```
 
 ### Stil Değiştirme
 ```bash
-cassmarrow style
+casstool style
 # Veya
 # ASCII_STYLE="retro"
 ```
 
 ### Test
 ```bash
-cassmarrow test
+casstool test
 ```
 
 ---
@@ -112,7 +112,7 @@ cassmarrow test
 
 ### Scripts (2 dosya)
 1. `motd.sh` (13KB) - Ana MOTD scripti
-2. `cassmarrow` (6.7KB) - Yönetim komutu
+2. `casstool` (6.7KB) - Yönetim komutu
 
 ### Tema Dosyaları (2 dosya)
 1. `themes/gradients.sh` (2KB) - Gradient tanımları
@@ -168,12 +168,12 @@ Services
 
 ### 1. Repository Oluştur
 ```bash
-# GitHub'da yeni repo: CassMarrow
+# GitHub'da yeni repo: casstool
 ```
 
 ### 2. Dosyaları Organize Et
 ```bash
-CassMarrow/
+casstool/
 ├── install.sh
 ├── README.md
 ├── THEMES.md
@@ -184,7 +184,7 @@ CassMarrow/
 │   └── styles.sh
 ├── scripts/
 │   ├── motd.sh
-│   ├── cassmarrow
+│   ├── casstool
 │   ├── customize.sh
 │   └── uninstall.sh
 └── screenshots/
@@ -195,7 +195,7 @@ CassMarrow/
 ```bash
 git init
 git add .
-git commit -m "🎨 CassMarrow v2.0 - 16 Gradient Themes + 3 Styles"
+git commit -m "🎨 casstool v2.0 - 16 Gradient Themes + 3 Styles"
 git branch -M main
 git remote add origin https://github.com/ahmetakifcetin/CassToolSSH.git
 git push -u origin main
@@ -203,17 +203,17 @@ git push -u origin main
 
 ### 4. Release Oluştur
 ```bash
-git tag -a v2.0.0 -m "CassMarrow v2.0.0 - Gradient Themes Release"
+git tag -a v2.0.0 -m "casstool v2.0.0 - Gradient Themes Release"
 git push origin v2.0.0
 ```
 
 ### 5. GitHub'da Release Notes
 ```markdown
-# CassMarrow v2.0.0 - Gradient Themes 🎨
+# casstool v2.0.0 - Gradient Themes 🎨
 
 ## What's New
 - 🌈 10 new gradient themes (Ice, Matrix, Ocean, Sunset, Fire, Neon, etc.)
-- 🎨 3 different ASCII art styles (CassMarrow, Minimal, Retro)
+- 🎨 3 different ASCII art styles (casstool, Minimal, Retro)
 - 📊 Smart status indicators (OPTIMAL/MODERATE/HEAVY LOAD)
 - ⚠️ Memory & disk usage warnings
 - 🐳 Enhanced Docker integration
@@ -222,7 +222,7 @@ git push origin v2.0.0
 
 ## Quick Install
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/casstool/main/install.sh | sudo bash
 ```
 
 See [README.md](README.md) for full documentation.
@@ -244,22 +244,22 @@ See [README.md](README.md) for full documentation.
 ## 💡 Screenshot Rehberi
 
 Her tema için 3 screenshot:
-1. CassMarrow stili
+1. casstool stili
 2. Minimal stili
 3. Retro stili
 
 Toplam: 16 tema × 3 stil = **48 screenshot**
 
 Öncelikli screenshot'lar (10 adet):
-1. Ice + CassMarrow
+1. Ice + casstool
 2. Matrix + Retro
 3. Ocean + Minimal
-4. Sunset + CassMarrow
-5. Fire + CassMarrow
-6. Neon + CassMarrow
+4. Sunset + casstool
+5. Fire + casstool
+6. Neon + casstool
 7. Hacker + Retro
 8. Corporate + Minimal
-9. Gold + CassMarrow
+9. Gold + casstool
 10. Dracula + Retro
 
 ---
@@ -279,7 +279,7 @@ Toplam: 16 tema × 3 stil = **48 screenshot**
 
 ## 🎉 Sonuç
 
-**CassMarrow v2.0** hazır! 
+**casstool v2.0** hazır! 
 
 - ✅ 16 gradient tema
 - ✅ 3 profesyonel stil
