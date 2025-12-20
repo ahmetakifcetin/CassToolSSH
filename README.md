@@ -1,27 +1,36 @@
-# CassToolSSH 🚀
+# CassMarrow 🚀
 
-**Beautiful, customizable server greeting system for Linux servers**
+**Professional Server Greeting System for Linux**
 
-Transform your boring SSH login into a stunning, informative welcome screen with real-time system statistics, service monitoring, and beautiful ASCII art.
+Transform your SSH login into a beautiful, informative welcome screen with real-time system stats, gradient themes, and customizable styles.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-green.svg)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-cyan.svg)
+
+---
 
 ## ✨ Features
 
-- 🎨 **Beautiful ASCII Art** - Multiple styles to choose from
-- 📊 **Real-time System Stats** - CPU, Memory, Disk, Network
-- 🐳 **Docker Integration** - Container count and status
+- 🎨 **10+ Gradient Themes** - Matrix, Ocean, Sunset, Fire, Ice, Neon, and more
+- 🖼️ **3 ASCII Art Styles** - Professional, Minimal, Retro
+- 📊 **Real-time System Stats** - CPU, Memory, Disk, Network with smart warnings
+- 🐳 **Docker Integration** - Container count and status monitoring
 - 🔧 **Service Monitoring** - Track your critical services
-- 🎭 **Customizable Themes** - 6 color themes included
+- 🚦 **Smart Status Indicators** - Optimal, Moderate, Heavy Load detection
 - ⚡ **Zero Dependencies** - Pure bash, works everywhere
-- 🔌 **Easy Installation** - One command setup
-- 🎯 **Highly Configurable** - Toggle any feature on/off
+- 🎯 **Easy Management** - Simple `cassmarrow` command for all operations
 
-## 📸 Screenshots
+---
 
-### CassToolSSH Style (Default)
+## 🎨 Styles & Themes
+
+### Style 1: CassMarrow (Professional)
+
+<details>
+<summary>🔵 Ice Theme (Default)</summary>
+
 ```
  ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
 ██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║
@@ -30,259 +39,442 @@ Transform your boring SSH login into a stunning, informative welcome screen with
 ╚██████╗██║  ██║███████║███████║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║╚██████╔╝╚███╔███╔╝
  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝
 
-CassToolSSH Infrastructure
-Version: v1.0
-Status: [ ONLINE ]
+Production Infrastructure  │  v1.0  │  ● OPTIMAL
+────────────────────────────────────────────────────────────────────────────────
 
-═══════════════════════════════════════════════════════════════════
-Host:           server.example.com
-Kernel:         6.8.0-88-generic
-Uptime:         1 week, 2 hours, 47 minutes
-Load Average:   0.08, 0.15, 0.20
-Memory:         2602MB used / 7941MB total (32.8%)
-Disk /:         118G used / 145G total (81%)
-Local IP:       192.168.1.100
-Public IP:      203.0.113.42
+System               app.mycar724.com                      Kernel 6.8.0-87-generic
+Uptime               7 days, 14 hours, 32 minutes          Load   0.45, 0.38, 0.32
+Memory               3854 MB / 7941 MB (48.5%)
+Disk (/)             118G / 145G (81%)
+Local IP             192.168.1.100                         Public 203.0.113.42
 
-Docker:         ● Running (12 containers)
+Docker               ● Running (8 containers)
 
-Services:
-● nginx
-● docker
-● postgresql
-● mysql
+Services
+  ● nginx
+  ● docker
+  ● postgresql
+  ● redis
 
-Last Login:
-root     pts/0        Mon Dec  8 14:03 - 14:03  (00:00)
+Last Login
+  joel from 212.252.140.19 on Dec 21 00:20 at 00:20
 
-═══════════════════════════════════════════════════════════════════
+────────────────────────────────────────────────────────────────────────────────
 ```
+</details>
 
-### Other Styles Available
-- **Minimal** - Clean and simple
-- **Blocks** - Modern block characters
-- **Simple** - Classic text-based
+<details>
+<summary>🟢 Matrix Theme</summary>
+
+![Matrix Theme](screenshots/cassmarrow-matrix.png)
+</details>
+
+<details>
+<summary>🌅 Sunset Theme</summary>
+
+![Sunset Theme](screenshots/cassmarrow-sunset.png)
+</details>
+
+<details>
+<summary>🔥 Fire Theme</summary>
+
+![Fire Theme](screenshots/cassmarrow-fire.png)
+</details>
+
+<details>
+<summary>🟣 Neon Theme</summary>
+
+![Neon Theme](screenshots/cassmarrow-neon.png)
+</details>
+
+### Style 2: Minimal (Clean & Simple)
+
+<details>
+<summary>💼 Corporate Theme</summary>
+
+```
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                              C A S S M A R R O W                               ║
+╠════════════════════════════════════════════════════════════════════════════════╣
+
+Production Infrastructure  │  v1.0  │  ● OPTIMAL
+╠════════════════════════════════════════════════════════════════════════════════╣
+
+System               app.mycar724.com                      Kernel 6.8.0-87-generic
+Uptime               7 days, 14 hours, 32 minutes          Load   0.45, 0.38, 0.32
+Memory               3854 MB / 7941 MB (48.5%)
+Disk (/)             118G / 145G (81%)
+
+╚════════════════════════════════════════════════════════════════════════════════╝
+```
+</details>
+
+### Style 3: Retro (Classic Terminal)
+
+<details>
+<summary>🟩 Hacker Theme</summary>
+
+```
+  ___   _   ___ ___ __  __   _   ___ ___  _____      __
+ / __| /_\ / __/ __|  \/  | /_\ | _ \ _ \/ _ \ \    / /
+| (__ / _ \\__ \__ \ |\/| |/ _ \|   /   / (_) \ \/\/ / 
+ \___/_/ \_\___/___/_|  |_/_/ \_\_|_\_|_\\___/ \_/\_/  
+
+Production Infrastructure  │  v1.0  │  ● OPTIMAL
+────────────────────────────────────────────────────────────────────────────────
+
+System               app.mycar724.com                      Kernel 6.8.0-87-generic
+Uptime               7 days, 14 hours, 32 minutes          Load   0.45, 0.38, 0.32
+Memory               3854 MB / 7941 MB (48.5%)
+
+────────────────────────────────────────────────────────────────────────────────
+```
+</details>
+
+---
+
+## 🌈 All Available Themes
+
+| Theme | Description | Best For |
+|-------|-------------|----------|
+| **ice** 🧊 | Cyan-blue gradient (default) | Modern tech servers |
+| **matrix** 💚 | Green matrix style | Security/dev servers |
+| **ocean** 🌊 | Deep blue gradient | Production databases |
+| **sunset** 🌅 | Orange-pink gradient | Creative projects |
+| **fire** 🔥 | Red-orange gradient | Critical systems |
+| **neon** 💜 | Purple-pink gradient | Gaming/media servers |
+| **hacker** 👾 | Dark green terminal | Pentesting/security |
+| **corporate** 💼 | Gray-blue professional | Enterprise servers |
+| **gold** 🏆 | Yellow-gold gradient | Premium services |
+| **dracula** 🧛 | Purple dark theme | Developer workstations |
+| **blue** 🔵 | Classic blue | Professional use |
+| **green** 🟢 | Classic green | Production success |
+| **purple** 🟣 | Classic purple | Creative work |
+| **cyan** 🔷 | Classic cyan | Tech focused |
+| **red** 🔴 | Classic red | Warning/critical |
+| **yellow** 🟡 | Classic yellow | Staging/test |
+
+---
 
 ## 🚀 Quick Start
 
 ### One-Line Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh | sudo bash
 ```
 
-Or download and run manually:
+### Manual Installation
 
 ```bash
-wget https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh
+# Download installer
+wget https://raw.githubusercontent.com/ahmetakifcetin/CassMarrow/main/install.sh
+
+# Make executable
 chmod +x install.sh
+
+# Run installation
 sudo ./install.sh
 ```
 
-### What it does
-1. Backs up your existing MOTD configuration
-2. Installs CassToolSSH to `/opt/CassToolSSH`
-3. Creates configuration file at `/etc/CassToolSSH.conf`
-4. Sets up automatic greeting on login
-5. Provides customization tools
+### First Steps
+
+```bash
+# Test your setup
+cassmarrow test
+
+# Check status
+cassmarrow status
+
+# Change theme
+cassmarrow theme
+
+# Change style
+cassmarrow style
+```
+
+---
+
+## 🎮 Usage
+
+### Management Commands
+
+```bash
+cassmarrow status      # Show current configuration
+cassmarrow enable      # Enable MOTD on SSH login
+cassmarrow disable     # Disable MOTD on SSH login
+cassmarrow test        # Preview current setup
+cassmarrow theme       # Quick theme switcher
+cassmarrow style       # Quick style switcher
+cassmarrow config      # Edit configuration file
+cassmarrow customize   # Interactive customization
+cassmarrow uninstall   # Remove CassMarrow
+```
+
+### Quick Theme Switch
+
+```bash
+# Interactive menu
+cassmarrow theme
+
+# Or edit config directly
+sudo nano /etc/cassmarrow.conf
+# Change: COLOR_THEME="ice"
+```
+
+### Quick Style Switch
+
+```bash
+# Available styles: cassmarrow, minimal, retro
+cassmarrow style
+```
+
+---
 
 ## ⚙️ Configuration
 
-### Quick Customization
-
-Use the built-in customization helper:
-
-```bash
-sudo /opt/CassToolSSH/customize.sh
-```
-
-### Manual Configuration
-
-Edit the configuration file:
-
-```bash
-sudo nano /etc/CassToolSSH.conf
-```
-
-### Configuration Options
+Configuration file: `/etc/cassmarrow.conf`
 
 ```bash
 # Display Settings
-SHOW_HOSTNAME=true      # Show server hostname
-SHOW_KERNEL=true        # Show kernel version
-SHOW_UPTIME=true        # Show system uptime
-SHOW_LOAD=true          # Show load average
-SHOW_MEMORY=true        # Show memory usage
-SHOW_DISK=true          # Show disk usage
-SHOW_IP=true            # Show IP addresses
-SHOW_DOCKER=true        # Show Docker status
-SHOW_SERVICES=true      # Show monitored services
-SHOW_LAST_LOGIN=true    # Show last login info
+SHOW_HOSTNAME=true
+SHOW_KERNEL=true
+SHOW_UPTIME=true
+SHOW_LOAD=true
+SHOW_MEMORY=true
+SHOW_DISK=true
+SHOW_IP=true
+SHOW_DOCKER=true
+SHOW_SERVICES=true
+SHOW_LAST_LOGIN=true
 
-# Custom Text
-SYSTEM_NAME="CassToolSSH Infrastructure"
+# System Info
+SYSTEM_NAME="Production Infrastructure"
 SYSTEM_VERSION="v1.0"
-CUSTOM_MESSAGE=""       # Optional footer message
+CUSTOM_MESSAGE="Welcome to Production - Handle with care!"
 
-# Color Theme
-COLOR_THEME="cyan"      # Options: blue, green, purple, cyan, red, yellow
-
-# ASCII Art Style
-ASCII_STYLE="CassToolSSH" # Options: CassToolSSH, minimal, blocks, simple
+# Theme & Style
+COLOR_THEME="ice"        # See theme table above
+ASCII_STYLE="cassmarrow" # cassmarrow, minimal, retro
 
 # Services to Monitor
 MONITORED_SERVICES="nginx docker postgresql mysql redis"
+
+# MOTD Control
+MOTD_ENABLED="true"
 ```
 
-## 🎨 Customization Examples
+---
 
-### Change Color Theme
+## 🎯 Use Cases
+
+### Production Server (Fire Theme)
 
 ```bash
-sudo sed -i 's/COLOR_THEME="cyan"/COLOR_THEME="purple"/' /etc/CassToolSSH.conf
+SYSTEM_NAME="Production API Server"
+COLOR_THEME="fire"
+ASCII_STYLE="cassmarrow"
+CUSTOM_MESSAGE="⚠️  PRODUCTION - All changes require approval"
+MONITORED_SERVICES="nginx docker postgresql redis"
 ```
 
-### Change ASCII Style
+### Development Server (Matrix Theme)
 
 ```bash
-sudo sed -i 's/ASCII_STYLE="CassToolSSH"/ASCII_STYLE="minimal"/' /etc/CassToolSSH.conf
+SYSTEM_NAME="Development Environment"
+COLOR_THEME="matrix"
+ASCII_STYLE="retro"
+CUSTOM_MESSAGE="🚀 Happy coding! Break things, learn, repeat."
+MONITORED_SERVICES="docker postgresql"
 ```
 
-### Add Custom Message
+### Database Server (Ocean Theme)
 
 ```bash
-echo 'CUSTOM_MESSAGE="Welcome to Production Server - Handle with care!"' | sudo tee -a /etc/CassToolSSH.conf
+SYSTEM_NAME="PostgreSQL Cluster"
+COLOR_THEME="ocean"
+ASCII_STYLE="minimal"
+CUSTOM_MESSAGE="🗄️  Database cluster - Read replicas active"
+MONITORED_SERVICES="postgresql pgbouncer redis"
 ```
 
-### Monitor Different Services
+### Security Server (Hacker Theme)
 
 ```bash
-sudo sed -i 's/MONITORED_SERVICES=".*"/MONITORED_SERVICES="nginx apache2 mongodb redis"/' /etc/CassToolSSH.conf
+SYSTEM_NAME="Security Gateway"
+COLOR_THEME="hacker"
+ASCII_STYLE="retro"
+CUSTOM_MESSAGE="🔒 Authorized access only - All actions logged"
+MONITORED_SERVICES="ssh fail2ban ufw iptables"
 ```
 
-## 🔧 Advanced Usage
+---
 
-### Test Your Configuration
+## 🚦 Smart Features
+
+### Status Indicators
+
+- **● OPTIMAL** (Green) - Load < 70% - System running smoothly
+- **● MODERATE** (Yellow) - Load 70-90% - Attention may be needed
+- **● HEAVY LOAD** (Red) - Load > 90% - Immediate action required
+
+### Memory & Disk Warnings
+
+- **Normal**: `3854 MB / 7941 MB (48.5%)`
+- **Warning** (75%+): `6120 MB / 7941 MB (77.1%)`
+- **Critical** (90%+): `7200 MB / 7941 MB (⚠ 90.7%)`
+
+### Docker Integration
+
+- Shows running container count
+- Indicates Docker daemon status
+- Graceful handling when Docker is not installed
+
+---
+
+## 🛠️ Advanced Customization
+
+### Custom ASCII Art
+
+Edit `/opt/cassmarrow/motd.sh` and add your own ASCII art in the `print_ascii_art()` function.
+
+### Custom Themes
+
+Create your own gradient theme by editing the color definitions in the MOTD script.
+
+### Service Monitoring
+
+Add any systemd service to the monitoring list:
 
 ```bash
-/opt/CassToolSSH/motd.sh
+MONITORED_SERVICES="nginx apache2 mysql postgresql redis mongodb docker gitlab-runner jenkins"
 ```
 
-### Disable Specific Features
+---
 
-Edit `/etc/CassToolSSH.conf` and set any `SHOW_*` option to `false`:
+## 📋 Requirements
+
+- **OS**: Ubuntu 20.04+, Debian 11+, or compatible Linux distribution
+- **Shell**: Bash 4.0+
+- **Privileges**: Root/sudo access for installation
+- **Optional**: Docker (for Docker status display)
+
+---
+
+## 🔧 Troubleshooting
+
+### MOTD Not Showing
 
 ```bash
-SHOW_DOCKER=false
-SHOW_LAST_LOGIN=false
+# Check if enabled
+cassmarrow status
+
+# Enable MOTD
+cassmarrow enable
+
+# Test manually
+cassmarrow test
+
+# Verify SSH config
+grep PrintMotd /etc/ssh/sshd_config
+
+# Should show: PrintMotd yes
 ```
 
-### Create Custom ASCII Art
+### Theme Not Applying
 
-You can create your own ASCII art and modify the `print_ascii_art()` function in `/opt/CassToolSSH/motd.sh`.
+```bash
+# Verify config
+cat /etc/cassmarrow.conf | grep COLOR_THEME
 
-Tools for creating ASCII art:
-- [ASCII Art Generator](http://patorjk.com/software/taag/)
-- [Text to ASCII](https://www.ascii-art-generator.org/)
+# Test with different theme
+sudo sed -i 's/COLOR_THEME=.*/COLOR_THEME="matrix"/' /etc/cassmarrow.conf
+cassmarrow test
+```
+
+### Services Not Showing
+
+```bash
+# List available services
+systemctl list-units --type=service | grep -v '@'
+
+# Update monitored services
+sudo nano /etc/cassmarrow.conf
+# Edit: MONITORED_SERVICES="nginx docker"
+```
+
+---
 
 ## 🗑️ Uninstallation
 
 ```bash
-sudo /opt/CassToolSSH/uninstall.sh
+# Quick uninstall
+cassmarrow uninstall
+
+# Or manually
+sudo /opt/cassmarrow/uninstall.sh
 ```
 
 This will:
-- Restore your original MOTD configuration
-- Remove all CassToolSSH files
+- Remove all CassMarrow files
+- Restore original MOTD configuration
 - Clean up configuration files
 
-## 🐳 Docker Container Usage
-
-You can also use CassToolSSH in Docker containers:
-
-```dockerfile
-FROM ubuntu:24.04
-
-# Install CassToolSSHRUN apt-get update && apt-get install -y curl sudo
-RUN curl -fsSL https://raw.githubusercontent.com/ahmetakifcetin/CassToolSSH/main/install.sh | bash
-
-# Your container setup here
-```
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions are welcome! Here's how:
 
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ### Ideas for Contributions
 
 - [ ] New ASCII art styles
-- [ ] Additional color themes
-- [ ] More system information displays
-- [ ] Support for other Linux distributions (CentOS, Arch, etc.)
-- [ ] Integration with monitoring tools (Prometheus, Grafana)
-- [ ] Weather information display
-- [ ] Custom plugin system
+- [ ] Additional gradient themes
+- [ ] GPU information display
+- [ ] Network traffic statistics
 - [ ] Multi-language support
+- [ ] Weather integration
+- [ ] Custom widget system
 
-## 📋 Requirements
-
-- Linux-based operating system (Ubuntu, Debian, CentOS, etc.)
-- Bash 4.0 or higher
-- Root or sudo access for installation
-
-## 🛠️ Compatibility
-
-Tested on:
-- ✅ Ubuntu 24.04 LTS
-- ✅ Ubuntu 22.04 LTS
-- ✅ Ubuntu 20.04 LTS
-- ✅ Debian 12
-- ✅ Debian 11
-- ⚠️ CentOS/RHEL (should work, but not extensively tested)
-- ⚠️ Arch Linux (should work, but not extensively tested)
-
-## 📝 Changelog
-
-### Version 1.0.0 (Current)
-- Initial release
-- Multiple ASCII art styles
-- 6 color themes
-- Docker integration
-- Service monitoring
-- Customization helper
-- Easy installation/uninstallation
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
 ## 🙏 Acknowledgments
 
-- Created by [Joel](https://github.com/ahmetakifcetin) and the open-source community
-- Inspired by the need for beautiful, informative server greetings
-- Special thanks to all contributors
+- Created by [Joel](https://github.com/ahmetakifcetin)
+- Inspired by the need for beautiful, professional server greetings
+- Special thanks to the open-source community
+
+---
 
 ## 📞 Support
 
-- 🐛 [Report a Bug](https://github.com/ahmetakifcetin/CassToolSSH/issues)
-- 💡 [Request a Feature](https://github.com/ahmetakifcetin/CassToolSSH/issues)
-- 💬 [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)
+- 🐛 [Report Bug](https://github.com/ahmetakifcetin/CassMarrow/issues/new?template=bug_report.md)
+- 💡 [Request Feature](https://github.com/ahmetakifcetin/CassMarrow/issues/new?template=feature_request.md)
+- 💬 [Discussions](https://github.com/ahmetakifcetin/CassMarrow/discussions)
+
+---
 
 ## 🌟 Show Your Support
 
-If you find CassToolSSH useful, please consider:
-- ⭐ Starring the repository
-- 🐦 Sharing on social media
-- 🤝 Contributing to the project
+If you find CassMarrow useful:
+- ⭐ Star the repository
+- 🐦 Share on social media
+- 🤝 Contribute to the project
 
 ---
 
 **Made with ❤️ for the self-hosting community**
 
-[GitHub](https://github.com/ahmetakifcetin/CassToolSSH) • [Issues](https://github.com/ahmetakifcetin/CassToolSSH/issues) • [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)
+[GitHub](https://github.com/ahmetakifcetin/CassMarrow) • [Issues](https://github.com/ahmetakifcetin/CassMarrow/issues) • [Discussions](https://github.com/ahmetakifcetin/CassMarrow/discussions)
