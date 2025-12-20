@@ -460,9 +460,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 🐛 [Report Bug](https://github.com/ahmetakifcetin/CassMarrow/issues/new?template=bug_report.md)
-- 💡 [Request Feature](https://github.com/ahmetakifcetin/CassMarrow/issues/new?template=feature_request.md)
-- 💬 [Discussions](https://github.com/ahmetakifcetin/CassMarrow/discussions)
+- 🐛 [Report Bug](https://github.com/ahmetakifcetin/CassToolSSH/issues/new?template=bug_report.md)
+- 💡 [Request Feature](https://github.com/ahmetakifcetin/CassToolSSH/issues/new?template=feature_request.md)
+- 💬 [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)
 
 ---
 
@@ -477,4 +477,4 @@ If you find CassMarrow useful:
 
 **Made with ❤️ for the self-hosting community**
 
-[GitHub](https://github.com/ahmetakifcetin/CassMarrow) • [Issues](https://github.com/ahmetakifcetin/CassMarrow/issues) • [Discussions](https://github.com/ahmetakifcetin/CassMarrow/discussions)
+[GitHub](https://github.com/ahmetakifcetin/CassToolSSH) • [Issues](https://github.com/ahmetakifcetin/CassToolSSH/issues) • [Discussions](https://github.com/ahmetakifcetin/CassToolSSH/discussions)

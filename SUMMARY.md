@@ -197,7 +197,7 @@ git init
 git add .
 git commit -m "🎨 CassMarrow v2.0 - 16 Gradient Themes + 3 Styles"
 git branch -M main
-git remote add origin https://github.com/ahmetakifcetin/CassMarrow.git
+git remote add origin https://github.com/ahmetakifcetin/CassToolSSH.git
 git push -u origin main
 ```
 
@@ -295,7 +295,7 @@ Toplam: 16 tema × 3 stil = **48 screenshot**
 ## 📞 İletişim
 
 Sorular, öneriler veya katkılar için:
-- GitHub Issues: https://github.com/ahmetakifcetin/CassMarrow/issues
-- GitHub Discussions: https://github.com/ahmetakifcetin/CassMarrow/discussions
+- GitHub Issues: https://github.com/ahmetakifcetin/CassToolSSH/issues
+- GitHub Discussions: https://github.com/ahmetakifcetin/CassToolSSH/discussions
 
 **Made with ❤️ by Joel**

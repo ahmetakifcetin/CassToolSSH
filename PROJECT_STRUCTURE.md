@@ -94,7 +94,7 @@ CassMarrow/
 
 ```bash
 # Repository'yi klonla
-git clone https://github.com/ahmetakifcetin/CassMarrow.git
+git clone https://github.com/ahmetakifcetin/CassToolSSH.git
 cd CassMarrow
 
 # Test et

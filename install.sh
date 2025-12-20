@@ -920,7 +920,7 @@ show_completion() {
     fi
     
     echo ""
-    echo -e "${DIM}Daha fazla bilgi: https://github.com/ahmetakifcetin/CassMarrow${NC}"
+    echo -e "${DIM}Daha fazla bilgi: https://github.com/ahmetakifcetin/CassToolSSH${NC}"
     echo ""
 }
 
