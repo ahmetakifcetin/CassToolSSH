@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# CassToolSSH - Beautiful Server Greeting System
+# CassMarrow - Beautiful Server Greeting System
 # Version: 1.1.0
 # Author: Joel & Community
 # License: MIT
@@ -26,14 +26,14 @@ fi
 
 # Banner
 show_banner() {
-    echo -e "${PURPLE}${BOLD}"
+    echo -e "${CYAN}${BOLD}"
     cat << "EOF"
- ██████╗ █████╗ ███████╗███████╗████████╗ ██████╗  ██████╗ ██╗     ███████╗███████╗██╗  ██╗
-██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝██╔════╝██║  ██║
-██║     ███████║███████╗███████╗   ██║   ██║   ██║██║   ██║██║     ███████╗███████╗███████║
-██║     ██╔══██║╚════██║╚════██║   ██║   ██║   ██║██║   ██║██║     ╚════██║╚════██║██╔══██║
-╚██████╗██║  ██║███████║███████║   ██║   ╚██████╔╝╚██████╔╝███████╗███████║███████║██║  ██║
- ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
+ ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
+██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║
+██║     ███████║███████╗███████╗██╔████╔██║███████║██████╔╝██████╔╝██║   ██║██║ █╗ ██║
+██║     ██╔══██║╚════██║╚════██║██║╚██╔╝██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║███╗██║
+╚██████╗██║  ██║███████║███████║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║╚██████╔╝╚███╔███╔╝
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝
 EOF
     echo -e "${NC}"
     echo -e "${CYAN}${BOLD}Beautiful Server Greeting System${NC}"
@@ -95,8 +95,8 @@ installation_wizard() {
         INSTALL_MODE="quick"
         ENABLE_MOTD="true"
         SELECTED_THEME="cyan"
-        SELECTED_STYLE="CassToolSSH"
-        SYSTEM_NAME="CassToolSSH Infrastructure"
+        SELECTED_STYLE="cassmarrow"
+        SYSTEM_NAME="Production Infrastructure"
         return
     fi
     
@@ -104,7 +104,7 @@ installation_wizard() {
     show_banner
     
     echo -e "${CYAN}${BOLD}═══════════════════════════════════════════════════════════${NC}"
-    echo -e "${CYAN}${BOLD}              CassToolSSH Kurulum Sihirbazı                ${NC}"
+    echo -e "${CYAN}${BOLD}              CassMarrow Kurulum Sihirbazı                  ${NC}"
     echo -e "${CYAN}${BOLD}═══════════════════════════════════════════════════════════${NC}"
     echo ""
     echo -e "${YELLOW}Kurulum tipini seçin:${NC}"
@@ -134,8 +134,8 @@ installation_wizard() {
         echo -e "${GREEN}[✓]${NC} Hızlı kurulum seçildi"
         ENABLE_MOTD="true"
         SELECTED_THEME="cyan"
-        SELECTED_STYLE="CassToolSSH"
-        SYSTEM_NAME="CassToolSSH Infrastructure"
+        SELECTED_STYLE="cassmarrow"
+        SYSTEM_NAME="Production Infrastructure"
     else
         custom_setup
     fi
@@ -149,7 +149,7 @@ custom_setup() {
     
     # 1. MOTD Enable/Disable
     echo -e "${YELLOW}1. SSH girişinde otomatik gösterilsin mi?${NC}"
-    echo -e "   ${DIM}(Her SSH bağlantısında CassToolSSH karşılama ekranı gösterilir)${NC}"
+    echo -e "   ${DIM}(Her SSH bağlantısında CassMarrow karşılama ekranı gösterilir)${NC}"
     while true; do
         response=$(ask_user "   [E/h]: " "E")
         case $response in
@@ -159,7 +159,7 @@ custom_setup() {
                 ;;
             [Hh]*)
                 ENABLE_MOTD="false"
-                echo -e "   ${DIM}Not: Daha sonra 'casstool enable' komutuyla aktifleştirebilirsiniz${NC}"
+                echo -e "   ${DIM}Not: Daha sonra 'cassmarrow enable' komutuyla aktifleştirebilirsiniz${NC}"
                 break
                 ;;
             *)
@@ -190,14 +190,14 @@ custom_setup() {
     # 3. ASCII Style
     echo ""
     echo -e "${YELLOW}3. ASCII art stilini seçin:${NC}"
-    echo -e "   ${GREEN}1)${NC} CassToolSSH ${DIM}(Varsayılan - tam logo)${NC}"
-    echo -e "   ${GREEN}2)${NC} Minimal ${DIM}(Basit kutu tasarımı)${NC}"
+    echo -e "   ${GREEN}1)${NC} CassMarrow ${DIM}(Varsayılan - tam logo)${NC}"
+    echo -e "   ${GREEN}2)${NC} Minimal ${DIM}(Basit tasarım)${NC}"
     echo -e "   ${GREEN}3)${NC} Blocks ${DIM}(Modern blok karakterler)${NC}"
     echo -e "   ${GREEN}4)${NC} Simple ${DIM}(Düz metin)${NC}"
     while true; do
         response=$(ask_user "   Seçim [1-4]: " "1")
         case $response in
-            1|"") SELECTED_STYLE="CassToolSSH"; break ;;
+            1|"") SELECTED_STYLE="cassmarrow"; break ;;
             2) SELECTED_STYLE="minimal"; break ;;
             3) SELECTED_STYLE="blocks"; break ;;
             4) SELECTED_STYLE="simple"; break ;;
@@ -209,9 +209,9 @@ custom_setup() {
     # 4. System Name
     echo ""
     echo -e "${YELLOW}4. Sistem adı:${NC}"
-    response=$(ask_user "   [CassToolSSH Infrastructure]: " "CassToolSSH Infrastructure")
+    response=$(ask_user "   [Production Infrastructure]: " "Production Infrastructure")
     if [ -z "$response" ]; then
-        SYSTEM_NAME="CassToolSSH Infrastructure"
+        SYSTEM_NAME="Production Infrastructure"
     else
         SYSTEM_NAME="$response"
     fi
@@ -224,12 +224,12 @@ custom_setup() {
 
 # Create configuration
 create_config() {
-    local config_file="/etc/CassToolSSH.conf"
+    local config_file="/etc/cassmarrow.conf"
     
     echo -e "${BLUE}[→]${NC} Yapılandırma dosyası oluşturuluyor..."
     
     cat > "$config_file" << EOF
-# CassToolSSH Configuration File
+# CassMarrow Configuration File
 # Customize your server greeting here
 
 # Display Settings
@@ -252,11 +252,11 @@ CUSTOM_MESSAGE=""
 # Color Theme (options: blue, green, purple, cyan, red, yellow)
 COLOR_THEME="$SELECTED_THEME"
 
-# ASCII Art Style (options: CassToolSSH, minimal, blocks, simple)
+# ASCII Art Style (options: cassmarrow, minimal, blocks, simple)
 ASCII_STYLE="$SELECTED_STYLE"
 
 # Services to monitor (space-separated)
-MONITORED_SERVICES="nginx docker postgresql mysql"
+MONITORED_SERVICES="nginx docker postgresql mysql redis"
 
 # Custom header text (leave empty for default)
 CUSTOM_HEADER=""
@@ -270,7 +270,7 @@ EOF
 
 # Create MOTD script
 create_motd_script() {
-    local install_dir="/opt/CassToolSSH"
+    local install_dir="/opt/cassmarrow"
     
     echo -e "${BLUE}[→]${NC} Kurulum dizini oluşturuluyor..."
     mkdir -p "$install_dir"
@@ -281,8 +281,8 @@ create_motd_script() {
 #!/bin/bash
 
 # Load configuration
-if [ -f /etc/CassToolSSH.conf ]; then
-    source /etc/CassToolSSH.conf
+if [ -f /etc/cassmarrow.conf ]; then
+    source /etc/cassmarrow.conf
 else
     SHOW_HOSTNAME=true
     SHOW_KERNEL=true
@@ -294,11 +294,11 @@ else
     SHOW_DOCKER=true
     SHOW_SERVICES=true
     SHOW_LAST_LOGIN=true
-    SYSTEM_NAME="CassToolSSH Infrastructure"
+    SYSTEM_NAME="Production Infrastructure"
     SYSTEM_VERSION="v1.0"
     COLOR_THEME="cyan"
-    ASCII_STYLE="CassToolSSH"
-    MONITORED_SERVICES="nginx docker postgresql mysql"
+    ASCII_STYLE="cassmarrow"
+    MONITORED_SERVICES="nginx docker postgresql mysql redis"
     MOTD_ENABLED="true"
 fi
 
@@ -307,75 +307,87 @@ if [ "$MOTD_ENABLED" != "true" ]; then
     exit 0
 fi
 
-# Color definitions
+# Color definitions based on theme
 case $COLOR_THEME in
     blue)
-        PRIMARY='\033[0;34m'
-        BRIGHT='\033[1;34m'
+        PRIMARY='\033[38;5;33m'
+        BRIGHT='\033[38;5;39m'
+        ACCENT='\033[38;5;27m'
         ;;
     green)
-        PRIMARY='\033[0;32m'
-        BRIGHT='\033[1;32m'
+        PRIMARY='\033[38;5;34m'
+        BRIGHT='\033[38;5;40m'
+        ACCENT='\033[38;5;28m'
         ;;
     purple)
-        PRIMARY='\033[0;35m'
-        BRIGHT='\033[1;35m'
+        PRIMARY='\033[38;5;135m'
+        BRIGHT='\033[38;5;141m'
+        ACCENT='\033[38;5;129m'
         ;;
     cyan)
-        PRIMARY='\033[0;36m'
-        BRIGHT='\033[1;36m'
+        PRIMARY='\033[38;5;51m'
+        BRIGHT='\033[38;5;87m'
+        ACCENT='\033[38;5;45m'
         ;;
     red)
-        PRIMARY='\033[0;31m'
-        BRIGHT='\033[1;31m'
+        PRIMARY='\033[38;5;196m'
+        BRIGHT='\033[38;5;202m'
+        ACCENT='\033[38;5;160m'
         ;;
     yellow)
-        PRIMARY='\033[0;33m'
-        BRIGHT='\033[1;33m'
+        PRIMARY='\033[38;5;220m'
+        BRIGHT='\033[38;5;226m'
+        ACCENT='\033[38;5;214m'
         ;;
     *)
-        PRIMARY='\033[0;36m'
-        BRIGHT='\033[1;36m'
+        PRIMARY='\033[38;5;51m'
+        BRIGHT='\033[38;5;87m'
+        ACCENT='\033[38;5;45m'
         ;;
 esac
 
-SECONDARY='\033[0;37m'
-DIM='\033[2m'
+WHITE='\033[38;5;255m'
+GRAY='\033[38;5;245m'
+DIM='\033[38;5;240m'
 BOLD='\033[1m'
 NC='\033[0m'
 
 # ASCII Art
 print_ascii_art() {
     case $ASCII_STYLE in
-        CassToolSSH)
+        cassmarrow)
             echo -e "${BRIGHT}"
             cat << "EOF"
- ██████╗ █████╗ ███████╗███████╗████████╗ ██████╗  ██████╗ ██╗     ███████╗███████╗██╗  ██╗
-██╔════╝██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝██╔════╝██║  ██║
-██║     ███████║███████╗███████╗   ██║   ██║   ██║██║   ██║██║     ███████╗███████╗███████║
-██║     ██╔══██║╚════██║╚════██║   ██║   ██║   ██║██║   ██║██║     ╚════██║╚════██║██╔══██║
-╚██████╗██║  ██║███████║███████║   ██║   ╚██████╔╝╚██████╔╝███████╗███████║███████║██║  ██║
- ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
+ ██████╗ █████╗ ███████╗███████╗███╗   ███╗ █████╗ ██████╗ ██████╗  ██████╗ ██╗    ██╗
+██╔════╝██╔══██╗██╔════╝██╔════╝████╗ ████║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║    ██║
+██║     ███████║███████╗███████╗██╔████╔██║███████║██████╔╝██████╔╝██║   ██║██║ █╗ ██║
+██║     ██╔══██║╚════██║╚════██║██║╚██╔╝██║██╔══██║██╔══██╗██╔══██╗██║   ██║██║███╗██║
+╚██████╗██║  ██║███████║███████║██║ ╚═╝ ██║██║  ██║██║  ██║██║  ██║╚██████╔╝╚███╔███╔╝
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝
 EOF
             ;;
         minimal)
             echo -e "${BRIGHT}"
-            echo "╔═══════════════════════════════════════╗"
-            echo "║        C A S S T O O L S S H          ║"
-            echo "╚═══════════════════════════════════════╝"
+            cat << "EOF"
+┌────────────────────────────────────────────────────────────────────────────────┐
+│                              C A S S M A R R O W                               │
+└────────────────────────────────────────────────────────────────────────────────┘
+EOF
             ;;
         blocks)
             echo -e "${BRIGHT}"
             cat << "EOF"
-█▀▀ ▄▀█ █▀ █▀ ▀█▀ █▀█ █▀█ █   █▀ █▀ █ █
-█▄▄ █▀█ ▄█ ▄█  █  █▄█ █▄█ █▄▄ ▄█ ▄█ █▀█
+█▀▀ ▄▀█ █▀ █▀ █▀▄▀█ ▄▀█ █▀█ █▀█ █▀█ █ █ █
+█▄▄ █▀█ ▄█ ▄█ █ ▀ █ █▀█ █▀▄ █▀▄ █▄█ ▀▄▀▄▀
 EOF
             ;;
         simple)
             echo -e "${BRIGHT}"
-            echo "=================================="
-            echo "      C A S S T O O L S S H"
-            echo "=================================="
+            cat << "EOF"
+════════════════════════════════════════════
+        C A S S M A R R O W
+════════════════════════════════════════════
+EOF
             ;;
     esac
     echo -e "${NC}"
@@ -391,11 +403,28 @@ get_load() {
 }
 
 get_memory() {
-    free -m | awk 'NR==2{printf "%dMB used / %dMB total (%.1f%%)", $3, $2, $3*100/$2}'
+    free -m | awk 'NR==2{
+        total=$2
+        used=$3
+        percent=used*100/total
+        printf "%d MB / %d MB", used, total
+        if (percent >= 90) printf " (⚠ %.1f%%)", percent
+        else if (percent >= 75) printf " (%.1f%%)", percent
+        else printf " (%.1f%%)", percent
+    }'
 }
 
 get_disk() {
-    df -h / | awk 'NR==2{printf "%s used / %s total (%s)", $3, $2, $5}'
+    df -h / | awk 'NR==2{
+        gsub("%","",$5)
+        used=$3
+        total=$2
+        percent=$5
+        printf "%s / %s", used, total
+        if (percent >= 90) printf " (⚠ %s%%)", percent
+        else if (percent >= 75) printf " (%s%%)", percent
+        else printf " (%s%%)", percent
+    }'
 }
 
 get_ip() {
@@ -408,92 +437,119 @@ get_public_ip() {
 
 get_docker_status() {
     if command -v docker &> /dev/null; then
-        if systemctl is-active --quiet docker; then
+        if systemctl is-active --quiet docker 2>/dev/null; then
             CONTAINERS=$(docker ps -q 2>/dev/null | wc -l)
-            echo -e "${PRIMARY}●${NC} Running (${CONTAINERS} containers)"
+            if [ "$CONTAINERS" -gt 0 ]; then
+                echo -e "${PRIMARY}●${NC} Running ${DIM}($CONTAINERS containers)${NC}"
+            else
+                echo -e "${GRAY}●${NC} Running ${DIM}(no containers)${NC}"
+            fi
         else
-            echo -e "\033[0;31m●${NC} Stopped"
+            echo -e "${RED}●${NC} Stopped"
         fi
     else
-        echo -e "${DIM}Not installed${NC}"
+        echo -e "${DIM}not installed${NC}"
     fi
 }
 
 check_service() {
     local service=$1
-    if systemctl list-unit-files | grep -q "^${service}.service"; then
-        if systemctl is-active --quiet "$service"; then
-            echo -e "${PRIMARY}●${NC} ${service}"
+    if systemctl list-unit-files 2>/dev/null | grep -q "^${service}.service"; then
+        if systemctl is-active --quiet "$service" 2>/dev/null; then
+            echo -e "  ${PRIMARY}●${NC} ${service}"
         else
-            echo -e "\033[0;31m●${NC} ${service}"
+            echo -e "  ${RED}●${NC} ${service} ${DIM}(stopped)${NC}"
         fi
     fi
 }
 
 get_last_login() {
-    last -n 1 -F 2>/dev/null | head -1
+    last -n 1 -F 2>/dev/null | head -1 | awk '{
+        if (NF >= 10) {
+            printf "%s from %s on %s %s %s at %s", $1, $3, $5, $6, $7, $8
+        } else if (NF >= 7) {
+            printf "%s from %s on %s %s %s", $1, $3, $5, $6, $7
+        } else {
+            print $0
+        }
+    }'
+}
+
+get_status_indicator() {
+    local load=$(cat /proc/loadavg | awk '{print $1}')
+    local cores=$(nproc)
+    local load_percent=$(echo "$load $cores" | awk '{printf "%.0f", ($1/$2)*100}')
+    
+    if [ "$load_percent" -ge 90 ]; then
+        echo -e "${RED}● HEAVY LOAD${NC}"
+    elif [ "$load_percent" -ge 70 ]; then
+        echo -e "${YELLOW}● MODERATE${NC}"
+    else
+        echo -e "${PRIMARY}● OPTIMAL${NC}"
+    fi
 }
 
 # Main display
 clear
+echo ""
 print_ascii_art
 
-# Header
-if [ -n "$CUSTOM_HEADER" ]; then
-    echo -e "${BRIGHT}${CUSTOM_HEADER}${NC}"
-else
-    echo -e "${PRIMARY}${BOLD}${SYSTEM_NAME}${NC}"
-fi
-echo -e "${SECONDARY}Version: ${SYSTEM_VERSION}${NC}"
-echo -e "${SECONDARY}Status: ${PRIMARY}[ ${BOLD}ONLINE${NC}${PRIMARY} ]${NC}"
+# System header with status
+echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${DIM}│${NC}  ${GRAY}v${SYSTEM_VERSION}${NC}  ${DIM}│${NC}  $(get_status_indicator)"
+
+echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
 echo ""
 
-# System Information
-echo -e "${BRIGHT}═══════════════════════════════════════════════════════════════════${NC}"
-
-if [ "$SHOW_HOSTNAME" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Host:${NC}           $(hostname -f 2>/dev/null || hostname)"
+# System Information - Two column layout
+if [ "$SHOW_HOSTNAME" = true ] || [ "$SHOW_KERNEL" = true ]; then
+    printf "${GRAY}%-20s${NC} ${WHITE}%-35s${NC}" "System" "$(hostname -f 2>/dev/null || hostname)"
+    if [ "$SHOW_KERNEL" = true ]; then
+        printf "  ${GRAY}Kernel${NC} ${WHITE}%s${NC}\n" "$(uname -r)"
+    else
+        echo ""
+    fi
 fi
 
-if [ "$SHOW_KERNEL" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Kernel:${NC}         $(uname -r)"
-fi
-
-if [ "$SHOW_UPTIME" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Uptime:${NC}         $(get_uptime)"
-fi
-
-if [ "$SHOW_LOAD" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Load Average:${NC}   $(get_load)"
+if [ "$SHOW_UPTIME" = true ] || [ "$SHOW_LOAD" = true ]; then
+    printf "${GRAY}%-20s${NC} ${WHITE}%-35s${NC}" "Uptime" "$(get_uptime)"
+    if [ "$SHOW_LOAD" = true ]; then
+        printf "  ${GRAY}Load${NC} ${WHITE}%s${NC}\n" "$(get_load)"
+    else
+        echo ""
+    fi
 fi
 
 if [ "$SHOW_MEMORY" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Memory:${NC}         $(get_memory)"
+    printf "${GRAY}%-20s${NC} ${WHITE}%s${NC}\n" "Memory" "$(get_memory)"
 fi
 
 if [ "$SHOW_DISK" = true ]; then
-    echo -e "${PRIMARY}${BOLD}Disk /:${NC}         $(get_disk)"
+    printf "${GRAY}%-20s${NC} ${WHITE}%s${NC}\n" "Disk (/)" "$(get_disk)"
 fi
 
 if [ "$SHOW_IP" = true ]; then
     LOCAL_IP=$(get_ip)
     PUBLIC_IP=$(get_public_ip)
-    echo -e "${PRIMARY}${BOLD}Local IP:${NC}       ${LOCAL_IP}"
-    if [ "$PUBLIC_IP" != "N/A" ]; then
-        echo -e "${PRIMARY}${BOLD}Public IP:${NC}      ${PUBLIC_IP}"
+    if [ -n "$LOCAL_IP" ]; then
+        printf "${GRAY}%-20s${NC} ${WHITE}%-35s${NC}" "Local IP" "$LOCAL_IP"
+        if [ "$PUBLIC_IP" != "N/A" ]; then
+            printf "  ${GRAY}Public${NC} ${WHITE}%s${NC}\n" "$PUBLIC_IP"
+        else
+            echo ""
+        fi
     fi
 fi
 
 # Docker Status
 if [ "$SHOW_DOCKER" = true ]; then
     echo ""
-    echo -e "${PRIMARY}${BOLD}Docker:${NC}         $(get_docker_status)"
+    printf "${GRAY}%-20s${NC} %s\n" "Docker" "$(get_docker_status)"
 fi
 
 # Services Status
 if [ "$SHOW_SERVICES" = true ] && [ -n "$MONITORED_SERVICES" ]; then
     echo ""
-    echo -e "${PRIMARY}${BOLD}Services:${NC}"
+    echo -e "${GRAY}Services${NC}"
     for service in $MONITORED_SERVICES; do
         check_service "$service"
     done
@@ -502,18 +558,17 @@ fi
 # Last Login
 if [ "$SHOW_LAST_LOGIN" = true ]; then
     echo ""
-    echo -e "${PRIMARY}${BOLD}Last Login:${NC}"
-    echo -e "${SECONDARY}$(get_last_login)${NC}"
+    echo -e "${GRAY}Last Login${NC}"
+    echo -e "  ${DIM}$(get_last_login)${NC}"
 fi
 
 echo ""
-echo -e "${BRIGHT}═══════════════════════════════════════════════════════════════════${NC}"
+echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
 
 # Custom message
 if [ -n "$CUSTOM_MESSAGE" ]; then
     echo ""
-    echo -e "${SECONDARY}${CUSTOM_MESSAGE}${NC}"
-    echo ""
+    echo -e "${ACCENT}${CUSTOM_MESSAGE}${NC}"
 fi
 
 echo ""
@@ -545,17 +600,16 @@ setup_motd() {
     echo "" > /etc/motd 2>/dev/null || true
     rm -f /etc/motd.dynamic 2>/dev/null || true
     
-    # Create CassToolSSH MOTD hook
-    cat > /etc/update-motd.d/00-CassToolSSH << 'MOTDEOF'
+    # Create CassMarrow MOTD hook
+    cat > /etc/update-motd.d/00-cassmarrow << 'MOTDEOF'
 #!/bin/bash
-/opt/CassToolSSH/motd.sh
+/opt/cassmarrow/motd.sh
 MOTDEOF
     
-    chmod +x /etc/update-motd.d/00-CassToolSSH
+    chmod +x /etc/update-motd.d/00-cassmarrow
     
     # Ensure SSH is configured to show MOTD
     if [ -f /etc/ssh/sshd_config ]; then
-        # Check if PrintMotd is already configured
         if grep -q "^PrintMotd" /etc/ssh/sshd_config; then
             sed -i 's/^PrintMotd.*/PrintMotd yes/' /etc/ssh/sshd_config
         else
@@ -567,13 +621,13 @@ MOTDEOF
 }
 
 # Create management tool
-create_casstool_command() {
+create_cassmarrow_command() {
     echo -e "${BLUE}[→]${NC} Yönetim komutu oluşturuluyor..."
     
-    cat > /usr/local/bin/casstool << 'TOOLEOF'
+    cat > /usr/local/bin/cassmarrow << 'TOOLEOF'
 #!/bin/bash
 
-# CassToolSSH Management Tool
+# CassMarrow Management Tool
 
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
@@ -582,23 +636,23 @@ RED='\033[0;31m'
 NC='\033[0m'
 BOLD='\033[1m'
 
-CONFIG="/etc/CassToolSSH.conf"
+CONFIG="/etc/cassmarrow.conf"
 
 show_usage() {
-    echo -e "${CYAN}${BOLD}CassToolSSH Yönetim Aracı${NC}"
+    echo -e "${CYAN}${BOLD}CassMarrow Yönetim Aracı${NC}"
     echo ""
-    echo "Kullanım: casstool <komut>"
+    echo "Kullanım: cassmarrow <komut>"
     echo ""
     echo "Komutlar:"
-    echo -e "  ${GREEN}enable${NC}      - CassToolSSH'u aktifleştir"
-    echo -e "  ${GREEN}disable${NC}     - CassToolSSH'u devre dışı bırak"
+    echo -e "  ${GREEN}enable${NC}      - CassMarrow'u aktifleştir"
+    echo -e "  ${GREEN}disable${NC}     - CassMarrow'u devre dışı bırak"
     echo -e "  ${GREEN}status${NC}      - Durum bilgisi göster"
     echo -e "  ${GREEN}config${NC}      - Yapılandırmayı düzenle"
     echo -e "  ${GREEN}customize${NC}   - İnteraktif özelleştirme"
     echo -e "  ${GREEN}test${NC}        - Karşılama ekranını test et"
     echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir"
     echo -e "  ${GREEN}style${NC}       - Hızlı stil değiştir"
-    echo -e "  ${GREEN}uninstall${NC}   - CassToolSSH'u kaldır"
+    echo -e "  ${GREEN}uninstall${NC}   - CassMarrow'u kaldır"
     echo ""
 }
 
@@ -609,7 +663,7 @@ enable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="false"/MOTD_ENABLED="true"/' "$CONFIG"
-    echo -e "${GREEN}✓ CassToolSSH aktifleştirildi${NC}"
+    echo -e "${GREEN}✓ CassMarrow aktifleştirildi${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilecek${NC}"
 }
 
@@ -620,19 +674,19 @@ disable_motd() {
     fi
     
     sed -i 's/MOTD_ENABLED="true"/MOTD_ENABLED="false"/' "$CONFIG"
-    echo -e "${YELLOW}! CassToolSSH devre dışı bırakıldı${NC}"
+    echo -e "${YELLOW}! CassMarrow devre dışı bırakıldı${NC}"
     echo -e "${CYAN}SSH girişlerinde karşılama ekranı gösterilmeyecek${NC}"
 }
 
 show_status() {
     if [ ! -f "$CONFIG" ]; then
-        echo -e "${RED}CassToolSSH kurulu değil${NC}"
+        echo -e "${RED}CassMarrow kurulu değil${NC}"
         exit 1
     fi
     
     source "$CONFIG"
     
-    echo -e "${CYAN}${BOLD}CassToolSSH Durum${NC}"
+    echo -e "${CYAN}${BOLD}CassMarrow Durum${NC}"
     echo -e "${CYAN}═══════════════════════════════════${NC}"
     
     if [ "$MOTD_ENABLED" = "true" ]; then
@@ -667,18 +721,18 @@ change_theme() {
     
     sed -i "s/COLOR_THEME=\".*\"/COLOR_THEME=\"$theme\"/" "$CONFIG"
     echo -e "${GREEN}✓ Tema değiştirildi: $theme${NC}"
-    /opt/CassToolSSH/motd.sh
+    /opt/cassmarrow/motd.sh
 }
 
 change_style() {
     echo -e "${CYAN}Mevcut Stiller:${NC}"
-    echo "1) CassToolSSH  2) minimal"
+    echo "1) cassmarrow  2) minimal"
     echo "3) blocks      4) simple"
     echo ""
     read -p "Stil seçin [1-4]: " choice
     
     case $choice in
-        1) style="CassToolSSH" ;;
+        1) style="cassmarrow" ;;
         2) style="minimal" ;;
         3) style="blocks" ;;
         4) style="simple" ;;
@@ -687,7 +741,7 @@ change_style() {
     
     sed -i "s/ASCII_STYLE=\".*\"/ASCII_STYLE=\"$style\"/" "$CONFIG"
     echo -e "${GREEN}✓ Stil değiştirildi: $style${NC}"
-    /opt/CassToolSSH/motd.sh
+    /opt/cassmarrow/motd.sh
 }
 
 case "$1" in
@@ -704,10 +758,10 @@ case "$1" in
         ${EDITOR:-nano} "$CONFIG"
         ;;
     customize)
-        /opt/CassToolSSH/customize.sh
+        /opt/cassmarrow/customize.sh
         ;;
     test)
-        /opt/CassToolSSH/motd.sh
+        /opt/cassmarrow/motd.sh
         ;;
     theme)
         change_theme
@@ -716,7 +770,7 @@ case "$1" in
         change_style
         ;;
     uninstall)
-        /opt/CassToolSSH/uninstall.sh
+        /opt/cassmarrow/uninstall.sh
         ;;
     *)
         show_usage
@@ -725,21 +779,21 @@ case "$1" in
 esac
 TOOLEOF
 
-    chmod +x /usr/local/bin/casstool
-    echo -e "${GREEN}[✓]${NC} 'casstool' komutu oluşturuldu"
+    chmod +x /usr/local/bin/cassmarrow
+    echo -e "${GREEN}[✓]${NC} 'cassmarrow' komutu oluşturuldu"
 }
 
 # Create helper scripts
 create_helper_scripts() {
-    local install_dir="/opt/CassToolSSH"
+    local install_dir="/opt/cassmarrow"
     
     # Customize script
     cat > "$install_dir/customize.sh" << 'CUSTOMEOF'
 #!/bin/bash
 
-CONFIG_FILE="/etc/CassToolSSH.conf"
+CONFIG_FILE="/etc/cassmarrow.conf"
 
-echo "CassToolSSH Özelleştirme Yardımcısı"
+echo "CassMarrow Özelleştirme Yardımcısı"
 echo "===================================="
 echo ""
 
@@ -768,7 +822,7 @@ while true; do
             echo "Tema güncellendi!"
             ;;
         2)
-            echo "Mevcut stiller: CassToolSSH, minimal, blocks, simple"
+            echo "Mevcut stiller: cassmarrow, minimal, blocks, simple"
             read -p "Stil girin: " style
             sed -i "s/ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" "$CONFIG_FILE"
             echo "Stil güncellendi!"
@@ -787,7 +841,7 @@ while true; do
             ${EDITOR:-nano} "$CONFIG_FILE"
             ;;
         6)
-            /opt/CassToolSSH/motd.sh
+            /opt/cassmarrow/motd.sh
             ;;
         7)
             exit 0
@@ -805,7 +859,7 @@ CUSTOMEOF
     cat > "$install_dir/uninstall.sh" << 'UNINSTALLEOF'
 #!/bin/bash
 
-echo "CassToolSSH kaldırılıyor..."
+echo "CassMarrow kaldırılıyor..."
 
 # Restore backups
 if [ -d /etc/update-motd.d.backup ]; then
@@ -815,12 +869,12 @@ if [ -d /etc/update-motd.d.backup ]; then
     rm -rf /etc/update-motd.d.backup
 fi
 
-# Remove CassToolSSH files
-rm -rf /opt/CassToolSSH
-rm -f /etc/CassToolSSH.conf
-rm -f /usr/local/bin/casstool
+# Remove CassMarrow files
+rm -rf /opt/cassmarrow
+rm -f /etc/cassmarrow.conf
+rm -f /usr/local/bin/cassmarrow
 
-echo "CassToolSSH kaldırıldı"
+echo "CassMarrow kaldırıldı"
 UNINSTALLEOF
     
     chmod +x "$install_dir/uninstall.sh"
@@ -845,28 +899,28 @@ show_completion() {
     echo ""
     
     echo -e "${CYAN}${BOLD}Hızlı Komutlar:${NC}"
-    echo -e "  ${YELLOW}casstool status${NC}      - Durum bilgisi"
-    echo -e "  ${YELLOW}casstool enable${NC}      - Aktifleştir"
-    echo -e "  ${YELLOW}casstool disable${NC}     - Devre dışı bırak"
-    echo -e "  ${YELLOW}casstool test${NC}        - Test et"
-    echo -e "  ${YELLOW}casstool theme${NC}       - Tema değiştir"
-    echo -e "  ${YELLOW}casstool config${NC}      - Yapılandırmayı düzenle"
+    echo -e "  ${YELLOW}cassmarrow status${NC}      - Durum bilgisi"
+    echo -e "  ${YELLOW}cassmarrow enable${NC}      - Aktifleştir"
+    echo -e "  ${YELLOW}cassmarrow disable${NC}     - Devre dışı bırak"
+    echo -e "  ${YELLOW}cassmarrow test${NC}        - Test et"
+    echo -e "  ${YELLOW}cassmarrow theme${NC}       - Tema değiştir"
+    echo -e "  ${YELLOW}cassmarrow config${NC}      - Yapılandırmayı düzenle"
     echo ""
     
     echo -e "${CYAN}${BOLD}Dosya Konumları:${NC}"
-    echo -e "  Config:  ${YELLOW}/etc/CassToolSSH.conf${NC}"
-    echo -e "  Scripts: ${YELLOW}/opt/CassToolSSH/${NC}"
+    echo -e "  Config:  ${YELLOW}/etc/cassmarrow.conf${NC}"
+    echo -e "  Scripts: ${YELLOW}/opt/cassmarrow/${NC}"
     echo ""
     
     if [ "$ENABLE_MOTD" = "true" ]; then
-        echo -e "${GREEN}${BOLD}SSH bağlantılarında CassToolSSH karşılama ekranı gösterilecek!${NC}"
-        echo -e "${CYAN}Şimdi test etmek için: ${YELLOW}casstool test${NC}"
+        echo -e "${GREEN}${BOLD}SSH bağlantılarında CassMarrow karşılama ekranı gösterilecek!${NC}"
+        echo -e "${CYAN}Şimdi test etmek için: ${YELLOW}cassmarrow test${NC}"
     else
-        echo -e "${YELLOW}MOTD devre dışı. Aktifleştirmek için: ${BOLD}casstool enable${NC}"
+        echo -e "${YELLOW}MOTD devre dışı. Aktifleştirmek için: ${BOLD}cassmarrow enable${NC}"
     fi
     
     echo ""
-    echo -e "${DIM}Daha fazla bilgi: https://github.com/ahmetakifcetin/CassToolSSH${NC}"
+    echo -e "${DIM}Daha fazla bilgi: https://github.com/ahmetakifcetin/CassMarrow${NC}"
     echo ""
 }
 
@@ -883,7 +937,7 @@ main() {
     create_config
     create_motd_script
     setup_motd
-    create_casstool_command
+    create_cassmarrow_command
     create_helper_scripts
     
     show_completion
