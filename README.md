@@ -9,7 +9,7 @@ SSH girişinizi gerçek zamanlı sistem istatistikleri, degrade (gradient) temal
 ![Lisans](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Linux-green.svg)
 ![Shell](https://img.shields.io/badge/shell-bash-yellow.svg)
-![Sürüm](https://img.shields.io/badge/version-2.0.0-cyan.svg)
+![Sürüm](https://img.shields.io/badge/version-1.0-cyan.svg)
 
 ---
 
