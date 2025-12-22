@@ -1,0 +1,227 @@
+#!/bin/bash
+
+CYAN='\033[0;36m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+BOLD='\033[1m'
+
+CONFIG="/etc/casstool.conf"
+
+show_banner() {
+    echo -e "${CYAN}${BOLD}"
+    cat << "EOF"
+  ___   _   ___ ___ __  __   _   ___ ___  _____      __
+ / __| /_\ / __/ __|  \/  | /_\ | _ \ _ \/ _ \ \    / /
+| (__ / _ \\__ \__ \ |\/| |/ _ \|   /   / (_) \ \/\/ / 
+ \___/_/ \_\___/___/_|  |_/_/ \_\_|_\_|_\\___/ \_/\_/  
+EOF
+    echo -e "${NC}"
+    echo -e "${CYAN}Management Tool v2.0${NC}"
+    echo ""
+}
+
+show_usage() {
+    show_banner
+    echo "Kullanım: casstool <komut>"
+    echo ""
+    echo "Komutlar:"
+    echo -e "  ${GREEN}enable${NC}      - casstool'u aktifleştir"
+    echo -e "  ${GREEN}disable${NC}     - casstool'u devre dışı bırak"
+    echo -e "  ${GREEN}status${NC}      - Durum bilgisi göster"
+    echo -e "  ${GREEN}config${NC}      - Yapılandırmayı düzenle"
+    echo -e "  ${GREEN}customize${NC}   - İnteraktif özelleştirme"
+    echo -e "  ${GREEN}test${NC}        - Karşılama ekranını test et"
+    echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir (18 tema)"
+    echo -e "  ${GREEN}style${NC}       - Hızlı stil değiştir (4 stil)"
+    echo -e "  ${GREEN}themes${NC}      - Tüm temaları listele"
+    echo -e "  ${GREEN}uninstall${NC}   - casstool'u kaldır"
+    echo ""
+}
+
+enable_motd() {
+    if [ ! -f "$CONFIG" ]; then
+        echo -e "${RED}Hata: Yapılandırma dosyası bulunamadı${NC}"
+        exit 1
+    fi
+    
+    sed -i 's/MOTD_ENABLED="false"/MOTD_ENABLED="true"/' "$CONFIG"
+    echo -e "${GREEN}✓ casstool aktifleştirildi${NC}"
+    echo -e "${CYAN}Terminal girişlerinde karşılama ekranı gösterilecek${NC}"
+}
+
+disable_motd() {
+    if [ ! -f "$CONFIG" ]; then
+        echo -e "${RED}Hata: Yapılandırma dosyası bulunamadı${NC}"
+        exit 1
+    fi
+    
+    sed -i 's/MOTD_ENABLED="true"/MOTD_ENABLED="false"/' "$CONFIG"
+    echo -e "${YELLOW}! casstool devre dışı bırakıldı${NC}"
+    echo -e "${CYAN}Terminal girişlerinde karşılama ekranı gösterilmeyecek${NC}"
+}
+
+show_status() {
+    if [ ! -f "$CONFIG" ]; then
+        echo -e "${RED}casstool kurulu değil${NC}"
+        exit 1
+    fi
+    
+    source "$CONFIG"
+    
+    show_banner
+    echo -e "${CYAN}═══════════════════════════════════${NC}"
+    
+    if [ "$MOTD_ENABLED" = "true" ]; then
+        echo -e "Durum:          ${GREEN}●${NC} Aktif"
+    else
+        echo -e "Durum:          ${RED}●${NC} Devre Dışı"
+    fi
+    
+    echo -e "Tema:           ${PURPLE}$COLOR_THEME${NC}"
+    echo -e "Stil:           ${CYAN}$ASCII_STYLE${NC}"
+    echo -e "Sistem Adı:     ${CYAN}$SYSTEM_NAME${NC}"
+    echo -e "Config:         ${CYAN}$CONFIG${NC}"
+    echo ""
+}
+
+list_themes() {
+    show_banner
+    echo -e "${PURPLE}${BOLD}Gradient Temalar (Yeni!):${NC}"
+    echo ""
+    echo -e "  ${GREEN}1)${NC}  ice       ❄️  Cyan-blue gradient (default)"
+    echo -e "  ${GREEN}2)${NC}  matrix    💚 Green matrix style"
+    echo -e "  ${GREEN}3)${NC}  ocean     🌊 Deep blue gradient"
+    echo -e "  ${GREEN}4)${NC}  sunset    🌅 Orange-pink gradient"
+    echo -e "  ${GREEN}5)${NC}  fire      🔥 Red-orange gradient"
+    echo -e "  ${GREEN}6)${NC}  neon      💜 Purple-pink gradient"
+    echo -e "  ${GREEN}7)${NC}  hacker    👾 Dark green terminal"
+    echo -e "  ${GREEN}8)${NC}  corporate 💼 Gray-blue professional"
+    echo -e "  ${GREEN}9)${NC}  gold      🏆 Yellow-gold gradient"
+    echo -e "  ${GREEN}10)${NC} dracula   🧛 Purple dark theme"
+    echo -e "  ${GREEN}11)${NC} forest    🌲 Green nature gradient"
+    echo -e "  ${GREEN}12)${NC} cosmic    🌌 Deep purple-blue gradient"
+    echo ""
+    echo -e "${CYAN}${BOLD}Klasik Temalar:${NC}"
+    echo ""
+    echo -e "  ${GREEN}13)${NC} blue      🔵 Classic blue"
+    echo -e "  ${GREEN}14)${NC} green     🟢 Classic green"
+    echo -e "  ${GREEN}15)${NC} purple    🟣 Classic purple"
+    echo -e "  ${GREEN}16)${NC} cyan      🔷 Classic cyan"
+    echo -e "  ${GREEN}17)${NC} red       🔴 Classic red"
+    echo -e "  ${GREEN}18)${NC} yellow    🟡 Classic yellow"
+    echo ""
+    echo -e "${YELLOW}Toplam: 18 tema × 4 stil = 72 farklı kombinasyon!${NC}"
+    echo ""
+}
+
+change_theme() {
+    show_banner
+    echo -e "${PURPLE}${BOLD}Tema Seçimi:${NC}"
+    echo ""
+    echo -e "${CYAN}Gradient Temalar:${NC}"
+    echo "1) ice       2) matrix    3) ocean     4) sunset"
+    echo "5) fire      6) neon      7) hacker    8) corporate"
+    echo "9) gold     10) dracula  11) forest   12) cosmic"
+    echo ""
+    echo -e "${CYAN}Klasik Temalar:${NC}"
+    echo "13) blue    14) green    15) purple   16) cyan"
+    echo "17) red     18) yellow"
+    echo ""
+    read -p "Tema seçin [1-18]: " choice
+    
+    case $choice in
+        1) theme="ice" ;;
+        2) theme="matrix" ;;
+        3) theme="ocean" ;;
+        4) theme="sunset" ;;
+        5) theme="fire" ;;
+        6) theme="neon" ;;
+        7) theme="hacker" ;;
+        8) theme="corporate" ;;
+        9) theme="gold" ;;
+        10) theme="dracula" ;;
+        11) theme="forest" ;;
+        12) theme="cosmic" ;;
+        13) theme="blue" ;;
+        14) theme="green" ;;
+        15) theme="purple" ;;
+        16) theme="cyan" ;;
+        17) theme="red" ;;
+        18) theme="yellow" ;;
+        *) echo -e "${RED}Geçersiz seçim${NC}"; exit 1 ;;
+    esac
+    
+    sed -i "s/^COLOR_THEME=.*/COLOR_THEME=\"$theme\"/" "$CONFIG"
+    echo ""
+    echo -e "${GREEN}✓ Tema değiştirildi: ${PURPLE}$theme${NC}"
+    echo ""
+    echo -e "${YELLOW}Önizleme için: ${CYAN}casstool test${NC}"
+    echo ""
+}
+
+change_style() {
+    show_banner
+    echo -e "${PURPLE}${BOLD}Stil Seçimi:${NC}"
+    echo ""
+    echo "1) casstool  - Profesyonel (tam logo)"
+    echo "2) minimal     - Minimal (kutu tasarım)"
+    echo "3) retro       - Retro (klasik terminal)"
+    echo "4) cyber       - Cyber (fütüristik)"
+    echo ""
+    read -p "Stil seçin [1-4]: " choice
+    
+    case $choice in
+        1) style="casstool" ;;
+        2) style="minimal" ;;
+        3) style="retro" ;;
+        4) style="cyber" ;;
+        *) echo -e "${RED}Geçersiz seçim${NC}"; exit 1 ;;
+    esac
+    
+    sed -i "s/^ASCII_STYLE=.*/ASCII_STYLE=\"$style\"/" "$CONFIG"
+    echo ""
+    echo -e "${GREEN}✓ Stil değiştirildi: ${PURPLE}$style${NC}"
+    echo ""
+    echo -e "${YELLOW}Önizleme için: ${CYAN}casstool test${NC}"
+    echo ""
+}
+
+case "$1" in
+    enable)
+        enable_motd
+        ;;
+    disable)
+        disable_motd
+        ;;
+    status)
+        show_status
+        ;;
+    config)
+        ${EDITOR:-nano} "$CONFIG"
+        ;;
+    customize)
+        /opt/casstool/customize.sh
+        ;;
+    test)
+        /opt/casstool/motd.sh
+        ;;
+    theme)
+        change_theme
+        ;;
+    style)
+        change_style
+        ;;
+    themes)
+        list_themes
+        ;;
+    uninstall)
+        /opt/casstool/uninstall.sh
+        ;;
+    *)
+        show_usage
+        exit 1
+        ;;
+esac

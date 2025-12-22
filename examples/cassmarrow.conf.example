@@ -1,0 +1,169 @@
+# casstool Configuration File - Examples
+# Copy this file to /etc/casstool.conf and customize
+
+# ============================================================================
+# DISPLAY SETTINGS
+# ============================================================================
+# Toggle individual display components on/off
+
+SHOW_HOSTNAME=true          # Display server hostname
+SHOW_KERNEL=true            # Display kernel version
+SHOW_UPTIME=true            # Display system uptime
+SHOW_LOAD=true              # Display load average (1, 5, 15 min)
+SHOW_MEMORY=true            # Display memory usage
+SHOW_DISK=true              # Display root disk usage
+SHOW_IP=true                # Display IP addresses (local and public)
+SHOW_DOCKER=true            # Display Docker status and container count
+SHOW_SERVICES=true          # Display monitored services status
+SHOW_LAST_LOGIN=true        # Display last login information
+
+# ============================================================================
+# CUSTOM TEXT
+# ============================================================================
+
+SYSTEM_NAME="casstool Infrastructure"
+# Examples:
+# SYSTEM_NAME="Production Server"
+# SYSTEM_NAME="Development Environment"
+# SYSTEM_NAME="Staging Server"
+# SYSTEM_NAME="My Home Lab"
+
+SYSTEM_VERSION="v1.0"
+# Examples:
+# SYSTEM_VERSION="v2.0-beta"
+# SYSTEM_VERSION="Production"
+# SYSTEM_VERSION="Development"
+
+CUSTOM_MESSAGE=""
+# Examples:
+# CUSTOM_MESSAGE="⚠️  This is a production server - Handle with care!"
+# CUSTOM_MESSAGE="🚀 Welcome to the development environment"
+# CUSTOM_MESSAGE="For support, contact: admin@example.com"
+# CUSTOM_MESSAGE="Scheduled maintenance: Every Sunday 2AM-4AM UTC"
+
+CUSTOM_HEADER=""
+# Leave empty for default header or set custom text
+# Example:
+# CUSTOM_HEADER="🏢 Acme Corporation - Infrastructure Team"
+
+# ============================================================================
+# COLOR THEME
+# ============================================================================
+# Available themes: blue, green, purple, cyan, red, yellow
+
+COLOR_THEME="cyan"
+
+# Theme Examples:
+# COLOR_THEME="blue"      # Professional, calm
+# COLOR_THEME="green"     # Success, positive
+# COLOR_THEME="purple"    # Creative, unique
+# COLOR_THEME="cyan"      # Modern, tech (default)
+# COLOR_THEME="red"       # Alert, important
+# COLOR_THEME="yellow"    # Warning, attention
+
+# ============================================================================
+# ASCII ART STYLE
+# ============================================================================
+# Available styles: casstool, minimal, blocks, simple
+
+ASCII_STYLE="casstool"
+
+# Style Examples:
+# ASCII_STYLE="casstool"    # Full logo (default)
+# ASCII_STYLE="minimal"       # Simple box design
+# ASCII_STYLE="blocks"        # Modern block characters
+# ASCII_STYLE="simple"        # Plain text
+
+# ============================================================================
+# SERVICE MONITORING
+# ============================================================================
+# Space-separated list of systemd services to monitor
+
+MONITORED_SERVICES="nginx docker postgresql mysql"
+
+# Common Service Examples:
+# MONITORED_SERVICES="nginx apache2 docker postgresql mysql redis mongodb"
+# MONITORED_SERVICES="ssh fail2ban ufw"
+# MONITORED_SERVICES="jenkins gitlab-runner"
+# MONITORED_SERVICES=""  # Empty to disable service monitoring
+
+# ============================================================================
+# EXAMPLE CONFIGURATIONS
+# ============================================================================
+
+# Example 1: Production Server
+# -------------------------------------------------------
+# SYSTEM_NAME="Production API Server"
+# SYSTEM_VERSION="v3.2.1"
+# COLOR_THEME="red"
+# ASCII_STYLE="casstool"
+# CUSTOM_MESSAGE="⚠️  PRODUCTION - All changes require approval"
+# MONITORED_SERVICES="nginx docker postgresql redis"
+
+# Example 2: Development Environment
+# -------------------------------------------------------
+# SYSTEM_NAME="Development Environment"
+# SYSTEM_VERSION="dev-latest"
+# COLOR_THEME="green"
+# ASCII_STYLE="blocks"
+# CUSTOM_MESSAGE="🚀 Happy coding! This is your playground."
+# MONITORED_SERVICES="docker postgresql"
+
+# Example 3: Minimal Setup
+# -------------------------------------------------------
+# SHOW_DOCKER=false
+# SHOW_SERVICES=false
+# SHOW_LAST_LOGIN=false
+# SYSTEM_NAME="Server"
+# SYSTEM_VERSION=""
+# COLOR_THEME="cyan"
+# ASCII_STYLE="simple"
+# CUSTOM_MESSAGE=""
+
+# Example 4: Home Lab
+# -------------------------------------------------------
+# SYSTEM_NAME="Joel's Home Lab"
+# SYSTEM_VERSION="2025"
+# COLOR_THEME="purple"
+# ASCII_STYLE="casstool"
+# CUSTOM_MESSAGE="🏠 Home Infrastructure - Experimentation Encouraged!"
+# MONITORED_SERVICES="docker plex transmission nginx"
+
+# Example 5: Security Focused
+# -------------------------------------------------------
+# SYSTEM_NAME="Secure Gateway"
+# SYSTEM_VERSION="Hardened"
+# COLOR_THEME="red"
+# ASCII_STYLE="minimal"
+# CUSTOM_MESSAGE="🔒 Authorized Access Only - All actions are logged"
+# MONITORED_SERVICES="ssh fail2ban ufw iptables"
+
+# ============================================================================
+# ADVANCED CUSTOMIZATION
+# ============================================================================
+
+# To add custom ASCII art:
+# 1. Edit /opt/casstool/motd.sh
+# 2. Add a new case in the print_ascii_art() function
+# 3. Set ASCII_STYLE to your custom name
+
+# To add custom system information:
+# 1. Edit /opt/casstool/motd.sh
+# 2. Add your custom function (e.g., get_custom_info())
+# 3. Add display logic in the main section
+
+# ============================================================================
+# QUICK COMMANDS
+# ============================================================================
+
+# Test your configuration:
+#   /opt/casstool/motd.sh
+
+# Interactive customization:
+#   /opt/casstool/customize.sh
+
+# Edit this file:
+#   sudo nano /etc/casstool.conf
+
+# Uninstall casstool:
+#   sudo /opt/casstool/uninstall.sh
