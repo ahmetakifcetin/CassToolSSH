@@ -311,11 +311,20 @@ EOF
 create_motd_script() {
     local install_dir="/opt/casstool"
     
-    echo -e "${BLUE}[→]${NC} Kurulum dizini oluşturuluyor..."
+    echo -e "${BLUE}[→]${NC} Dosyalar hazırlanıyor..."
     mkdir -p "$install_dir"
     
-    echo -e "${BLUE}[→]${NC} MOTD scripti oluşturuluyor..."
-    
+    # Progress animation
+    local spinner=( '⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏' )
+    echo -ne "  "
+    for i in {1..20}; do
+        for s in "${spinner[@]}"; do
+            echo -ne "\r  ${CYAN}$s${NC} Bileşenler kopyalanıyor..."
+            sleep 0.01
+        done
+    done
+    echo -ne "\r  ${GREEN}✓${NC} Bileşenler kopyalandı.          \n"
+
     cat > "$install_dir/motd.sh" << 'SCRIPTEOF'
 #!/bin/bash
 
@@ -1084,12 +1093,41 @@ show_completion() {
 
 # Main installation flow
 main() {
+    clear
     show_banner
     check_root
     detect_os
     
+    # Check for update mode
+    if [ -d "/opt/casstool" ]; then
+        echo -e "${YELLOW}[!] Mevcut bir kurulum tespit edildi. Güncelleme moduna geçiliyor...${NC}"
+        UPDATING=true
+        sleep 1
+    fi
+
     echo ""
-    installation_wizard
+    if [ "$UPDATING" = "true" ]; then
+        echo -e "${CYAN}[+] Dosyalar güncelleniyor...${NC}"
+        # Spinner/Progress bar animation simulator
+        local spinner=( '⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏' )
+        for i in {1..20}; do
+            for s in "${spinner[@]}"; do
+                echo -ne "\r${CYAN}$s${NC} Güncelleniyor... $i%"
+                sleep 0.01
+            done
+        done
+        echo -ne "\r${GREEN}✓${NC} Güncelleme hazırlanıyor... 100%\n"
+        
+        INSTALL_MODE="quick"
+        # Load existing config to preserve it
+        if [ -f "/etc/casstool.conf" ]; then
+            source /etc/casstool.conf
+            SELECTED_THEME=$COLOR_THEME
+            SELECTED_STYLE=$ASCII_STYLE
+        fi
+    else
+        installation_wizard
+    fi
     
     echo ""
     create_config
@@ -1097,6 +1135,11 @@ main() {
     setup_motd
     create_casstool_command
     create_helper_scripts
+    
+    # Copy changelog to /opt/casstool for 'casstool changelog' command
+    if [ -f "docs/CHANGELOG.md" ]; then
+        cp "docs/CHANGELOG.md" "/opt/casstool/CHANGELOG.md"
+    fi
     
     show_completion
 }

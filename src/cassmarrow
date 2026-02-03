@@ -33,12 +33,21 @@ show_usage() {
     echo -e "  ${GREEN}status${NC}      - Durum bilgisi göster"
     echo -e "  ${GREEN}config${NC}      - Yapılandırmayı düzenle"
     echo -e "  ${GREEN}customize${NC}   - İnteraktif özelleştirme"
+    echo -e "  ${GREEN}changelog${NC}   - Sürüm notlarını göster"
     echo -e "  ${GREEN}test${NC}        - Karşılama ekranını test et"
-    echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir (18 tema)"
+    echo -e "  ${GREEN}theme${NC}       - Hızlı tema değiştir (12+ tema)"
     echo -e "  ${GREEN}style${NC}       - Hızlı stil değiştir (4 stil)"
     echo -e "  ${GREEN}themes${NC}      - Tüm temaları listele"
     echo -e "  ${GREEN}uninstall${NC}   - casstool'u kaldır"
     echo ""
+}
+
+changelog() {
+    if [ -f "/opt/casstool/CHANGELOG.md" ]; then
+        cat "/opt/casstool/CHANGELOG.md" | less
+    else
+        echo -e "${RED}Changelog dosyası bulunamadı.${NC}"
+    fi
 }
 
 enable_motd() {
@@ -204,6 +213,9 @@ case "$1" in
         ;;
     customize)
         /opt/casstool/customize.sh
+        ;;
+    changelog)
+        changelog
         ;;
     test)
         /opt/casstool/motd.sh

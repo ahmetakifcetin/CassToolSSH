@@ -116,40 +116,40 @@ load_theme() {
             ;;
         # Classic Themes (Single Color / Flat)
         blue)
-            PRIMARY='\033[38;5;33m'
-            BRIGHT='\033[38;5;33m'
-            ACCENT='\033[38;5;33m'
-            DIM='\033[38;5;33m'
+            PRIMARY='\033[0;94m'
+            BRIGHT='\033[0;94m'
+            ACCENT='\033[0;94m'
+            DIM='\033[0;94m'
             ;;
         green)
-            PRIMARY='\033[38;5;46m'
-            BRIGHT='\033[38;5;46m'
-            ACCENT='\033[38;5;46m'
-            DIM='\033[38;5;46m'
+            PRIMARY='\033[0;92m'
+            BRIGHT='\033[0;92m'
+            ACCENT='\033[0;92m'
+            DIM='\033[0;92m'
             ;;
         purple)
-            PRIMARY='\033[38;5;129m'
-            BRIGHT='\033[38;5;129m'
-            ACCENT='\033[38;5;129m'
-            DIM='\033[38;5;129m'
+            PRIMARY='\033[0;95m'
+            BRIGHT='\033[0;95m'
+            ACCENT='\033[0;95m'
+            DIM='\033[0;95m'
             ;;
         cyan)
-            PRIMARY='\033[38;5;51m'
-            BRIGHT='\033[38;5;51m'
-            ACCENT='\033[38;5;51m'
-            DIM='\033[38;5;51m'
+            PRIMARY='\033[0;96m'
+            BRIGHT='\033[0;96m'
+            ACCENT='\033[0;96m'
+            DIM='\033[0;96m'
             ;;
         red)
-            PRIMARY='\033[38;5;196m'
-            BRIGHT='\033[38;5;196m'
-            ACCENT='\033[38;5;196m'
-            DIM='\033[38;5;196m'
+            PRIMARY='\033[0;91m'
+            BRIGHT='\033[0;91m'
+            ACCENT='\033[0;91m'
+            DIM='\033[0;91m'
             ;;
         yellow)
-            PRIMARY='\033[38;5;226m'
-            BRIGHT='\033[38;5;226m'
-            ACCENT='\033[38;5;226m'
-            DIM='\033[38;5;226m'
+            PRIMARY='\033[0;93m'
+            BRIGHT='\033[0;93m'
+            ACCENT='\033[0;93m'
+            DIM='\033[0;93m'
             ;;
         *)
             # Default to ice
