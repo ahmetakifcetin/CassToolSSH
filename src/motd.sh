@@ -30,91 +30,79 @@ load_theme() {
     
     case $theme in
         # Gradient Themes
-        ice)
-            # Crisp Cyan-White Gradient
-            PRIMARY='\033[38;5;51m'    # Cyan
-            BRIGHT='\033[38;5;195m'    # Very Light Cyan/White
-            ACCENT='\033[38;5;123m'    # Light Sky Blue
-            DIM='\033[38;5;39m'        # Deep Sky Blue
-            ;;
         matrix)
-            # Authentic Matrix Digital Rain
-            PRIMARY='\033[38;5;46m'    # Matrix Green
-            BRIGHT='\033[38;5;119m'    # Light Green
-            ACCENT='\033[38;5;34m'     # Darker Green
-            DIM='\033[38;5;22m'        # Very Dark Green
+            PRIMARY='\033[38;5;46m'
+            BRIGHT='\033[38;5;82m'
+            ACCENT='\033[38;5;40m'
+            DIM='\033[38;5;22m'
             ;;
         ocean)
-            # Deep Ocean Blue Gradient
-            PRIMARY='\033[38;5;33m'    # Dodger Blue
-            BRIGHT='\033[38;5;45m'     # Light Blue
-            ACCENT='\033[38;5;27m'     # Deep Blue
-            DIM='\033[38;5;21m'        # Dark Blue
+            PRIMARY='\033[38;5;39m'
+            BRIGHT='\033[38;5;51m'
+            ACCENT='\033[38;5;33m'
+            DIM='\033[38;5;24m'
             ;;
         sunset)
-            # Rich Purple to Orange Gradient
-            PRIMARY='\033[38;5;208m'   # Dark Orange
-            BRIGHT='\033[38;5;213m'    # Pink/Orchid
-            ACCENT='\033[38;5;202m'    # Orange Red
-            DIM='\033[38;5;166m'       # Darker Orange
-            ;;
-        fire)
-            # Intense Fire Gradient
-            PRIMARY='\033[38;5;196m'   # Red
-            BRIGHT='\033[38;5;214m'    # Orange
-            ACCENT='\033[38;5;208m'    # Dark Orange
-            DIM='\033[38;5;124m'       # Dark Red
-            ;;
-        neon)
-            # Cyberpunk Neon Gradient
-            PRIMARY='\033[38;5;201m'   # Magenta
-            BRIGHT='\033[38;5;51m'     # Cyan
-            ACCENT='\033[38;5;213m'    # Light Purple
-            DIM='\033[38;5;93m'        # Purple
+            PRIMARY='\033[38;5;208m'
+            BRIGHT='\033[38;5;213m'
+            ACCENT='\033[38;5;202m'
+            DIM='\033[38;5;166m'
             ;;
         hacker)
-            # Modern Hacker (Green/Grey)
-            PRIMARY='\033[38;5;41m'    # Spring Green
-            BRIGHT='\033[38;5;48m'     # Medium Spring Green
-            ACCENT='\033[38;5;35m'     # Green
-            DIM='\033[38;5;28m'        # Dark Green
+            PRIMARY='\033[38;5;28m'
+            BRIGHT='\033[38;5;40m'
+            ACCENT='\033[38;5;34m'
+            DIM='\033[38;5;22m'
+            ;;
+        neon)
+            PRIMARY='\033[38;5;201m'
+            BRIGHT='\033[38;5;213m'
+            ACCENT='\033[38;5;165m'
+            DIM='\033[38;5;127m'
+            ;;
+        fire)
+            PRIMARY='\033[38;5;196m'
+            BRIGHT='\033[38;5;208m'
+            ACCENT='\033[38;5;202m'
+            DIM='\033[38;5;88m'
+            ;;
+        ice)
+            PRIMARY='\033[38;5;51m'
+            BRIGHT='\033[38;5;159m'
+            ACCENT='\033[38;5;87m'
+            DIM='\033[38;5;45m'
             ;;
         corporate)
-            # Professional Blue-Grey
-            PRIMARY='\033[38;5;75m'    # Steel Blue
-            BRIGHT='\033[38;5;110m'    # Light Steel Blue
-            ACCENT='\033[38;5;67m'     # Steel Blue Dark
-            DIM='\033[38;5;60m'        # Dark Slate Blue
+            PRIMARY='\033[38;5;67m'
+            BRIGHT='\033[38;5;75m'
+            ACCENT='\033[38;5;61m'
+            DIM='\033[38;5;241m'
             ;;
         gold)
-            # Luxurious Gold gradient
-            PRIMARY='\033[38;5;220m'   # Gold
-            BRIGHT='\033[38;5;226m'    # Yellow
-            ACCENT='\033[38;5;214m'    # Orange Gold
-            DIM='\033[38;5;178m'       # Dark Gold
+            PRIMARY='\033[38;5;220m'
+            BRIGHT='\033[38;5;228m'
+            ACCENT='\033[38;5;214m'
+            DIM='\033[38;5;136m'
             ;;
         dracula)
-            # Dracula Theme (Purple/Pink)
-            PRIMARY='\033[38;5;141m'   # Light Purple
-            BRIGHT='\033[38;5;212m'    # Pink
-            ACCENT='\033[38;5;105m'    # Pale Purple
-            DIM='\033[38;5;61m'        # Dark Blue/Purple
+            PRIMARY='\033[38;5;141m'
+            BRIGHT='\033[38;5;183m'
+            ACCENT='\033[38;5;135m'
+            DIM='\033[38;5;97m'
             ;;
         forest)
-            # Deep Forest Gradient
-            PRIMARY='\033[38;5;34m'    # Green
-            BRIGHT='\033[38;5;154m'    # Light Green
-            ACCENT='\033[38;5;40m'     # Lime Green
-            DIM='\033[38;5;22m'        # Dark Green
+            PRIMARY='\033[38;5;34m'
+            BRIGHT='\033[38;5;154m'
+            ACCENT='\033[38;5;46m'
+            DIM='\033[38;5;22m'
             ;;
         cosmic)
-            # Deep Space Gradient
-            PRIMARY='\033[38;5;99m'    # Slate Blue
-            BRIGHT='\033[38;5;147m'    # Light Steel Blue
-            ACCENT='\033[38;5;57m'     # Violet
-            DIM='\033[38;5;17m'        # Dark Blue
+            PRIMARY='\033[38;5;57m'
+            BRIGHT='\033[38;5;147m'
+            ACCENT='\033[38;5;93m'
+            DIM='\033[38;5;17m'
             ;;
-        # Classic Themes (Single Color / Flat)
+        # Classic Themes
         blue)
             PRIMARY='\033[0;94m'
             BRIGHT='\033[0;94m'
@@ -152,17 +140,20 @@ load_theme() {
             DIM='\033[0;93m'
             ;;
         *)
-            # Default to ice
             PRIMARY='\033[38;5;51m'
-            BRIGHT='\033[38;5;195m'
-            ACCENT='\033[38;5;123m'
-            DIM='\033[38;5;39m'
+            BRIGHT='\033[38;5;159m'
+            ACCENT='\033[38;5;87m'
+            DIM='\033[38;5;45m'
             ;;
     esac
     
     WHITE='\033[38;5;255m'
     GRAY='\033[38;5;245m'
     DARK_GRAY='\033[38;5;240m'
+    RED='\033[0;91m'
+    GREEN='\033[0;92m'
+    YELLOW='\033[0;93m'
+    INFO_DIM='\033[38;5;240m'
     BOLD='\033[1m'
     NC='\033[0m'
 }
@@ -266,15 +257,15 @@ get_docker_status() {
         if systemctl is-active --quiet docker 2>/dev/null; then
             CONTAINERS=$(docker ps -q 2>/dev/null | wc -l)
             if [ "$CONTAINERS" -gt 0 ]; then
-                echo -e "${PRIMARY}●${NC} Running ${DIM}($CONTAINERS containers)${NC}"
+                echo -e "${PRIMARY}●${NC} Running ${INFO_DIM}($CONTAINERS containers)${NC}"
             else
-                echo -e "${GRAY}●${NC} Running ${DIM}(no containers)${NC}"
+                echo -e "${GRAY}●${NC} Running ${INFO_DIM}(no containers)${NC}"
             fi
         else
             echo -e "${RED}●${NC} Stopped"
         fi
     else
-        echo -e "${DIM}not installed${NC}"
+        echo -e "${INFO_DIM}not installed${NC}"
     fi
 }
 
@@ -283,7 +274,7 @@ check_service() {
     if systemctl is-active --quiet "$service" 2>/dev/null; then
         echo -e "  ${PRIMARY}●${NC} ${service}"
     elif systemctl list-unit-files "$service.service" &>/dev/null; then
-         echo -e "  ${ACCENT}●${NC} ${service} ${DIM}(stopped)${NC}"
+         echo -e "  ${RED}●${NC} ${service} ${INFO_DIM}(stopped)${NC}"
     fi
 }
 
@@ -305,9 +296,9 @@ get_status_indicator() {
     local load_percent=$(echo "$load $cores" | awk '{printf "%.0f", ($1/$2)*100}')
     
     if [ "$load_percent" -ge 90 ]; then
-        echo -e "${ACCENT}● HEAVY LOAD${NC}"
+        echo -e "${RED}● HEAVY LOAD${NC}"
     elif [ "$load_percent" -ge 70 ]; then
-        echo -e "${PRIMARY}● MODERATE${NC}"
+        echo -e "${YELLOW}● MODERATE${NC}"
     else
         echo -e "${PRIMARY}● OPTIMAL${NC}"
     fi
@@ -322,14 +313,10 @@ print_ascii_art
 if [ "$ASCII_STYLE" = "retro" ]; then
     echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${DARK_GRAY}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${DARK_GRAY}│${NC}  $(get_status_indicator)"
 else
-    echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${DIM}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${DIM}│${NC}  $(get_status_indicator)"
+    echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${INFO_DIM}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${INFO_DIM}│${NC}  $(get_status_indicator)"
 fi
 
-if [ "$ASCII_STYLE" = "minimal" ]; then
-    echo -e "╠════════════════════════════════════════════════════════════════════════════════╣"
-else
-    echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
-fi
+echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
 
 echo ""
 
@@ -392,16 +379,12 @@ fi
 if [ "$SHOW_LAST_LOGIN" = true ]; then
     echo ""
     echo -e "${GRAY}Last Login${NC}"
-    echo -e "  ${DIM}$(get_last_login)${NC}"
+    echo -e "  ${INFO_DIM}$(get_last_login)${NC}"
 fi
 
 echo ""
 
-if [ "$ASCII_STYLE" = "minimal" ]; then
-    echo -e "╚════════════════════════════════════════════════════════════════════════════════╝"
-else
-    echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
-fi
+echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
 
 # Custom message with accent color
 if [ -n "$CUSTOM_MESSAGE" ]; then

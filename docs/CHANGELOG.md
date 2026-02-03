@@ -7,14 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned Features
-- Weather information integration
-- Custom plugin system
-- Network traffic statistics
-- GPU information display
-- Multi-language support (Turkish, Spanish, French, etc.)
-- Theme marketplace
-- Web-based configuration interface
+## [2.0.0] - 2025-02-14
+
+### Added
+- Seamless Update Support: `install.sh` now detects existing installations and preserves configuration.
+- Management Command: Added `casstool changelog` to view version history.
+- Visual Polish: Added spinner and progress animations during installation and updates.
+- Theme List: Added `casstool themes` to list all available color schemes.
+
+### Changed
+- Refactored Classic Themes (Blue, Green, Yellow, etc.) to use solid colors instead of gradients.
+- Optimized UI layout: Separated theme colors from layout characters to ensure consistency across all themes.
+- Updated `casstool theme` command to handle new theme numbers.
+
+### Fixed
+- Fixed gradient leakage in classic themes where some sections were using old colors.
+- Improved config preservation during reinstallations.
 
 ## [1.0.0] - 2025-12-08
 

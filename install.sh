@@ -356,131 +356,140 @@ if [ "$MOTD_ENABLED" != "true" ]; then
 fi
 
 # Color definitions based on theme
-case $COLOR_THEME in
-    # Gradient Themes
-    matrix)
-        PRIMARY='\033[38;5;46m'
-        BRIGHT='\033[38;5;82m'
-        ACCENT='\033[38;5;40m'
-        DIM='\033[38;5;22m'
-        ;;
-    ocean)
-        PRIMARY='\033[38;5;39m'
-        BRIGHT='\033[38;5;51m'
-        ACCENT='\033[38;5;33m'
-        DIM='\033[38;5;24m'
-        ;;
-    sunset)
-        PRIMARY='\033[38;5;208m'
-        BRIGHT='\033[38;5;213m'
-        ACCENT='\033[38;5;202m'
-        DIM='\033[38;5;166m'
-        ;;
-    hacker)
-        PRIMARY='\033[38;5;28m'
-        BRIGHT='\033[38;5;40m'
-        ACCENT='\033[38;5;34m'
-        DIM='\033[38;5;22m'
-        ;;
-    neon)
-        PRIMARY='\033[38;5;201m'
-        BRIGHT='\033[38;5;213m'
-        ACCENT='\033[38;5;165m'
-        DIM='\033[38;5;127m'
-        ;;
-    fire)
-        PRIMARY='\033[38;5;196m'
-        BRIGHT='\033[38;5;208m'
-        ACCENT='\033[38;5;202m'
-        DIM='\033[38;5;88m'
-        ;;
-    ice)
-        PRIMARY='\033[38;5;51m'
-        BRIGHT='\033[38;5;159m'
-        ACCENT='\033[38;5;87m'
-        DIM='\033[38;5;45m'
-        ;;
-    corporate)
-        PRIMARY='\033[38;5;67m'
-        BRIGHT='\033[38;5;75m'
-        ACCENT='\033[38;5;61m'
-        DIM='\033[38;5;241m'
-        ;;
-    gold)
-        PRIMARY='\033[38;5;220m'
-        BRIGHT='\033[38;5;228m'
-        ACCENT='\033[38;5;214m'
-        DIM='\033[38;5;136m'
-        ;;
-    dracula)
-        PRIMARY='\033[38;5;141m'
-        BRIGHT='\033[38;5;183m'
-        ACCENT='\033[38;5;135m'
-        DIM='\033[38;5;97m'
-        ;;
-    forest)
-        PRIMARY='\033[38;5;34m'
-        BRIGHT='\033[38;5;154m'
-        ACCENT='\033[38;5;46m'
-        DIM='\033[38;5;22m'
-        ;;
-    cosmic)
-        PRIMARY='\033[38;5;57m'
-        BRIGHT='\033[38;5;147m'
-        ACCENT='\033[38;5;93m'
-        DIM='\033[38;5;17m'
-        ;;
-    # Classic Themes
-    blue)
-        PRIMARY='\033[0;94m'
-        BRIGHT='\033[0;94m'
-        ACCENT='\033[0;94m'
-        DIM='\033[0;94m'
-        ;;
-    green)
-        PRIMARY='\033[0;92m'
-        BRIGHT='\033[0;92m'
-        ACCENT='\033[0;92m'
-        DIM='\033[0;92m'
-        ;;
-    purple)
-        PRIMARY='\033[0;95m'
-        BRIGHT='\033[0;95m'
-        ACCENT='\033[0;95m'
-        DIM='\033[0;95m'
-        ;;
-    cyan)
-        PRIMARY='\033[0;96m'
-        BRIGHT='\033[0;96m'
-        ACCENT='\033[0;96m'
-        DIM='\033[0;96m'
-        ;;
-    red)
-        PRIMARY='\033[0;91m'
-        BRIGHT='\033[0;91m'
-        ACCENT='\033[0;91m'
-        DIM='\033[0;91m'
-        ;;
-    yellow)
-        PRIMARY='\033[0;93m'
-        BRIGHT='\033[0;93m'
-        ACCENT='\033[0;93m'
-        DIM='\033[0;93m'
-        ;;
-    *)
-        PRIMARY='\033[38;5;51m'
-        BRIGHT='\033[38;5;159m'
-        ACCENT='\033[38;5;87m'
-        DIM='\033[38;5;45m'
-        ;;
-esac
+load_theme() {
+    local theme=$1
+    
+    case $theme in
+        # Gradient Themes
+        matrix)
+            PRIMARY='\033[38;5;46m'
+            BRIGHT='\033[38;5;82m'
+            ACCENT='\033[38;5;40m'
+            DIM='\033[38;5;22m'
+            ;;
+        ocean)
+            PRIMARY='\033[38;5;39m'
+            BRIGHT='\033[38;5;51m'
+            ACCENT='\033[38;5;33m'
+            DIM='\033[38;5;24m'
+            ;;
+        sunset)
+            PRIMARY='\033[38;5;208m'
+            BRIGHT='\033[38;5;213m'
+            ACCENT='\033[38;5;202m'
+            DIM='\033[38;5;166m'
+            ;;
+        hacker)
+            PRIMARY='\033[38;5;28m'
+            BRIGHT='\033[38;5;40m'
+            ACCENT='\033[38;5;34m'
+            DIM='\033[38;5;22m'
+            ;;
+        neon)
+            PRIMARY='\033[38;5;201m'
+            BRIGHT='\033[38;5;213m'
+            ACCENT='\033[38;5;165m'
+            DIM='\033[38;5;127m'
+            ;;
+        fire)
+            PRIMARY='\033[38;5;196m'
+            BRIGHT='\033[38;5;208m'
+            ACCENT='\033[38;5;202m'
+            DIM='\033[38;5;88m'
+            ;;
+        ice)
+            PRIMARY='\033[38;5;51m'
+            BRIGHT='\033[38;5;159m'
+            ACCENT='\033[38;5;87m'
+            DIM='\033[38;5;45m'
+            ;;
+        corporate)
+            PRIMARY='\033[38;5;67m'
+            BRIGHT='\033[38;5;75m'
+            ACCENT='\033[38;5;61m'
+            DIM='\033[38;5;241m'
+            ;;
+        gold)
+            PRIMARY='\033[38;5;220m'
+            BRIGHT='\033[38;5;228m'
+            ACCENT='\033[38;5;214m'
+            DIM='\033[38;5;136m'
+            ;;
+        dracula)
+            PRIMARY='\033[38;5;141m'
+            BRIGHT='\033[38;5;183m'
+            ACCENT='\033[38;5;135m'
+            DIM='\033[38;5;97m'
+            ;;
+        forest)
+            PRIMARY='\033[38;5;34m'
+            BRIGHT='\033[38;5;154m'
+            ACCENT='\033[38;5;46m'
+            DIM='\033[38;5;22m'
+            ;;
+        cosmic)
+            PRIMARY='\033[38;5;57m'
+            BRIGHT='\033[38;5;147m'
+            ACCENT='\033[38;5;93m'
+            DIM='\033[38;5;17m'
+            ;;
+        # Classic Themes
+        blue)
+            PRIMARY='\033[0;94m'
+            BRIGHT='\033[0;94m'
+            ACCENT='\033[0;94m'
+            DIM='\033[0;94m'
+            ;;
+        green)
+            PRIMARY='\033[0;92m'
+            BRIGHT='\033[0;92m'
+            ACCENT='\033[0;92m'
+            DIM='\033[0;92m'
+            ;;
+        purple)
+            PRIMARY='\033[0;95m'
+            BRIGHT='\033[0;95m'
+            ACCENT='\033[0;95m'
+            DIM='\033[0;95m'
+            ;;
+        cyan)
+            PRIMARY='\033[0;96m'
+            BRIGHT='\033[0;96m'
+            ACCENT='\033[0;96m'
+            DIM='\033[0;96m'
+            ;;
+        red)
+            PRIMARY='\033[0;91m'
+            BRIGHT='\033[0;91m'
+            ACCENT='\033[0;91m'
+            DIM='\033[0;91m'
+            ;;
+        yellow)
+            PRIMARY='\033[0;93m'
+            BRIGHT='\033[0;93m'
+            ACCENT='\033[0;93m'
+            DIM='\033[0;93m'
+            ;;
+        *)
+            PRIMARY='\033[38;5;51m'
+            BRIGHT='\033[38;5;159m'
+            ACCENT='\033[38;5;87m'
+            DIM='\033[38;5;45m'
+            ;;
+    esac
+    
+    WHITE='\033[38;5;255m'
+    GRAY='\033[38;5;245m'
+    DARK_GRAY='\033[38;5;240m'
+    RED='\033[0;91m'
+    GREEN='\033[0;92m'
+    YELLOW='\033[0;93m'
+    INFO_DIM='\033[38;5;240m'
+    BOLD='\033[1m'
+    NC='\033[0m'
+}
 
-WHITE='\033[38;5;255m'
-GRAY='\033[38;5;245m'
-DARK_GRAY='\033[38;5;240m'
-DIM='\033[38;5;240m'
-BOLD='\033[1m'
-NC='\033[0m'
+load_theme "$COLOR_THEME"
 
 # ASCII Art
 print_ascii_art() {
@@ -580,15 +589,15 @@ get_docker_status() {
         if systemctl is-active --quiet docker 2>/dev/null; then
             CONTAINERS=$(docker ps -q 2>/dev/null | wc -l)
             if [ "$CONTAINERS" -gt 0 ]; then
-                echo -e "${PRIMARY}●${NC} Running ${DIM}($CONTAINERS containers)${NC}"
+                echo -e "${PRIMARY}●${NC} Running ${INFO_DIM}($CONTAINERS containers)${NC}"
             else
-                echo -e "${GRAY}●${NC} Running ${DIM}(no containers)${NC}"
+                echo -e "${GRAY}●${NC} Running ${INFO_DIM}(no containers)${NC}"
             fi
         else
             echo -e "${RED}●${NC} Stopped"
         fi
     else
-        echo -e "${DIM}not installed${NC}"
+        echo -e "${INFO_DIM}not installed${NC}"
     fi
 }
 
@@ -597,7 +606,7 @@ check_service() {
     if systemctl is-active --quiet "$service" 2>/dev/null; then
         echo -e "  ${PRIMARY}●${NC} ${service}"
     elif systemctl list-unit-files "$service.service" &>/dev/null; then
-         echo -e "  ${RED}●${NC} ${service} ${DIM}(stopped)${NC}"
+         echo -e "  ${RED}●${NC} ${service} ${INFO_DIM}(stopped)${NC}"
     fi
 }
 
@@ -636,7 +645,7 @@ print_ascii_art
 if [ "$ASCII_STYLE" = "retro" ]; then
     echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${DARK_GRAY}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${DARK_GRAY}│${NC}  $(get_status_indicator)"
 else
-    echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${DIM}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${DIM}│${NC}  $(get_status_indicator)"
+    echo -e "${WHITE}${BOLD}${SYSTEM_NAME}${NC}  ${INFO_DIM}│${NC}  ${GRAY}${SYSTEM_VERSION}${NC}  ${INFO_DIM}│${NC}  $(get_status_indicator)"
 fi
 
 echo -e "${BRIGHT}────────────────────────────────────────────────────────────────────────────────${NC}"
@@ -701,7 +710,7 @@ fi
 if [ "$SHOW_LAST_LOGIN" = true ]; then
     echo ""
     echo -e "${GRAY}Last Login${NC}"
-    echo -e "  ${DIM}$(get_last_login)${NC}"
+    echo -e "  ${INFO_DIM}$(get_last_login)${NC}"
 fi
 
 echo ""
