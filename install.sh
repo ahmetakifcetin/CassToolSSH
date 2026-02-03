@@ -432,40 +432,40 @@ case $COLOR_THEME in
         ;;
     # Classic Themes
     blue)
-        PRIMARY='\033[38;5;33m'
-        BRIGHT='\033[38;5;39m'
-        ACCENT='\033[38;5;27m'
-        DIM='\033[38;5;24m'
+        PRIMARY='\033[0;94m'
+        BRIGHT='\033[0;94m'
+        ACCENT='\033[0;94m'
+        DIM='\033[0;94m'
         ;;
     green)
-        PRIMARY='\033[38;5;34m'
-        BRIGHT='\033[38;5;40m'
-        ACCENT='\033[38;5;28m'
-        DIM='\033[38;5;22m'
+        PRIMARY='\033[0;92m'
+        BRIGHT='\033[0;92m'
+        ACCENT='\033[0;92m'
+        DIM='\033[0;92m'
         ;;
     purple)
-        PRIMARY='\033[38;5;135m'
-        BRIGHT='\033[38;5;141m'
-        ACCENT='\033[38;5;129m'
-        DIM='\033[38;5;97m'
+        PRIMARY='\033[0;95m'
+        BRIGHT='\033[0;95m'
+        ACCENT='\033[0;95m'
+        DIM='\033[0;95m'
         ;;
     cyan)
-        PRIMARY='\033[38;5;51m'
-        BRIGHT='\033[38;5;87m'
-        ACCENT='\033[38;5;45m'
-        DIM='\033[38;5;39m'
+        PRIMARY='\033[0;96m'
+        BRIGHT='\033[0;96m'
+        ACCENT='\033[0;96m'
+        DIM='\033[0;96m'
         ;;
     red)
-        PRIMARY='\033[38;5;196m'
-        BRIGHT='\033[38;5;202m'
-        ACCENT='\033[38;5;160m'
-        DIM='\033[38;5;88m'
+        PRIMARY='\033[0;91m'
+        BRIGHT='\033[0;91m'
+        ACCENT='\033[0;91m'
+        DIM='\033[0;91m'
         ;;
     yellow)
-        PRIMARY='\033[38;5;220m'
-        BRIGHT='\033[38;5;226m'
-        ACCENT='\033[38;5;214m'
-        DIM='\033[38;5;136m'
+        PRIMARY='\033[0;93m'
+        BRIGHT='\033[0;93m'
+        ACCENT='\033[0;93m'
+        DIM='\033[0;93m'
         ;;
     *)
         PRIMARY='\033[38;5;51m'
@@ -1100,7 +1100,7 @@ main() {
     
     # Check for update mode
     if [ -d "/opt/casstool" ]; then
-        echo -e "${YELLOW}[!] Mevcut bir kurulum tespit edildi. Güncelleme moduna geçiliyor...${NC}"
+        echo -e "${YELLOW}[!] Daha yeni bir sürüm var...${NC}"
         UPDATING=true
         sleep 1
     fi
